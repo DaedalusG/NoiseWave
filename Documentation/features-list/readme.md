@@ -6,6 +6,8 @@ Song CRUD
     -Update: alter song attributes (i.e. artist, title, album, release date, etc.)
     -Destroy: remove songs from soundcloud
 
+    Amazon S3
+
 Playing songs with progress bar with continuous play
 
 Comments
@@ -16,8 +18,9 @@ User pages
 
     Pages containing pics of users liked songs, the ability to play the song when the user clicks the icon, tracks page to display songs the user has uploaded
 
-***Bonus: Likes***
+Bonus: Likes
 
 Bonus: Wave Forms
 Bonus: Playlists
+Bonus: Search Bar
 
