@@ -23,6 +23,22 @@
 | /api/songs/:id               | DELETE          | Delete a song you've posted       
 | /explore                     | GET             | Retrieve all songs on the database  ** restful would be /songs
 
+
+## Comments
+
+| URL                          | Verb            | Description   
+|------------------------------|-----------------|--------------
+| /comments                    | POST            | A user posts a comment on a song
+| /comments/:id                | DELETE          | A user removes their comment from a song
+
+
+## Likes
+
+| URL                          | Verb            | Description   
+|------------------------------|-----------------|--------------
+| /likes                       | POST            | A user likes a song
+| /likes/:id                   | DELETE          | A user unlikes a song
+
 ## Search 
 
 | URL                          | Verb            | Description   

@@ -1,0 +1,42 @@
+{
+  "name": "noisewave",
+  "version": "1.0.0",
+  "description": "A SoundCloud Clone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaedalusG/420_Group2_Project.git"
+  },
+  "author": "Warren Gifford, Cole Hunter, Chris Cottier, Ben Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaedalusG/420_Group2_Project/issues"
+  },
+  "homepage": "https://github.com/DaedalusG/420_Group2_Project#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-bearer-token": "^2.4.0",
+    "express-validator": "^6.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
+    "per-env": "^1.0.2",
+    "pg": "^8.3.0",
+    "pug": "^3.0.0",
+    "sequelize": "^5.22.3"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^3.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^5.5.1"
+  }
+}
