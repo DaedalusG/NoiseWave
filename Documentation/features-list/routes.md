@@ -1,55 +1,32 @@
-# Backend Routes
+# Routes
 
 ## Users
+<!-- | /api/users          | GET   | Get a list of all users               | -->
 
 | URL                 | Verb  | Description                           |
 |---------------------|-------|---------------------------------------|
-| /api/users          | GET   | Get a list of all users               |
-| /api/users          | POST  | Save the new user to DB               |
-| /api/users/:id      | GET   | Show a page for a user                |
-| /api/users/:id      | PATCH | Save changes to a user                |
-| /api/users/:id      | DELETE| Remove a user form the database       |
+| /users          | POST  | Save the new user to DB               |
+| /api/users/:id      | GET   | Get a user with likes and songs included               |
+| /users/:id      | PATCH | Save changes to a user                |
+| /users/:id/edit     | GET |   gets form to update user              |
+| /users/:id      | DELETE| Remove a user form the database       |
 
-## Likes API
-
-| URL                                   | Verb  | Description                           |
-|---------------------------------------|-------|---------------------------------------|
-| /api/songs/:songId/likes/:userId      | POST  | Adds a like to the song               |
-| /api/songs/:songId/likes/:userId      | DELETE| Remove a like from a song             |
-| /api/songs/:id/likes                  | GET   | Fetches the likes for a song          |
-| /api/users/:id/likes                  | GET   | Fetches the likes a user has made     |                                    
-
-## Comments API
-
-| URL                                  | Verb     | Description                 |
-|--------------------------------------|----------|-----------------------------|
-| /api/songs/:id/comments              | GET      | Returns relevant comments   |
-| /api/songs/:id/comments              | POST     | Creates a comment           |
-| /api/comments/:id                    | GET      | Returns a comment           |
-| /api/comments/:id                    | PATCH    | Edits a comment             |
-| /api/comments/:id                    | DELETE   | Removes a comment           |
-
-## Songs API
+## Songs
 
 | URL                          | Verb            | Description   
 |------------------------------|-----------------|--------------
-| /api/songs/:id               | GET             | Get a specific song
-| /api/users/:id/songs         | POST            | Post a song   
+| /upload                      | GET             | Gets upload song form ** instead restful would be /song/new 
+| /songs                       | POST            | Post a song  
+| /songs/:id/edit              | POST            | edit a song ** soundcloud has /you/tracks because a modal is in use
 | /api/songs/:id               | PATCH           | Update a songs meta data           
+| /api/songs/:id               | GET            | Shows a single song       
 | /api/songs/:id               | DELETE          | Delete a song you've posted       
-| /api/users/:id/songs/        | GET             | Retrieve all songs uploaded by a user              
-| /api/songs                   | GET             | Retrieve all songs on the database     
+| /explore                     | GET             | Retrieve all songs on the database  ** restful would be /songs
 
-## Search API
+## Search 
 
 | URL                          | Verb            | Description   
 |------------------------------|-----------------|--------------
-| /api/search?query=string     | POST            | Gets a list of all songs or users that match the query
-| /api/search                  | POST            | Gets a list of all songs or users that match the query
-
-- get 1 song
-- get all songs by user
-- get all songs?????
-- get songs that match query??
- 
-- get users that match query??
+| /search?query=string     | POST            | Gets a list of all songs or users that match the query. The query will match the search string for instances of song(title, genre, album, artist) and user(username), that contain the search string (case insensitive).
+| /:username                   | GET           | access api/users/:id
+| /:username/:song                   | GET           | access api/songs/:id

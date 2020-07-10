@@ -35,6 +35,14 @@ A SoundCloud-inspired application
   - The music player on a song page will use a waveform visualization of the song as the song's progress bar.
   - A song page will display comments on the song from users, along with an input field to post new comments.
 - When a user navigates away from a song's page, the song will continue to play in a smaller player at the bottom of the page.
+  - The music player modal will contain:
+    - previous track, play/pause, next track
+    - shuffle, repeat 
+    - basic progress bar 
+    - volume level
+    - song/artist names and image
+    - like button
+    - Playlist popout button (when playlists are implmenting)
 - A user should have the ability to upload songs to the websites database, as well as edit information about songs after upload.
 - The songs should be hosted through Amazon S3 hosting services.
 
@@ -78,10 +86,19 @@ A SoundCloud-inspired application
 - Users should be able to leave likes on a song.
 - A song's likes should be visible on its page.
 
+### Search Bar
+
+- This feature allows users to search for songs and users.
+  - The searchbar will appear in the navbar at the top of the screen center left, and display as an input field
+  - The search should display results for search string matches to song title, and username.
+
+
+
 #### Authentication
 
 - User authentication will be handled using Javascript Web Tokens through the Express framework. Logging in allows users access full site functionality including creating, updating, and deleting content.
 - Without authentication, users should still be able to browse content and listen to any music in the application.
+
 
 #### Authorization
 
@@ -104,9 +121,7 @@ A SoundCloud-inspired application
 
 - This feature allows users to create named playlists, add songs to their playlists, and play their playlists.
 
-### Search Bar
 
-- This feature allows users to search for songs and users.
 
 ### Waveform Visualization Comments
 
