@@ -48,18 +48,9 @@ const generateUserToken = (user) => {
   return token;
 };
 
-const authenticateToken = (req, res, next) => {
-  //grab token from request
-  const { token } = req;
-
-  if (!token) {
-    return res.sendStatus(401);
-  }
-};
-
 //FOR BACKEND API CALL we supply the jwt, for frontend, the user supplies the jwt
 
-const restoreUser = (req, res, next) => {
+const authenticateUser = (req, res, next) => {
   const { token } = req;
 
   if (!token) {
@@ -75,7 +66,7 @@ const restoreUser = (req, res, next) => {
     const { id } = jwtPayload.data;
 
     try {
-      req.user = await User.findbyPk(id);
+      req.user = await User.findByPk(id);
     } catch (err) {
       return next(err);
     }
@@ -83,7 +74,7 @@ const restoreUser = (req, res, next) => {
     if (!req.user) {
       return res.set("WWW-authenticate", "Bearer").status(401).end();
     }
-    return next;
+    return next();
   });
 };
 
@@ -109,7 +100,7 @@ const restoreUser = (req, res, next) => {
 //   })
 // );
 
-const requireAuth = [bearerToken(), restoreUser];
+const requireAuth = [bearerToken(), authenticateUser];
 module.exports = {
   generateUserToken,
   requireAuth,
