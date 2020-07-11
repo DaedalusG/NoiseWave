@@ -7,4 +7,6 @@ app.get("/", (req, res) => {
   res.send(`Find me at localhost:8080`);
 });
 
+//start server with npm run start
+
 module.exports = app;
