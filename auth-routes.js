@@ -10,7 +10,7 @@ const asyncHandler = (handler) => (req, res, next) => {
 // backend signup route
 //this route encrypts the password, creates the new user, creates a token for that user, and sends the token.
 router.post(
-  "/sign-up",
+  "/",
   asyncHandler(async (req, res) => {
     console.log(req.body);
     const { username, email, password } = req.body;
@@ -33,7 +33,7 @@ router.post(
 
 //backend login validation
 router.post(
-  "/login",
+  "/token",
   asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     const user = await user.findOne({
@@ -60,8 +60,6 @@ router.post(
   })
 );
 
-//verify with bcrypt this is valid
-
 router.post("/logout", (req, res) => {});
 
 //WITH THE CORRECT USER TOKEN, THIS WILL GRAB THE USERS INFO
@@ -74,20 +72,5 @@ router.post(
   "/",
   asyncHandler(async (req, res) => {})
 );
-// );
-// router.use(express.json());
-// router.get("/users", (req, res) => {
-//   res.json([{ username: "lol", password: "nope" }]);
-// });
-
-// router.post("/login", (req, res) => {
-//   const { username, id, email } = req.body.username;
-
-//   const user = { username, id, email };
-
-//   const token = generateUserToken(user);
-
-//   res.json({ token: token });
-// });
 
 module.exports = router;

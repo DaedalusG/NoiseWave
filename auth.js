@@ -1,6 +1,9 @@
 // What needs to be authenticated?
 // -Users
 
+//How?????
+//-cookies or local storage
+
 //What does authentication require?
 //-valid user credentials from signing up or signing in
 
@@ -48,8 +51,41 @@ const generateUserToken = (user) => {
   return token;
 };
 
-//FOR BACKEND API CALL we supply the jwt, for frontend, the user supplies the jwt
+//this is an idea to refresh the token(authentication) on each app call. It would be a middleware. I'm not 100% it would work. But let's talk and see if we want to use it.
+const refreshValidToken = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+  let token;
+  if (authHeader) {
+    token = authHeader.split(" ")[1];
+  }
+  if (!token) {
+    next();
+  }
 
+  jwt.verify(token, secret, null, async (err, jwtPayload) => {
+    if (err) {
+      err.status = 401;
+      return next(err);
+    }
+
+    const { id } = jwtPayload.data;
+
+    try {
+      const user = await User.findByPk(id);
+    } catch (err) {
+      return next(err);
+    }
+
+    const token = generateUserToken(user);
+
+    localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
+    localStorage.setItem("NOISEWAVE_CURRENT_USER_ID", id);
+
+    next();
+  });
+};
+
+//this checks that the user is valid and grabs their user object.
 const authenticateUser = (req, res, next) => {
   const { token } = req;
 
@@ -78,30 +114,9 @@ const authenticateUser = (req, res, next) => {
   });
 };
 
-// THIS IS WHAT THE SIGNUP POST ROUTE SHOULD LOOK LIKE IN THE ROUTE FOLDER
-//this route encrypts the password, creates the new user, creates a token for that user, and sends the token in the repons to user.
-
-// router.post(
-//   "/users",
-//   validateUsername,
-//   validateEmailAndPassword,
-//   handleValidationErrors,
-//   asyncHandler(async (req, res) => {
-//     const { username, email, password } = req.body;
-//     const hashedPassword = await bcrypt.hash(password, 10);
-//     const user = await User.create({ username, email, hashedPassword });
-
-//     const token = generateUserToken(user);
-//     res.status(201);
-
-//     //This part im not sure, we want to give the client the token created and redirect them??
-//     res.token = token;
-//     res.redirect("I DONT KNOW");
-//   })
-// );
-
 const requireAuth = [bearerToken(), authenticateUser];
 module.exports = {
   generateUserToken,
   requireAuth,
+  refreshValidToken,
 };
