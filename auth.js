@@ -2,7 +2,7 @@
 // -Users
 
 //How?????
-//-cookies or local storage
+//-cookies or local storage with jwt
 
 //What does authentication require?
 //-valid user credentials from signing up or signing in
@@ -14,19 +14,18 @@
 // - I think it should be .post('/users/signin')
 
 // When do we need to authenticate?
-// -when user adds a comment
-// -when user adds a like
 //- when user tries to do anything requiring authorization
+//-user posts a comment
+//-user posts a like
+//-user post a song
 
 // What/when do we need to authorize?
+// -when user tries to get pages to edit song or user.
 // - when user tries to edit song
 // -when user tries to delete a song
-// -when user tries to edit profile
-// -when user tries to delete profile
-// -user deletes a comment
+// -when user tries to edit user
+// -when user tries to delete user
 //-user deletes a like
-
-//once user created with bcrypt encryption...
 
 const jwt = require("jsonwebtoken");
 const { jwtConfig } = require("./config");
@@ -36,8 +35,9 @@ const { User } = require("./db/models");
 const bearerToken = require("express-bearer-token");
 
 const generateUserToken = (user) => {
-  //we pass in the user instance from db, this is ran when users are signing up
-
+  //DOES WHAT: generates a token for a user
+  //WHEN TO RUN: run it during account creation, login, or token refreshing.
+  //WHERE TO RUN IT: this should be ran in the signup and login routes. it can also be ran in a refresh middleware function.
   const userDataForToken = {
     id: user.id,
     email: user.email,
@@ -51,18 +51,17 @@ const generateUserToken = (user) => {
   return token;
 };
 
-//this is an idea to refresh the token(authentication) on each app call. It would be a middleware. I'm not 100% it would work. But let's talk and see if we want to use it.
 const refreshValidToken = (req, res, next) => {
-  const authHeader = req.headers["authorization"];
-  let token;
-  if (authHeader) {
-    token = authHeader.split(" ")[1];
-  }
+  //DOES WHAT: refreshes a token if user has valid token already.
+  //WHEN TO RUN: This is an optional middleware. If we want user to have their token refreshed with each request, we should run this middleware.
+  //WHERE TO RUN IT: We would use this middleware on app.js; it is not route specific.
+  const { token } = req;
+
   if (!token) {
     next();
   }
 
-  jwt.verify(token, secret, null, async (err, jwtPayload) => {
+  return jwt.verify(token, secret, null, async (err, jwtPayload) => {
     if (err) {
       err.status = 401;
       return next(err);
@@ -84,12 +83,17 @@ const refreshValidToken = (req, res, next) => {
     next();
   });
 };
+const refreshToken = [bearerToken(), refreshValidToken];
 
-//this checks that the user is valid and grabs their user object.
 const authenticateUser = (req, res, next) => {
+  //DOES WHAT: this function checks to see if a user has the authorization to have a request run, if yes, it will pass on their user instance to req. If not, it will try to have user login.
+  //WHEN TO RUN: This middleware should be ran for anything we want only a specific user to do (see lines 16-29). Once the user is passed in req, we'll check in the route their id matches the routes user.
+  //WHERE TO RUN IT: this is a middleware. run it before route.
+
   const { token } = req;
 
   if (!token) {
+    //TODO this should be redirect or prompt modal popup for login
     return res.set("WWW-authenticate", "Bearer").status(401).end();
   }
 
@@ -108,15 +112,59 @@ const authenticateUser = (req, res, next) => {
     }
 
     if (!req.user) {
+      //TODO this should be redirect or prompt modal popup for login
       return res.set("WWW-authenticate", "Bearer").status(401).end();
     }
     return next();
   });
 };
-
 const requireAuth = [bearerToken(), authenticateUser];
+
+const isUserLoggedIn = (req, res, next) => {
+  //DOES WHAT: this middleware checks if the user is logged in (has valid token). If they are, their instance is grabbed and passed in the req.
+  //WHEN TO RUN: this middleware should be ran when we want to determine how to render a frontend page from a get request. We check who is logged in, and if it matches the id of
+  // the get path for user or user songs we render it with extra stuff.           For example, if a user visits a profile page or
+  //a user's songs page, we would run this and see if the person is logged in and the owner. if yes, we'd add links to edit account, or edit/add songs page(s).
+  //WHERE TO RUN IT: it's a middleware, run before rendering pug to see if we need to render certain options/links for user.
+  const { token } = req;
+
+  if (!token) {
+    next();
+  }
+
+  return jwt.verify(token, secret, null, async (err, jwtPayload) => {
+    if (err) {
+      err.status = 401;
+      return next(err);
+    }
+
+    const { id } = jwtPayload.data;
+
+    try {
+      const user = await User.findByPk(id);
+      if (user !== null) {
+        req.user = user;
+      }
+    } catch (err) {
+      return next(err);
+    }
+
+    next();
+  });
+};
+
+const loggedInUser = [bearerToken(), isUserLoggedIn];
+
+const userIsAuthorized = (userFromReqObject, userSpecificiedByUrl) => {
+  //DOES WHAT: tells us if user is authorized by comparing what user the route is selecting and what route is authenticated.
+  //WHEN TO RUN: Anytime specific authorization is required.
+  //WHERE TO RUN IT: this would always be ran from within a route. TBH the function itself is overkill, BUT it explains how we'd do authorization.
+  return userFromReqObject.id === userSpecificiedByUrl.id;
+};
+
 module.exports = {
   generateUserToken,
   requireAuth,
-  refreshValidToken,
+  refreshToken,
+  loggedInUser,
 };
