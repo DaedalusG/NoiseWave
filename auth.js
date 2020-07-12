@@ -86,8 +86,8 @@ const refreshValidToken = (req, res, next) => {
 const refreshToken = [bearerToken(), refreshValidToken];
 
 const authenticateUser = (req, res, next) => {
-  //DOES WHAT: this function checks to see if a user has the authorization to have a request run, if yes, it will pass on their user instance to req. If not, it will try to have user login.
-  //WHEN TO RUN: This middleware should be ran for anything we want only a specific user to do (see lines 16-29). Once the user is passed in req, we'll check in the route their id matches the routes user.
+  //DOES WHAT: this function checks to see if a user has is logged in (has a token). If yes, it will pass on their user instance to req. If not, it will direct the user to login.
+  //WHEN TO RUN: When it is necessary to have an authenticated, logged in user for a request.
   //WHERE TO RUN IT: this is a middleware. run it before route.
 
   const { token } = req;
@@ -155,11 +155,14 @@ const isUserLoggedIn = (req, res, next) => {
 
 const loggedInUser = [bearerToken(), isUserLoggedIn];
 
-const userIsAuthorized = (userFromReqObject, userSpecificiedByUrl) => {
+const userIsAuthorized = (
+  authenticatedUserFromReqObject,
+  userSpecificiedByUrl
+) => {
   //DOES WHAT: tells us if user is authorized by comparing what user the route is selecting and what route is authenticated.
-  //WHEN TO RUN: Anytime specific authorization is required.
+  //WHEN TO RUN: Anytime specific authorization is required (see lines 16-29).
   //WHERE TO RUN IT: this would always be ran from within a route. TBH the function itself is overkill, BUT it explains how we'd do authorization.
-  return userFromReqObject.id === userSpecificiedByUrl.id;
+  return authenticatedUserFromReqObject.id === userSpecificiedByUrl.id;
 };
 
 module.exports = {
@@ -167,4 +170,5 @@ module.exports = {
   requireAuth,
   refreshToken,
   loggedInUser,
+  userIsAuthorized,
 };
