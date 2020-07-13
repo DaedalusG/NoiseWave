@@ -16,9 +16,10 @@ router.post('/', handleValidationErrors, asyncHandler(async (req, res) => {
 }));
 
 router.post('/:id(\\d+)/edit', asyncHandler(async (req, res) => {
+    const { title, artist, album, genre } = req.body;
     await fetch(`http://localhost:${apiPort}/songs/${req.params.id}`, 
                 {method: 'PUT',
-                body: {  }});
+                body: { title, artist, album, genre }});
 }));
 
 module.exports = router

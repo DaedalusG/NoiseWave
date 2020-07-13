@@ -14,6 +14,7 @@ router.use(cookieParser());
 const csrfProtection = csrf({cookie: true});
 
 const getUser = async userId => {
+    // Change fetch url for heroku deployment
     const userData = await fetch(`http://localhost:${apiPort}/users/${userId}`);
     return await userData.json();
 }

@@ -1,4 +1,10 @@
-extends templates/nav_logged-out
+extends templates/nav_logged-in.pug
 
-block content
-    h1 You have an error
+block page-specific-content
+    h1= title
+    p= message
+    if errors
+        ul
+            each error in errors
+                li= error
+    pre= stack

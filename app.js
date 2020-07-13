@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use('/', indexRoutes);
 app.use('/songs', songRoutes);
-app.use('/users', userRoutes)
+app.use('/users', userRoutes);
 
 // middleware to catch errors caused by unhandled requests
 app.use((req, res, next) => {
