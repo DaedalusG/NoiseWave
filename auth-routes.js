@@ -7,12 +7,13 @@ const asyncHandler = (handler) => (req, res, next) => {
   return handler(req, res, next).catch(next);
 };
 
-// backend signup route
+// compare to ben's signup route
 //this route encrypts the password, creates the new user, creates a token for that user, and sends the token.
+
 router.post(
-  "/",
+  "/users", VALIDATIONS,
   asyncHandler(async (req, res) => {
-    console.log(req.body);
+    
     const { username, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -33,7 +34,7 @@ router.post(
 
 //backend login validation
 router.post(
-  "/token",
+  "/login",
   asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     const user = await user.findOne({
@@ -67,10 +68,5 @@ router.get("/userinfo", requireAuth, (req, res) => {
   const user = req.user;
   res.json(user);
 });
-
-router.post(
-  "/",
-  asyncHandler(async (req, res) => {})
-);
 
 module.exports = router;
