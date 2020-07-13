@@ -1,6 +1,5 @@
 const { db } = require("./index");
 const { username, password, host, database } = db;
-console.log(db);
 
 module.exports = {
   development: {

@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const app = express();
+<<<<<<< HEAD
 app.set('view engine', 'pug')
 
 app.use(morgan('dev'));
@@ -37,11 +38,15 @@ app.use((err, req, res, next) => {
     stack: isProduction ? null : err.stack,
   });
 });
+=======
+app.use(express.json());
+>>>>>>> origin/authorization-authentication
 
 app.get("/", (req, res) => {
   res.send(`Find me at localhost:8080`);
 });
 
-//start server with npm run start
-
+//testin auth routes
+const authRouter = require("./auth-routes");
+app.use(authRouter);
 module.exports = app;
