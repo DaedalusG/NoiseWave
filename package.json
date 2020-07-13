@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/DaedalusG/420_Group2_Project#readme",
   "dependencies": {
+    "aws": "0.0.3-2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -29,6 +30,7 @@
     "express-bearer-token": "^2.4.0",
     "express-validator": "^6.6.0",
     "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
     "path": "^0.12.7",
     "per-env": "^1.0.2",
     "pg": "^8.3.0",

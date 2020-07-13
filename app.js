@@ -1,5 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
+const multer = require('multer');
+const AWS = require('aws-sdk');
 
 const app = express();
 
