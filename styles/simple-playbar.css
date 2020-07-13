@@ -1,0 +1,45 @@
+.playbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: black;
+}
+.playbar__elements {
+
+}
+.previous-button {
+
+}
+.play-button {
+
+}
+.next-button {
+
+}
+.shuffle-button {
+
+}
+.repeat-button {
+
+}
+.playbar__timeline {
+
+}
+.playbar__volume {
+
+}
+.playbar__soundBadge {
+
+}
+.artist {
+
+}
+.track {
+
+}
+.playbackSoundBadge__actions {
+
+}
+.like-button {
+
+}

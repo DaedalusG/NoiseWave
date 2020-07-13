@@ -4,7 +4,7 @@
   "description": "A SoundCloud Clone",
   "main": "app.js",
   "scripts": {
-    "start": "per-env",
+    "start": "node ./bin/www",
     "start:development": "nodemon -r dotenv/config ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/DaedalusG/420_Group2_Project#readme",
   "dependencies": {
     "aws": "0.0.3-2",
+    "aws-sdk": "^2.713.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",

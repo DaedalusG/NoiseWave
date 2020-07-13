@@ -2,10 +2,12 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const { User } = require("./db/models");
 const router = express.Router();
-const { generateUserToken, requireAuth } = require("./auth");
-const asyncHandler = (handler) => (req, res, next) => {
-  return handler(req, res, next).catch(next);
-};
+const { generateUserToken, requireAuth } = require("../auth");
+const asyncHandler = handler => {
+  return (req, res, next) => {
+      return handler(req, res, next).catch(next);
+  }
+}
 
 // compare to ben's signup route
 //this route encrypts the password, creates the new user, creates a token for that user, and sends the token.
@@ -35,7 +37,7 @@ router.post(
   "/login",
   asyncHandler(async (req, res) => {
     const { email, password } = req.body;
-    const user = await user.findOne({
+    const user = await User.findOne({
       where: {
         email,
         //or username, our choice, as long as unique
