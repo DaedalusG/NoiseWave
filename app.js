@@ -1,3 +1,4 @@
+const { environment } = require('./config')
 const indexRoutes = require('./routes/index');
 const songRoutes = require('./routes/songs');
 const userRoutes = require('./routes/users');
