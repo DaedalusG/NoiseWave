@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #S3 bucket access keys
-keys.js
+./keys.js
