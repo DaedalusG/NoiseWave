@@ -7,12 +7,12 @@ const asyncHandler = (handler) => (req, res, next) => {
   return handler(req, res, next).catch(next);
 };
 
-// backend signup route
+// compare to ben's signup route
 //this route encrypts the password, creates the new user, creates a token for that user, and sends the token.
+
 router.post(
-  "/",
+  "/users" /*VALIDATIONS,*/,
   asyncHandler(async (req, res) => {
-    console.log(req.body);
     const { username, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -25,7 +25,6 @@ router.post(
 
     const token = generateUserToken(user);
     res.status(201).json({
-      user: { id: user.id },
       token,
     });
   })
@@ -33,7 +32,7 @@ router.post(
 
 //backend login validation
 router.post(
-  "/token",
+  "/login",
   asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     const user = await user.findOne({
@@ -56,21 +55,17 @@ router.post(
       return next(err);
     }
     const token = generateUserToken(user);
-    res.json({ token, user: { id: user.id } });
+    res.json({ token });
   })
 );
 
-router.post("/logout", (req, res) => {});
+//I think the logout will just be a logout button with event listener
+// router.post("/logout", (req, res) => {});
 
 //WITH THE CORRECT USER TOKEN, THIS WILL GRAB THE USERS INFO
 router.get("/userinfo", requireAuth, (req, res) => {
   const user = req.user;
   res.json(user);
 });
-
-router.post(
-  "/",
-  asyncHandler(async (req, res) => {})
-);
 
 module.exports = router;
