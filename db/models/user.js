@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
       },
       hashedPassword: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING.BINARY,
         allowNull: false,
       },
       email: {

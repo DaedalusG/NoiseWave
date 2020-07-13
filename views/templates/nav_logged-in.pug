@@ -1,0 +1,19 @@
+extends footer
+block navigation
+    nav(class="navbar sticky")
+        ul(class="navbar__col navbar__col-1")
+            li
+                img(class="logo" src="header-logo.jpg")
+            li
+                a(href="/explore") Explore
+        form(class="navbar__col navbar__col-" id="searchbar" method="get" action="/search")
+            label(for="search") Search:
+            input(type="search" id="search" name="search")
+            input(type="submit" value="Search")
+        ul(class="navbar__col navbar__col-3")
+            li
+                a(href="/explore") Upload
+            li
+                a(href="/explore") User
+            li
+                a(href="/explore") ...

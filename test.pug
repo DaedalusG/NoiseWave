@@ -1,0 +1,56 @@
+
+div(class="playControls g-z-index-control-bar m-visible")
+    section(role="contentinfo" aria-label="miniplayer" class="playControls__inner")
+        div(class="playControls__wrapper l-container l-fullwidth")
+            div(class="playControls__bg")
+            div(class="playControls__elements")
+                button(class="skipControl sc-ir playControls__control playControls__prev skipControl__previous") Skip to previous
+                button(type="button" class="playControl sc-ir playControls__control playControls__play" tabindex="" title="Play current" aria-label="Play current") Play current
+                button(class="skipControl sc-ir playControls__control playControls__next skipControl__next" tabindex="") Skip to next
+                div(class="playControls__shuffle playControls__control")
+                    button(title="Shuffle" class="shuffleControl sc-ir") Shuffle
+                div(class="playControls__repeat playControls__control")
+                    button(title="Repeat" class="repeatControl sc-ir m-none") Repeat track
+                div(class="playControls__timeline")
+                    div(class="playbackTimeline is-scrubbable has-sound")
+                        div(class="playbackTimeline__timePassed")
+                            span(class="sc-visuallyhidden") Current time: 0 seconds
+                            span(aria-hidden="true") 0:00
+                        div(class="playbackTimeline__progressWrapper" role="progressbar" aria-valuemax="2374" aria-valuenow="0" aria-valuetext="0 seconds")
+                            div(class="playbackTimeline__progressBackground")
+                            div(class="playbackTimeline__progressBar" style="min-width: 0px; width: 0%;")
+                            div(class="playbackTimeline__progressHandle sc-ir" style="left: 0%;")
+                        div(class="playbackTimeline__duration")
+                            span(class="sc-visuallyhidden") Duration: 39 minutes 34 seconds
+                            span(aria-hidden="true") 39:34
+                        div(class="playbackTimeline__snippetIndicator")
+                            span(class="sc-snippet-badge sc-selection-disabled sc-snippet-badge-small" aria-describedby="tooltip-73") Preview
+                div(class="playControls__volume")
+                    div(class="volume" data-level="8")
+                        div(class="sc-visuallyhidden") Volume
+                        div(class="volume__iconWrapper")
+                            button(type="button" class="volume__button volume__speakerIcon sc-ir") Toggle mute
+                        div(class="sc-hidden" id="volume__sliderDescription") Use shift and the arrow up and down keys to change the volume.
+                        div(class="volume__sliderWrapper" role="slider" aria-valuemin="0" aria-valuemax="1" aria-label="Volume" aria-valuenow="0.8")
+                            div(class="volume__sliderBackground")
+                            div(class="volume__sliderProgress" style="height: 73.6px;")
+                            div(class="volume__sliderHandle" style="top: 28.4px;")
+                div(class="playControls__soundBadge")
+                    div(class="playbackSoundBadge paused")
+                        a(href="/slumberjack/distillation-vol-4-live-from-isolate-festival" class="playbackSoundBadge__avatar sc-media-image" tabindex="-1")
+                            div(class="image m-sound image__lightOutline readOnly customImage sc-artwork sc-artwork-placeholder-7 m-loaded" style="height: 30px; width: 30px;")
+                                span(style="background-image: url(&quot;https://i1.sndcdn.com/artworks-yzgqS8nxLJRflKwz-nXlrMg-t120x120.jpg&quot;); width: 30px; height: 30px; opacity: 1;" class="sc-artwork sc-artwork-placeholder-7  image__full g-opacity-transition" aria-label="DISTILLATION MIX Vol 4: Live From IsoLate Festival" aria-role="img")
+                        div(class="playbackSoundBadge__titleContextContainer")
+                            a(href="/slumberjack" class="playbackSoundBadge__lightLink sc-link-light sc-truncate" title="SLUMBERJACK") SLUMBERJACK
+                            div(class="playbackSoundBadge__title")
+                                a(href="/slumberjack/distillation-vol-4-live-from-isolate-festival" class="playbackSoundBadge__titleLink sc-truncate" title="DISTILLATION MIX Vol 4: Live From IsoLate Festival")
+                                    span(class="sc-visuallyhidden") Current track: DISTILLATION MIX Vol 4: Live From IsoLate Festival
+                                    span(aria-hidden="true") DISTILLATION MIX Vol 4: Live From IsoLate Festival
+                        div(class="playbackSoundBadge__actions")
+                            button(type="button" class="sc-button-like playbackSoundBadge__like sc-button sc-button-small sc-button-icon sc-button-responsive" aria-describedby="tooltip-362" tabindex="0" title="Like" aria-label="Like") Like
+                            a(class="playbackSoundBadge__showQueue" title="Next up" aria-role="button")
+                                svg(width="24" height="24")
+                                    path(fill="#333" class="playbackSoundBadge__queueIcon" d="M6 11h12v2H6zM6 7h8v2H6zM6 15h12v2H6zM16 3v6l4-3z")
+                                div(class="playbackSoundBadge__queueCircle")
+            div(class="playControls__panel")
+                div(class="playControlsPanel sc-font-body sc-background-darkgrey")

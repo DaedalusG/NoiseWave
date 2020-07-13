@@ -1,0 +1,72 @@
+nav {
+    height: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: white;
+    background-color: rgb(26, 26, 26);
+}
+
+.navbar a {
+    height: 100%;
+    padding: 40px;
+    border: 2px solid rgb(26, 26, 26);
+    color: white;
+    background-color: rgb(46, 46, 46);
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: rgb(75, 75, 75);
+}
+
+.navbar__col {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+.logo {
+  padding: 0;
+  margin: 0;
+  height: 53px;
+}
+
+.sticky {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+@media all and (max-width: 800px) {
+  nav {
+    height: 40px;
+  }
+  .navbar a {
+      padding: 15px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  nav {
+    height: 20px;
+  }
+
+  #searchbar {
+    display: none;
+  }
+
+  .navbar a, .navbar label {
+      padding: 5px;
+      font-size: 12px;
+  }
+
+  .navbar label {
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 23px;
+  }
+}
