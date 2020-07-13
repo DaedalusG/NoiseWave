@@ -9,12 +9,12 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-<<<<<<< HEAD
 app.set('view engine', 'pug')
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.json());
 
 app.use('/', indexRoutes);
 app.use('/songs', songRoutes);
@@ -38,9 +38,6 @@ app.use((err, req, res, next) => {
     stack: isProduction ? null : err.stack,
   });
 });
-=======
-app.use(express.json());
->>>>>>> origin/authorization-authentication
 
 app.get("/", (req, res) => {
   res.send(`Find me at localhost:8080`);
