@@ -46,6 +46,6 @@ app.get("/", (req, res) => {
 });
 
 //testin auth routes
-const authRouter = require("./auth-routes");
-app.use(authRouter);
+// const authRouter = require("./auth-routes");
+// app.use(authRouter);
 module.exports = app;
