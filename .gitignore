@@ -103,8 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-# s3 bucket access
-# Access Key ID:
-# AKIAJB2WKMUIQ5EKJ7CA
-# Secret Access Key:
-# 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
+#S3 bucket access keys
+keys.js
