@@ -128,6 +128,7 @@ const isUserLoggedIn = (req, res, next) => {
   const { token } = req;
 
   if (!token) {
+    req.user = null;
     next();
   }
 
