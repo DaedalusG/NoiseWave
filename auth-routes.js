@@ -11,9 +11,8 @@ const asyncHandler = (handler) => (req, res, next) => {
 //this route encrypts the password, creates the new user, creates a token for that user, and sends the token.
 
 router.post(
-  "/users", VALIDATIONS,
+  "/users" /*VALIDATIONS,*/,
   asyncHandler(async (req, res) => {
-    
     const { username, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -26,7 +25,6 @@ router.post(
 
     const token = generateUserToken(user);
     res.status(201).json({
-      user: { id: user.id },
       token,
     });
   })
@@ -57,11 +55,12 @@ router.post(
       return next(err);
     }
     const token = generateUserToken(user);
-    res.json({ token, user: { id: user.id } });
+    res.json({ token });
   })
 );
 
-router.post("/logout", (req, res) => {});
+//I think the logout will just be a logout button with event listener
+// router.post("/logout", (req, res) => {});
 
 //WITH THE CORRECT USER TOKEN, THIS WILL GRAB THE USERS INFO
 router.get("/userinfo", requireAuth, (req, res) => {

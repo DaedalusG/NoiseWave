@@ -78,7 +78,6 @@ const refreshValidToken = (req, res, next) => {
     const token = generateUserToken(user);
 
     localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
-    localStorage.setItem("NOISEWAVE_CURRENT_USER_ID", id);
 
     next();
   });
