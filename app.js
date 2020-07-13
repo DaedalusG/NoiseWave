@@ -41,11 +41,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.send(`Find me at localhost:8080`);
-});
-
-//testin auth routes
-const authRouter = require("./auth-routes");
-app.use(authRouter);
 module.exports = app;
