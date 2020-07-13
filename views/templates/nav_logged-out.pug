@@ -1,0 +1,40 @@
+extends footer
+block navigation
+    nav(class="navbar sticky")
+        ul(class="navbar__col navbar__col-1")
+            li
+                img(class="logo" src="header-logo.jpg")
+        ul(class="navbar__col navbar__col-3")
+            li(class="btn-group")
+                button(type="button" class="open-modal" data-open="modal1") Sign In
+            div(class="modal" id="modal1" data-animation="zoomInOut")
+                div(class="modal-dialog")
+                    header(class="modal-header") Sign in to your NoiseWave account
+                        button(class="close-modal" aria-label="close modal" data-close) X
+                    section(class="modal-content")
+                        form(method="get" action="/search")
+                            label(for="display-name") Display Name:&nbsp;&nbsp;
+                            input(type="text" id="display-name1" name="display-name1")
+                            <br><br>
+                            label(for="password") Password:&nbsp;&nbsp;
+                            input(type="password" id="password1" name="password1")
+                            <br><br>
+                            input(type="submit" value="Sign in")
+            li(class="btn-group")
+                button(type="button" class="open-modal" data-open="modal2") Create Account
+            div(class="modal" id="modal2" data-animation="zoomInOut")
+                div(class="modal-dialog")
+                    header(class="modal-header") Create your NoiseWave account
+                        button(class="close-modal" aria-label="close modal" data-close) X
+                    section(class="modal-content")
+                        form(method="get" action="/search")
+                            label(for="display-name") Display Name:&nbsp;&nbsp;
+                            input(type="text" id="display-name2" name="display-name2")
+                            <br><br>
+                            label(for="password") Password:&nbsp;&nbsp;
+                            input(type="password" id="password2" name="password2")
+                            <br><br>
+                            input(type="submit" value="Get Started")
+                    footer(class="modal-footer") By signing up I accept the Terms of Use. I have read and understood the Privacy Policy and Cookies Policy.
+            li
+                a(href="/explore") ...

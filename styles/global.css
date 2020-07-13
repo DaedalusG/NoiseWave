@@ -1,0 +1,19 @@
+
+/* FOR TESTING PURPOSES; DELETE ONCE NO LONGER NEEDED */
+body {
+  margin-top: 50px;
+  height: 1000px;
+}
+/* FOR TESTING PURPOSES; DELETE ONCE NO LONGER NEEDED */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 75px;
+}
