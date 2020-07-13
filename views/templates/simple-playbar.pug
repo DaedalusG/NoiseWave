@@ -2,14 +2,16 @@ extends head
 block playbar
     div(class="playbar")
         div(class="playbar__elements")
-            button(class="previous-button") Previous
-            button(class="play-button") Play
-            button(class="next-button") Next
-            button(class="shuffle-button") Shuffle
-            button(class="repeat-button") Repeat
-            div(class="playbar__timeline") Timeline
-            div(class="playbar__volume") Volume
+            div(class="playbar__buttons")
+                button(class="previous-button") Previous
+                button(class="play-button") Play
+                button(class="next-button") Next
+                button(class="shuffle-button") Shuffle
+                button(class="repeat-button") Repeat
+            div(class="playbar__timeline")
+                div(class="timeline") Timeline
+                div(class="volume") VOL
             div(class="playbar__soundBadge")
-                span(class="artist") Ariana Grande
-                span(class="track") Ariana Grande, Justin Bieber - Stuck with U                        
+                div(class="artist") Ariana Grande
+                div(class="track") Ariana Grande, Justin Bieber - Stuck with U
                 button(class="like-button") Like
