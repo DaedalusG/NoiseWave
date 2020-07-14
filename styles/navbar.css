@@ -5,6 +5,8 @@ nav {
     justify-content: space-between;
     color: white;
     background-color: rgb(26, 26, 26);
+    /* margin: 0;
+    padding: 0; */
 }
 
 .navbar a {

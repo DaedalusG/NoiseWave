@@ -1,11 +1,17 @@
 
 /* FOR TESTING PURPOSES; DELETE ONCE NO LONGER NEEDED */
 body {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  /* height: 2000px; */
+}
+
+main {
   height: 1000px;
 }
 /* FOR TESTING PURPOSES; DELETE ONCE NO LONGER NEEDED */
 
+footer {
+}
 
 * {
   margin: 0;
@@ -16,4 +22,15 @@ body {
 
 main {
   padding-top: 75px;
+  margin: 0 75px;
+}
+
+nav {
+  margin-bottom: 75px;
+}
+
+footer {
+  padding: 75px;
+  /* margin-bottom: 50px; */
+  /* background-color: rgb(185, 185, 185); */
 }

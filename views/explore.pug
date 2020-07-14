@@ -1,4 +1,12 @@
 extends templates/nav_logged-in
 block page-specific-content
-    h1 New Music Now
-    p The latest hits, updated all the time
+    section(id='latest' class="songCard__section")
+        header
+            h2 Hot Off The Studio
+            p Check out our latest jams
+        div(class='songCards')
+            div(class='card')
+                div(class='card__image')
+                div(class='card__label')
+                    div(class='card__label__album')
+                    div(class='card__label__artist')

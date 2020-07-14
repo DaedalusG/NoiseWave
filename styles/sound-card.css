@@ -1,0 +1,47 @@
+body {
+
+}
+
+.songCards {
+    background-image: url(https://i1.sndcdn.com/artworks-lQcIkzUufOvrM9Zq-CazdtQ-t500x500.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    height: 150px;
+    /* width: 100%; */
+}
+
+.songCard__section section {
+
+}
+
+.songCard__section header {
+
+}
+
+.songCard__section .songCards {
+
+}
+
+.songCard__section .card {
+
+}
+
+/* .songCard__section .card__image {
+    background-image: url(https://i1.sndcdn.com/artworks-lQcIkzUufOvrM9Zq-CazdtQ-t500x500.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+} */
+
+.songCard__section .card__label {
+
+}
+
+.songCard__section .card__label__album {
+
+}
+
+.songCard__section .card__label__artist {
+
+}

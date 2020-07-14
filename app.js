@@ -9,9 +9,12 @@ const multer = require('multer');
 const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 const app = express();
 app.set('view engine', 'pug')
+
+app.use(express.static(path.join(__dirname, 'images')));
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
