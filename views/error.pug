@@ -1,4 +1,5 @@
-extends templates/nav_logged-out
-
-block content
-    h1 You have an error
+include templates/nav_logged-out
+    if errors
+        ul
+            each error in errors
+                li= error

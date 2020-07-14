@@ -165,6 +165,8 @@ const userIsAuthorized = (
   return authenticatedUserFromReqObject.id === userSpecificiedByUrl.id;
 };
 
+User.findByPk(2).then((res) => console.log(res));
+
 module.exports = {
   generateUserToken,
   requireAuth,

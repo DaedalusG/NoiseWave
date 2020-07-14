@@ -1,7 +1,12 @@
 const express = require("express");
 const { asyncHandler, handleValidationErrors } = require("../utils");
+const { User } = require("../db/models");
+const { generateUserToken } = require("../auth");
+const bcrypt = require("bcryptjs");
 
 const router = express.Router();
+
+console.log("using index router");
 
 router.get("/", (req, res) => {
   res.render("home");
@@ -9,31 +14,35 @@ router.get("/", (req, res) => {
 
 router.post(
   "/login",
-  handleValidationErrors,
   asyncHandler(async (req, res) => {
+    console.log(req.body);
     const { username, password } = req.body;
-    const user = await User.findOne({
+    const user = await User.findAll({
       where: {
         username,
-        //or username, our choice, as long as unique
       },
     });
-    const validPassword = bcrypt.compareSync(
-      password,
-      user.hashedPassword.toString()
-    );
+    console.log(user);
 
-    //This check should be in error validator.
-    //if credentials invalid, it errors
-    // if (!user || !validPassword) {
-    //   const err = new Error("Login failed");
-    //   err.status = 401;
-    //   err.title = "Login failed";
-    //   err.errors = ["The provided credentials were invalid."];
-    //   return next(err);
-    // }
-    const token = generateUserToken(user);
-    localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
+    let validPassword = false;
+    if (user) {
+      validPassword = bcrypt.compareSync(password, user.hashedPassword);
+    }
+
+    console.log(validPassword);
+
+    if (!user || !validPassword) {
+      const err = new Error("Login failed");
+      err.status = 401;
+      err.title = "Login failed";
+      err.errors = ["The provided credentials were invalid."];
+      return next(err);
+    } else {
+      const token = generateUserToken(user);
+      localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
+
+      res.redirect("/explore");
+    }
   })
 );
 

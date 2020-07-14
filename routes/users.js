@@ -1,6 +1,10 @@
 const { User } = require("../db/models");
 const { apiPort } = require("../config");
-const { asyncHandler, handleValidationErrors } = require("../utils");
+const {
+  asyncHandler,
+  handleValidationErrors,
+  signUpValidation,
+} = require("../utils");
 
 const express = require("express");
 const bcrypt = require("bcryptjs");
@@ -12,7 +16,7 @@ const router = express.Router();
 router.use(cookieParser());
 
 const csrfProtection = csrf({ cookie: true });
-
+console.log("using users router");
 const getUser = async (userId) => {
   const userData = await fetch(`http://localhost:${apiPort}/users/${userId}`);
   return await userData.json();
@@ -21,8 +25,10 @@ const getUser = async (userId) => {
 // User sign up form action
 router.post(
   "/",
-  handleValidationErrors,
-  asyncHandler(async (req, res) => {
+  // signUpValidation,
+  // handleValidationErrors,
+  async (req, res) => {
+    console.log(req.body);
     // TODO save uploaded pictures to s3
     const { username, password, email } = req.body;
     const hashedPassword = await bcrypt.hash(password, 8);
@@ -39,8 +45,8 @@ router.post(
     localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
 
     res.status(200);
-    res.redirect("/discover");
-  })
+    res.redirect("/");
+  }
 );
 
 // Renders a user edit form
