@@ -1,5 +1,7 @@
 extends footer
 block navigation
+    script
+        include ../../scripts/logout.js
     nav(class="navbar sticky")
         ul(class="navbar__col navbar__col-1")
             li
@@ -14,6 +16,7 @@ block navigation
             li
                 a(href="/explore") Upload
             li
-                a(href="/explore") User
+                a.user(href="/explore") User
             li
                 a(href="/explore") ...
+            li: a.logout Log Out?

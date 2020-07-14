@@ -1,6 +1,6 @@
 const { User } = require('../db/models');
 const { apiPort } = require('../config');
-const { loggedInUser, requireAuth } = require('../auth');
+const { loggedInUser, requireAuth, generateUserToken } = require('../auth');
 const { asyncHandler, handleValidationErrors, signUpValidation } = require('../utils');
 
 const express = require("express");
@@ -23,13 +23,18 @@ const getUser = async userId => {
 // User sign up form action
 router.post(
   "/",
-  // signUpValidation,
-  // handleValidationErrors,
-  async (req, res) => {
+  signUpValidation,
+  handleValidationErrors,
+  asyncHandler(async (req, res) => {
+
+
     console.log(req.body);
     // TODO save uploaded pictures to s3
-    const { username, password, email } = req.body;
+    const { username, password, email, confirmPassword } = req.body;
+
+
     const hashedPassword = await bcrypt.hash(password, 8);
+    console.log(hashedPassword);
     const user = await User.create({
       username,
       hashedPassword,
@@ -39,12 +44,11 @@ router.post(
     });
 
     //Give User token
-    const token = generateUserToken(user);
-    localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
 
-    res.status(200);
-    res.redirect("/");
-  }
+    const token= generateUserToken(user);
+
+    res.json(token);
+  })
 );
 
 // Renders a user edit form

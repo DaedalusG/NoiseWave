@@ -16,7 +16,7 @@ router.post('/:songId(\\d+)', requireAuth, asyncHandler(async (req, res) => {
 
 //  Triggered by a delete button that only renders if the current user from req.user is the same as the userId of the comment
 router.delete('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
-    const cimment = await Comment.findByPk(req.params.id);
+    const comment = await Comment.findByPk(req.params.id);
     await Comment.destroy();
     res.status(200);
 }))

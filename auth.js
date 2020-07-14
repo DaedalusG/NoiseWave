@@ -125,16 +125,17 @@ const isUserLoggedIn = (req, res, next) => {
   // the get path for user or user songs we render it with extra stuff.           For example, if a user visits a profile page or
   //a user's songs page, we would run this and see if the person is logged in and the owner. if yes, we'd add links to edit account, or edit/add songs page(s).
   //WHERE TO RUN IT: it's a middleware, run before rendering pug to see if we need to render certain options/links for user.
-  const { token } = req;
+  const token  = req.token;
 
   if (!token) {
     req.user = null;
     next();
+    return;
   }
 
-  return jwt.verify(token, secret, null, async (err, jwtPayload) => {
+  return jwt.verify(token, secret, async (err, jwtPayload) => {
     if (err) {
-      err.status = 401;
+      err.status = 405;
       return next(err);
     }
 
@@ -165,7 +166,7 @@ const userIsAuthorized = (
   return authenticatedUserFromReqObject.id === userSpecificiedByUrl.id;
 };
 
-User.findByPk(2).then((res) => console.log(res));
+// User.findByPk(2).then((res) => console.log(res));
 
 module.exports = {
   generateUserToken,

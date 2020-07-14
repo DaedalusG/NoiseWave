@@ -30,12 +30,14 @@ router.get('/search', (req, res) => {
     res.render('search-results', { search: req.query, test: "THIS IS A TEST" });
 });
 
+//the username search !== (search,upload,explore)
 router.get('/:username', loggedInUser, asyncHandler(async (req, res) => {
     const {username} = req.params;
     const user = await User.findOne({include: ['Song', 'Like'], where: {username: username}})
     res.render('user-page', {user, currentUser: req.user});
 }));
 
+//song !== edit
 router.get('/:username(\\w+)/:song(\\w+)', loggedInUser, asyncHandler(async (req, res) => {
     const {song} = req.params;
     const songData = await Song.findOne({include: ['User', 'Like', 'Comment'], where: {title: song}});
@@ -44,10 +46,10 @@ router.get('/:username(\\w+)/:song(\\w+)', loggedInUser, asyncHandler(async (req
 
 router.post(
   "/login",
-  asyncHandler(async (req, res) => {
+  asyncHandler(async (req, res, next) => {
     console.log(req.body);
     const { username, password } = req.body;
-    const user = await User.findAll({
+    const user = await User.findOne({
       where: {
         username,
       },
@@ -56,22 +58,19 @@ router.post(
 
     let validPassword = false;
     if (user) {
-      validPassword = bcrypt.compareSync(password, user.hashedPassword);
+      validPassword = bcrypt.compareSync(password, user.hashedPassword.toString());
     }
 
     console.log(validPassword);
 
     if (!user || !validPassword) {
-      const err = new Error("Login failed");
-      err.status = 401;
-      err.title = "Login failed";
-      err.errors = ["The provided credentials were invalid."];
-      return next(err);
+      res.ok = false;
+      res.status(401);
+      res.json({message: 'The provided credentials were invalid.'});
     } else {
       const token = generateUserToken(user);
-      localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
 
-      res.redirect("/explore");
+      res.json(token);
     }
   })
 );

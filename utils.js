@@ -3,7 +3,7 @@ const { User } = require("./db/models");
 const { check, validationResult } = expressValidator;
 
 const asyncHandler = (handler) => (req, res, next) => {
-  return returnhandler(req, res, next).catch(next);
+  return handler(req, res, next).catch(next);
 };
 
 const handleValidationErrors = (req, res, next) => {
@@ -11,12 +11,15 @@ const handleValidationErrors = (req, res, next) => {
 
   if (!validationErrors.isEmpty()) {
     const errors = validationErrors.array().map((error) => error.msg);
-
-    const err = Error("Bad request.");
-    err.errors = errors;
-    err.status = 400;
-    err.title = "Bad request.";
-    return next(err);
+    res.ok = false;
+    res.status(401);
+    res.json(errors)
+    return;
+    // const err = Error("BAD request.");
+    // err.errors = errors;
+    // err.status = 400;
+    // err.title = "BAD request.";
+    // return next(err);
   }
   next();
 };
@@ -29,6 +32,11 @@ const modelNotFound = (model) => {
     return err;
   };
 };
+
+// const loginValidation = [
+//   check('username')
+//     .notEmpty().withMessage('PLease enter a username')
+// ]
 
 const signUpValidation = [
   check("username")
