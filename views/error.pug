@@ -1,4 +1,6 @@
-extends templates/nav_logged-out
+extends templates/layout
 
-block content
-    h1 You have an error
+block page-specific-content
+    h1= title
+    p= stack
+    
