@@ -1,5 +1,6 @@
 const { User } = require('../db/models');
-const { apiPort } = require('../config')
+const { apiPort } = require('../config');
+const { loggedInUser, requireAuth } = require('../auth');
 const { asyncHandler, handleValidationErrors } = require('../utils');
 
 const express = require('express');
@@ -30,15 +31,17 @@ router.post('/', handleValidationErrors, asyncHandler(async (req, res) => {
 }));
 
 // Renders a user edit form
-router.get('/:id(\\d+)/edit', csrfProtection, asyncHandler(async (req, res) => {
+router.get('/:id(\\d+)/edit', requireAuth, csrfProtection, asyncHandler(async (req, res) => {
     const userId = req.params.id;
+    if(userId !== req.user.id) redirect('/');
     const user = await getUser(userId);
     res.render('user-edit', {user, csrfToken: req.csrfToken()});
 }));
 
 // User profile edit form action
-router.put('/:id(\\d+)', handleValidationErrors, csrfProtection, asyncHandler(async (req, res) => {
+router.put('/:id(\\d+)', requireAuth, handleValidationErrors, csrfProtection, asyncHandler(async (req, res) => {
     const userId = req.params.id;
+    if(userId !== req.user.id) redirect('/');
     const user = await getUser(userId);
     const { username, password, email } = req.body;
     const hashedPassword = password ? await bcrypt.hash(password, 8) : user.hashedPassword;
@@ -46,7 +49,8 @@ router.put('/:id(\\d+)', handleValidationErrors, csrfProtection, asyncHandler(as
     res.redirect(`/${username}`);
 }));
 
-router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
+router.delete('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
+    if(req.params.id !== req.user.id) redirect('/');
     const user = await getUser(req.params.id);
     user.destroy();
     req.status(200);
