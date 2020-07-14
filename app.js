@@ -1,7 +1,7 @@
-const { environment } = require('./config')
-const indexRoutes = require('./routes/index');
-const songRoutes = require('./routes/songs');
-const userRoutes = require('./routes/users');
+const { environment } = require("./config");
+const indexRoutes = require("./routes/index");
+const songRoutes = require("./routes/songs");
+const userRoutes = require("./routes/users");
 
 const express = require("express");
 const morgan = require("morgan");
@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 
 const app = express();
-app.set('view engine', 'pug')
+app.set("view engine", "pug");
 
 app.use(express.static(path.join(__dirname, 'images')));
 
@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
   const isProduction = environment === "production";
-  res.render('error', {
+  res.render("error", {
     title: err.title || "Server Error",
     message: err.message,
     errors: err.errors,

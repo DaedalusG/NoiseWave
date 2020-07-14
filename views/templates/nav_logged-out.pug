@@ -3,7 +3,7 @@ block navigation
     nav(class="navbar sticky")
         ul(class="navbar__col navbar__col-1")
             li
-                img(class="logo" src="header-logo.jpg")
+                //- img(class="logo" src="header-logo.jpg")
         ul(class="navbar__col navbar__col-3")
             li(class="btn-group")
                 button(type="button" class="open-modal" data-open="modal1") Sign In
@@ -12,12 +12,12 @@ block navigation
                     header(class="modal-header") Sign in to your NoiseWave account
                         button(class="close-modal" aria-label="close modal" data-close) X
                     section(class="modal-content")
-                        form(method="get" action="/search")
-                            label(for="display-name") Display Name:&nbsp;&nbsp;
-                            input(type="text" id="display-name1" name="display-name1")
+                        form(method="post" class="login-form" action="/login")
+                            label(for="display-name") Username:&nbsp;&nbsp;
+                            input(type="text" id="display-name" name="username")
                             <br><br>
                             label(for="password") Password:&nbsp;&nbsp;
-                            input(type="password" id="password1" name="password1")
+                            input(type="password" id="password1" name="password")
                             <br><br>
                             input(type="submit" value="Sign in")
             li(class="btn-group")
@@ -27,12 +27,18 @@ block navigation
                     header(class="modal-header") Create your NoiseWave account
                         button(class="close-modal" aria-label="close modal" data-close) X
                     section(class="modal-content")
-                        form(method="get" action="/search")
-                            label(for="display-name") Display Name:&nbsp;&nbsp;
-                            input(type="text" id="display-name2" name="display-name2")
+                        form(method="post" action="/users")
+                            label(for="usernameSignUp") Username:&nbsp;&nbsp;
+                            input(type="text" id="usernameSignUp" name="username")
                             <br><br>
-                            label(for="password") Password:&nbsp;&nbsp;
-                            input(type="password" id="password2" name="password2")
+                            label(for="emailSignUp") Email:&nbsp;&nbsp;
+                            input(type="email" id="emailSignUp" name="email")
+                            <br><br>
+                            label(for="password2") Password:&nbsp;&nbsp;
+                            input(type="password" id="password2" name="password")
+                            <br><br>
+                            label(for="confirmPassword") Confirm password:&nbsp;&nbsp;
+                            input(type="password" id="confirmPassword" name="confirmPassword")
                             <br><br>
                             input(type="submit" value="Get Started")
                     footer(class="modal-footer") By signing up I accept the Terms of Use. I have read and understood the Privacy Policy and Cookies Policy.
