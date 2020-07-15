@@ -92,7 +92,8 @@ const requireAuth = (req, res, next) => {
     //TODO this should be redirect or prompt modal popup for login
     const error = new Error("You must be logged in to see this page");
     res.status(401);
-    return res.render("error", error);
+    res.render("error", { error });
+    return;
   }
 
   return jwt.verify(token, secret, null, async (err, jwtPayload) => {

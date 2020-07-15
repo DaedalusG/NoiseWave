@@ -22,7 +22,7 @@ router.get("/explore", loggedInUser, (req, res) => {
 
 router.get("/upload", requireAuth, (req, res) => {
   // res.render('upload', {csrfToken: req.csrfToken()})
-  res.send("upload");
+  res.render("upload");
 });
 
 router.get("/search?q=:string", (req, res) => {
