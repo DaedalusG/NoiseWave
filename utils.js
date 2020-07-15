@@ -13,7 +13,7 @@ const handleValidationErrors = (req, res, next) => {
     const errors = validationErrors.array().map((error) => error.msg);
     res.ok = false;
     res.status(401);
-    res.json(errors)
+    res.json(errors);
     return;
     // const err = Error("BAD request.");
     // err.errors = errors;
@@ -81,9 +81,53 @@ const signUpValidation = [
     }),
 ];
 
+const editUserValidations = [
+  check("username")
+    .notEmpty()
+    .withMessage("Username must be at least 1 character.")
+    .isLength({ max: 100 })
+    .withMessage("Username must be less than 100 characters")
+    .custom(async (value, { req }) => {
+      const inUse = await User.findAll({
+        where: {
+          username: value,
+        },
+      });
+      console.log(req.user.username);
+      if (req.user.username !== value && inUse.length > 0) {
+        throw new Error("That username is already in use.");
+      } else return true;
+    }),
+  check("email")
+    .isEmail()
+    .withMessage("Not a valid email address")
+    .isLength({ max: 255 })
+    .withMessage("Email must be less than 255 characters")
+    .custom(async (value, { req }) => {
+      const inUse = await User.findAll({
+        where: {
+          email: value,
+        },
+      });
+
+      if (req.user.email !== value && inUse.length > 0) {
+        throw new Error("That email is already in use.");
+      } else return true;
+    }),
+  check("password")
+    .notEmpty()
+    .withMessage("Password must be at least 1 character.")
+    .custom((value, { req }) => {
+      if (req.body.confirmPassword !== value) {
+        throw new Error("The password and confirmed password must match");
+      } else return true;
+    }),
+];
+
 module.exports = {
   asyncHandler,
   handleValidationErrors,
   modelNotFound,
   signUpValidation,
+  editUserValidations,
 };
