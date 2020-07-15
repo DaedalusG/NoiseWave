@@ -92,8 +92,6 @@ router.post(
       );
     }
 
-    console.log(validPassword);
-
     if (!user || !validPassword) {
       res.ok = false;
       res.status(401);

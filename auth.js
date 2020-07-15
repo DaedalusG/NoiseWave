@@ -126,7 +126,6 @@ const loggedInUser = (req, res, next) => {
   //a user's songs page, we would run this and see if the person is logged in and the owner. if yes, we'd add links to edit account, or edit/add songs page(s).
   //WHERE TO RUN IT: it's a middleware, run before rendering pug to see if we need to render certain options/links for user.
   const token = req.cookies.NOISEWAVE_ACCESS_TOKEN;
-  console.log(token);
 
   if (!token) {
     req.user = null;

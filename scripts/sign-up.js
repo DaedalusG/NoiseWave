@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const signUpForm = document.querySelector(".sign-up-form");
   signUpForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log("going through event listener");
+
     const formData = new FormData(signUpForm);
 
     const username = formData.get("username");
