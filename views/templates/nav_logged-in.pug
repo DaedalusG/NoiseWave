@@ -2,14 +2,13 @@ extends footer
 block navigation
     script
         include ../../scripts/logout.js
+        include ../../scripts/search.js
     nav(class="navbar sticky")
         ul(class="navbar__col navbar__col-1")
             li
                 img(class="logo" src="header-logo.jpg")
             li
                 a(href="/explore") Explore
-        script
-            include ../../scripts/search.js
         form(class="navbar__col navbar__col-" id="searchbar" method="get" action="/search")
             label(for="search") Search:
             input(type="search" id="search" name="search")

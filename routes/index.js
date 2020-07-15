@@ -25,8 +25,9 @@ router.get("/upload", requireAuth, (req, res) => {
   res.render("upload", { user: req.user });
 });
 
-router.get("/search?=:string", loggedInUser, (req, res) => {
+router.get("/search/:string", loggedInUser, (req, res) => {
   //made event handler that leads to this route. whatever was search is in params
+  console.log("searching");
 
   const query = req.params.string;
 
@@ -48,12 +49,12 @@ router.get("/search?=:string", loggedInUser, (req, res) => {
 
 //the username search !== (search,upload,explore)
 router.get(
-  "/:username",
+  "/:username(?!search)(?!explore)(?!upload)",
   loggedInUser,
   asyncHandler(async (req, res) => {
     const { username } = req.params;
     const user = await User.findOne({
-      include: ["Song", "Like"],
+      include: ["Songs", "Likes"],
       where: { username: username },
     });
     res.render("user-page", { user, currentUser: req.user });
@@ -67,7 +68,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const { song } = req.params;
     const songData = await Song.findOne({
-      include: ["User", "Like", "Comment"],
+      include: ["Users", "Likes", "Comments"],
       where: { title: song },
     });
     res.render("song-page", { songData, currentUser: req.user });
