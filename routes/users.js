@@ -52,7 +52,7 @@ router.post(
 
 // Renders a user edit form
 router.get(
-  "users/:id(\\d+)/edit",
+  "/:id(\\d+)/edit",
   requireAuth,
   csrfProtection,
   asyncHandler(async (req, res) => {
@@ -65,7 +65,7 @@ router.get(
 
 // User profile edit form action
 router.put(
-  "users/:id(\\d+)",
+  "/:id(\\d+)",
   requireAuth,
   handleValidationErrors,
   csrfProtection,
@@ -83,7 +83,7 @@ router.put(
 );
 
 router.delete(
-  "users/:id(\\d+)",
+  "/:id(\\d+)",
   requireAuth,
   asyncHandler(async (req, res) => {
     if (req.params.id !== req.user.id) redirect("/");
