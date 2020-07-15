@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         throw res;
       }
       const token = await res.json();
-      console.log(token);
-      localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
+      document.cookie = `NOISEWAVE_ACCESS_TOKEN=${token}`;
 
       // redirect to home page to see explore page:
       window.location.href = "/explore";

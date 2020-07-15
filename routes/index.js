@@ -70,7 +70,6 @@ router.get(
 router.post(
   "/login",
   asyncHandler(async (req, res, next) => {
-    console.log(req.body);
     const { username, password } = req.body;
     const user = await User.findOne({
       where: {
@@ -94,7 +93,6 @@ router.post(
       res.json({ message: "The provided credentials were invalid." });
     } else {
       const token = generateUserToken(user);
-      console.log("token to res", token);
 
       res.json(token);
     }

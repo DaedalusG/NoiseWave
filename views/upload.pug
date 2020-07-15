@@ -1,0 +1,10 @@
+extends templates/nav_logged-out
+block page-specific-content
+    form(method="post" class="login-form" action="/login")
+        label(for="title") Username:&nbsp;&nbsp;
+        input(type="text" id="display-name" name="username")
+        <br><br>
+        label(for="password") Password:&nbsp;&nbsp;
+        input(type="password" id="password1" name="password")
+        <br><br>
+        input(type="submit" value="Upload Song")
