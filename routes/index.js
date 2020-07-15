@@ -17,6 +17,7 @@ router.get("/", loggedInUser, (req, res) => {
 
 router.get("/explore", loggedInUser, (req, res) => {
   // TODO: get all relevant songs from the API and send them to the view
+  console.log(req.user);
   res.render("explore", { user: req.user });
 });
 
