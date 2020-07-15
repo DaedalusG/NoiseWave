@@ -1,11 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log(`search script loaded`);
-  document.getElementById("searchbar").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const query = document.getElementById("search").value;
+  document
+    .getElementById("searchbar")
+    .addEventListener("submit", async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const query = document.getElementById("search").value;
 
-    console.log(`query is ${query}`);
+      console.log(`query is ${query}`);
 
-    window.location = `/search/${query}`;
-  });
+      //we'll have to change for production API
+      // const resUsers = await fetch(`http://localhost:4000/search/users`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(query),
+      //   agent: httpsAgent,
+      // });
+
+      // console.log(resUsers);
+
+      window.location = `/search/${query}`;
+    });
 });

@@ -2,6 +2,13 @@ const { User, Song } = require("../db/models");
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
 const { asyncHandler } = require("../utils");
 
+// const fetch = require("node-fetch");
+// const https = require("https");
+// const httpsAgent = new https.Agent({
+//   rejectUnauthorized: false,
+// });
+const axios = require("axios");
+
 const express = require("express");
 const csrf = require("csurf");
 const bcrypt = require("bcryptjs");
@@ -25,27 +32,44 @@ router.get("/upload", requireAuth, (req, res) => {
   res.render("upload", { user: req.user });
 });
 
-router.get("/search/:string", loggedInUser, (req, res) => {
-  //made event handler that leads to this route. whatever was search is in params
-  console.log("searching");
+router.get(
+  "/search/:string",
+  loggedInUser,
+  asyncHandler(async (req, res) => {
+    //made event handler that leads to this route. whatever was search is in params
 
-  const query = req.params.string;
+    const query = req.params.string;
 
-  // const fetchSongs= await fetch().....
-  //run query through search api for users
-  //run query through search api for songs
+    //run query through search api for users
+    //run query through search api for songs
+    // console.log(`http://localhost:4000/search/users/${query}`);
+    const resUsers = await axios.get(
+      `http://localhost:4000/search/users/${query}`
+    );
 
-  //then
-  //const matchingUsers = await res.json()
-  //const matchingSongs = await res.json()
-  //plug in these 2 to render
+    const usersArr = resUsers.data;
 
-  res.render("search-results", {
-    user: req.user,
-    search: req.query,
-    test: "THIS IS A TEST",
-  });
-});
+    console.log("search side Users arr", usersArr);
+
+    const resSongs = await axios.get(
+      `http://localhost:4000/search/songs/${query}`
+    );
+
+    const songsArr = resSongs.data;
+
+    console.log("search side Songs arr", songsArr);
+
+    //then
+    //const matchingSongs = await res.json()
+    //plug in these 2 to render
+
+    res.render("search-results", {
+      user: req.user,
+      search: req.query,
+      test: "THIS IS A TEST",
+    });
+  })
+);
 
 //the username search !== (search,upload,explore)
 router.get(

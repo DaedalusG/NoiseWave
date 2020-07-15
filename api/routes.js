@@ -1,4 +1,9 @@
 const { User, Song } = require("../db/models");
+// const db = require("../db/models/index");
+// const { Op } = db.Sequelize;
+const Sequelize = require("../db/models/index").Sequelize;
+const Op = Sequelize.Op;
+
 const {
   asyncHandler,
   modelNotFound,
@@ -75,6 +80,51 @@ router.put(
     song.genre = genre;
     await song.save();
     return res.json(song);
+  })
+);
+
+router.get(
+  "/search/users/:string",
+  asyncHandler(async (req, res) => {
+    const query = req.params.string;
+
+    const matchingUsers = await User.findAll({
+      where: {
+        username: {
+          [Op.iLike]: query,
+        },
+      },
+    });
+    console.log("api found matches", matchingUsers);
+    return res.json(matchingUsers);
+  })
+);
+
+router.get(
+  "/search/songs/:string",
+  asyncHandler(async (req, res) => {
+    const query = req.params.string;
+
+    const matchingSongs = await Song.findAll({
+      where: {
+        [Op.or]: {
+          title: {
+            [Op.iLike]: query,
+          },
+          artist: {
+            [Op.iLike]: query,
+          },
+          album: {
+            [Op.iLike]: query,
+          },
+          genre: {
+            [Op.iLike]: query,
+          },
+        },
+      },
+    });
+    console.log("api found matches", matchingSongs);
+    return res.json(matchingSongs);
   })
 );
 
