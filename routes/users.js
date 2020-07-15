@@ -56,9 +56,11 @@ router.get(
   requireAuth,
   csrfProtection,
   asyncHandler(async (req, res) => {
-    const userId = req.params.id;
-    if (userId !== req.user.id) redirect("/");
-    const user = await getUser(userId);
+    const authenticatedId = req.user.id;
+    const userId = parseInt(req.params.id, 10);
+    console.log(authenticatedId, userId);
+    if (userId !== authenticatedId) res.redirect("/");
+    const user = req.user;
     res.render("user-edit", { user, csrfToken: req.csrfToken() });
   })
 );
