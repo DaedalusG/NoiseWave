@@ -40,33 +40,23 @@ router.get(
 
     const query = req.params.string;
 
-    //run query through search api for users
-    //run query through search api for songs
-    // console.log(`http://localhost:4000/search/users/${query}`);
+    //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
     const resUsers = await axios.get(
       `http://localhost:4000/search/users/${query}`
     );
 
-    const usersArr = resUsers.data;
-
-    console.log("search side Users arr", usersArr);
+    const matchingUsersArr = resUsers.data;
 
     const resSongs = await axios.get(
       `http://localhost:4000/search/songs/${query}`
     );
 
-    const songsArr = resSongs.data;
-
-    console.log("search side Songs arr", songsArr);
-
-    //then
-    //const matchingSongs = await res.json()
-    //plug in these 2 to render
+    const matchingSongsArr = resSongs.data;
 
     res.render("search-results", {
       user: req.user,
-      search: req.query,
-      test: "THIS IS A TEST",
+      matchingSongsArr,
+      matchingUsersArr,
     });
   })
 );

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log(`search script loaded`);
   document
     .getElementById("searchbar")
     .addEventListener("submit", async (event) => {
@@ -18,8 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       //   body: JSON.stringify(query),
       //   agent: httpsAgent,
       // });
-
-      // console.log(resUsers);
 
       window.location = `/search/${query}`;
     });

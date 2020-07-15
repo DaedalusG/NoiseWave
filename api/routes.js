@@ -91,11 +91,10 @@ router.get(
     const matchingUsers = await User.findAll({
       where: {
         username: {
-          [Op.iLike]: query,
+          [Op.iLike]: `%${query}%`,
         },
       },
     });
-    console.log("api found matches", matchingUsers);
     return res.json(matchingUsers);
   })
 );
@@ -109,21 +108,20 @@ router.get(
       where: {
         [Op.or]: {
           title: {
-            [Op.iLike]: query,
+            [Op.iLike]: `%${query}%`,
           },
           artist: {
-            [Op.iLike]: query,
+            [Op.iLike]: `%${query}%`,
           },
           album: {
-            [Op.iLike]: query,
+            [Op.iLike]: `%${query}%`,
           },
           genre: {
-            [Op.iLike]: query,
+            [Op.iLike]: `%${query}%`,
           },
         },
       },
     });
-    console.log("api found matches", matchingSongs);
     return res.json(matchingSongs);
   })
 );
