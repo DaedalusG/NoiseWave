@@ -15,7 +15,7 @@ const path = require('path');
 const app = express();
 app.set("view engine", "pug");
 
-app.use(express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));

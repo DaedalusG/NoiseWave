@@ -5,27 +5,39 @@ const { asyncHandler, modelNotFound } = require("../utils");
 const express = require("express");
 const csrf = require("csurf");
 const bcrypt = require("bcryptjs");
+const pug = require('pug');
+const path = require('path');
 
 const router = express.Router();
 
 const csrfProtection = csrf({ cookie: true });
 const userNotFound = modelNotFound('User');
 
+// router.get("/", loggedInUser, (req, res) => {
+//   if (req.user) res.redirect("/explore");
+//   res.render("home");
+// });
+
 router.get("/", loggedInUser, (req, res) => {
-  if (req.user) res.redirect("/explore");
-  res.render("home");
+  res.render('templates/ajaxLayout.pug', {user: req.user})
 });
 
-router.get("/explore", loggedInUser, (req, res) => {
-  // TODO: get all relevant songs from the API and send them to the view
-  console.log(req.user);
-  res.render("explore", { user: req.user });
-});
+// router.get("/explore", loggedInUser, (req, res) => {
+//   // TODO: get all relevant songs from the API and send them to the view
+//   console.log(req.user);
+//   res.render("explore", { user: req.user });
+// });
 
-router.get("/upload", requireAuth, (req, res) => {
-  // res.render('upload', {csrfToken: req.csrfToken()})
-  res.render("upload", { user: req.user });
-});
+router.get('/explore', loggedInUser, asyncHandler((req, res) => {
+  const ajaxExplore = pug.compileFile(path.join(express().get('views'), 'explore.pug'), {user: req.user});
+  console.log(req.user)
+  res.send(ajaxExplore());
+}))
+
+router.get("/upload", loggedInUser, asyncHandler((req, res) => {
+  const upload = pug.compileFile(path.join(express().get('views'), 'upload.pug'), {user: req.user});
+  res.send(upload());
+}));
 
 router.get("/search?=:string", loggedInUser, (req, res) => {
   //made event handler that leads to this route. whatever was search is in params
@@ -64,12 +76,12 @@ router.get(
     }
     res.render("user-page", { userData, user: req.user });
   })
-);
-
-//song !== edit
-router.get(
-  "/:username(\\w+)/:song(\\w+)",
-  loggedInUser,
+  );
+  
+  //song !== edit
+  router.get(
+    "/:username(\\w+)/:song(\\w+)",
+    loggedInUser,
   asyncHandler(async (req, res) => {
     const { song } = req.params;
     const songData = await Song.findOne({
@@ -109,5 +121,6 @@ router.post(
     }
   })
 );
+
 
 module.exports = router;

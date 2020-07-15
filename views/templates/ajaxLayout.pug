@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= title
+        link(rel="stylesheet" href="styles/navbar.css")
+        link(rel="stylesheet" href="styles/modal-popup.css")
+        link(rel="stylesheet" href="styles/simple-playbar.css")
+        link(rel="stylesheet" href="styles/song-card.css")
+        link(rel="stylesheet" href="styles/global.css")
+        script(src="js/ajax.js")
+        if user
+            script(src="js/logout.js")
+        else
+            script(src="js/login.js")
+            script(src="js/sign-up.js")
+
+    body
+        include nav.pug
+        main#page-specific-content
+            h1 Welcome to NoiseWave!
+            p The latest hits, updated all the time
+            a(href="/explore" class="ajax") Click Here to explore our songs
+        include footer.pug
+        include simple-playbar.pug
+
+
+        
+        script(src="js/modal-popup.js")

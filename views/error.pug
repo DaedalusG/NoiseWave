@@ -1,11 +1,11 @@
-extends templates/nav.pug
+//- extends templates/nav.pug
 
-block page-specific-content
-    h1= title
-    p= message
-    if errors
-        ul
-            each error in errors
-                li= error
-    pre= stack
+//- block page-specific-content
+h1= title
+p= message
+if errors
+    ul
+        each error in errors
+            li= error
+pre= stack
 

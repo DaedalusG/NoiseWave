@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const token = await res.json();
       document.cookie = `NOISEWAVE_ACCESS_TOKEN=${token}`;
 
-      window.location.href = "/explore";
+      window.location.href = "/";
     } catch (res) {
       const loginErrors = document.querySelector(".login-errors");
 
