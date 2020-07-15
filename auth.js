@@ -30,9 +30,7 @@
 const jwt = require("jsonwebtoken");
 const { jwtConfig } = require("./config");
 const { secret, expiresIn } = jwtConfig;
-
 const { User } = require("./db/models");
-const bearerToken = require("express-bearer-token");
 
 const generateUserToken = (user) => {
   //DOES WHAT: generates a token for a user
@@ -77,23 +75,25 @@ const refreshValidToken = (req, res, next) => {
 
     const token = generateUserToken(user);
 
-    localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
+    document.cookie = `NOISEWAVE_ACCESS_TOKEN=${token}`;
 
     next();
   });
 };
-const refreshToken = [bearerToken(), refreshValidToken];
 
-const authenticateUser = (req, res, next) => {
+const requireAuth = (req, res, next) => {
   //DOES WHAT: this function checks to see if a user has is logged in (has a token). If yes, it will pass on their user instance to req. If not, it will direct the user to login.
   //WHEN TO RUN: When it is necessary to have an authenticated, logged in user for a request.
   //WHERE TO RUN IT: this is a middleware. run it before route.
 
-  const { token } = req;
+  const token = req.cookies.NOISEWAVE_ACCESS_TOKEN;
 
   if (!token) {
     //TODO this should be redirect or prompt modal popup for login
-    return res.set("WWW-authenticate", "Bearer").status(401).end();
+    const error = new Error("You must be logged in to see this page");
+    res.status(401);
+    res.render("error", { error });
+    return;
   }
 
   return jwt.verify(token, secret, null, async (err, jwtPayload) => {
@@ -111,21 +111,21 @@ const authenticateUser = (req, res, next) => {
     }
 
     if (!req.user) {
-      //TODO this should be redirect or prompt modal popup for login
-      return res.set("WWW-authenticate", "Bearer").status(401).end();
+      const error = new Error("You must be logged in to see this page");
+      res.status(401);
+      return res.render("error", error);
     }
     return next();
   });
 };
-const requireAuth = [bearerToken(), authenticateUser];
 
-const isUserLoggedIn = (req, res, next) => {
+const loggedInUser = (req, res, next) => {
   //DOES WHAT: this middleware checks if the user is logged in (has valid token). If they are, their instance is grabbed and passed in the req.
   //WHEN TO RUN: this middleware should be ran when we want to determine how to render a frontend page from a get request. We check who is logged in, and if it matches the id of
   // the get path for user or user songs we render it with extra stuff.           For example, if a user visits a profile page or
   //a user's songs page, we would run this and see if the person is logged in and the owner. if yes, we'd add links to edit account, or edit/add songs page(s).
   //WHERE TO RUN IT: it's a middleware, run before rendering pug to see if we need to render certain options/links for user.
-  const token  = req.token;
+  const token = req.cookies.NOISEWAVE_ACCESS_TOKEN;
 
   if (!token) {
     req.user = null;
@@ -133,7 +133,7 @@ const isUserLoggedIn = (req, res, next) => {
     return;
   }
 
-  return jwt.verify(token, secret, async (err, jwtPayload) => {
+  return jwt.verify(token, secret, null, async (err, jwtPayload) => {
     if (err) {
       err.status = 405;
       return next(err);
@@ -154,8 +154,6 @@ const isUserLoggedIn = (req, res, next) => {
   });
 };
 
-const loggedInUser = [bearerToken(), isUserLoggedIn];
-
 const userIsAuthorized = (
   authenticatedUserFromReqObject,
   userSpecificiedByUrl
@@ -166,12 +164,10 @@ const userIsAuthorized = (
   return authenticatedUserFromReqObject.id === userSpecificiedByUrl.id;
 };
 
-// User.findByPk(2).then((res) => console.log(res));
-
 module.exports = {
   generateUserToken,
   requireAuth,
-  refreshToken,
+  refreshValidToken,
   loggedInUser,
   userIsAuthorized,
 };

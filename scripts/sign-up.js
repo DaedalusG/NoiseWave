@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const signUpForm = document.querySelector(".sign-up-form");
   signUpForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log("going through event listener");
+
     const formData = new FormData(signUpForm);
 
     const username = formData.get("username");
@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         throw res;
       }
       const token = await res.json();
-      console.log(token);
-      localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
+      document.cookie = `NOISEWAVE_ACCESS_TOKEN=${token}`;
 
       // redirect to home page to see explore page:
       window.location.href = "/explore";

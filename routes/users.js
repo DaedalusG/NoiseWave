@@ -30,12 +30,10 @@ router.post(
   signUpValidation,
   handleValidationErrors,
   asyncHandler(async (req, res) => {
-    console.log(req.body);
     // TODO save uploaded pictures to s3
     const { username, password, email, confirmPassword } = req.body;
 
     const hashedPassword = await bcrypt.hash(password, 8);
-    // console.log(hashedPassword);
     const user = await User.create({
       username,
       hashedPassword,
@@ -47,7 +45,6 @@ router.post(
     //Give User token
 
     const token = generateUserToken(user);
-    // console.log(token);
 
     res.json(token);
   })

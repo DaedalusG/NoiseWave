@@ -8,6 +8,8 @@ block navigation
                 img(class="logo" src="header-logo.jpg")
             li
                 a(href="/explore") Explore
+        script
+            include ../../scripts/search.js
         form(class="navbar__col navbar__col-" id="searchbar" method="get" action="/search")
             label(for="search") Search:
             input(type="search" id="search" name="search")

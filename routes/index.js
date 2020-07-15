@@ -22,12 +22,15 @@ router.get("/explore", loggedInUser, (req, res) => {
 
 router.get("/upload", requireAuth, (req, res) => {
   // res.render('upload', {csrfToken: req.csrfToken()})
-  res.send("upload");
+  res.render("upload", { user: req.user });
 });
 
-router.get("/search?q=:string", (req, res) => {
-  // const { search } = req.query;
+router.get("/search?=:string", loggedInUser, (req, res) => {
+  //made event handler that leads to this route. whatever was search is in params
+
   const query = req.params.string;
+
+  // const fetchSongs= await fetch().....
   //run query through search api for users
   //run query through search api for songs
 
@@ -36,7 +39,11 @@ router.get("/search?q=:string", (req, res) => {
   //const matchingSongs = await res.json()
   //plug in these 2 to render
 
-  res.render("search-results", { search: req.query, test: "THIS IS A TEST" });
+  res.render("search-results", {
+    user: req.user,
+    search: req.query,
+    test: "THIS IS A TEST",
+  });
 });
 
 //the username search !== (search,upload,explore)
@@ -70,7 +77,6 @@ router.get(
 router.post(
   "/login",
   asyncHandler(async (req, res, next) => {
-    console.log(req.body);
     const { username, password } = req.body;
     const user = await User.findOne({
       where: {
@@ -86,15 +92,12 @@ router.post(
       );
     }
 
-    console.log(validPassword);
-
     if (!user || !validPassword) {
       res.ok = false;
       res.status(401);
       res.json({ message: "The provided credentials were invalid." });
     } else {
       const token = generateUserToken(user);
-      console.log("token to res", token);
 
       res.json(token);
     }

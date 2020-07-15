@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const token = await res.json();
-      localStorage.setItem("NOISEWAVE_ACCESS_TOKEN", token);
+      document.cookie = `NOISEWAVE_ACCESS_TOKEN=${token}`;
 
       window.location.href = "/explore";
     } catch (res) {
