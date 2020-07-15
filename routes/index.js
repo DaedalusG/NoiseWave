@@ -1,6 +1,6 @@
-const { User, Song } = require("../db/models");
+const { User, Song, Like } = require("../db/models");
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
-const { asyncHandler } = require("../utils");
+const { asyncHandler, modelNotFound } = require("../utils");
 
 const express = require("express");
 const csrf = require("csurf");
@@ -9,6 +9,7 @@ const bcrypt = require("bcryptjs");
 const router = express.Router();
 
 const csrfProtection = csrf({ cookie: true });
+const userNotFound = modelNotFound('User');
 
 router.get("/", loggedInUser, (req, res) => {
   if (req.user) res.redirect("/explore");
@@ -49,15 +50,19 @@ router.get("/search?=:string", loggedInUser, (req, res) => {
 
 //the username search !== (search,upload,explore)
 router.get(
-  "/:username",
+  "/:username(\\w+)",
   loggedInUser,
-  asyncHandler(async (req, res) => {
+  asyncHandler(async (req, res, next) => {
     const { username } = req.params;
-    const user = await User.findOne({
-      include: ["Song", "Like"],
+    const userData = await User.findOne({
+      include: [{model: Song}, {model: Like}],
       where: { username: username },
     });
-    res.render("user-page", { user, currentUser: req.user });
+    if(!userData) {
+      next(userNotFound());
+      
+    }
+    res.render("user-page", { userData, user: req.user });
   })
 );
 

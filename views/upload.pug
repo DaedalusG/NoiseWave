@@ -1,8 +1,6 @@
 extends templates/nav
 block page-specific-content
-    if !user
-        p Please log in to upload a song
-    else
+    if user
         form(method="post" class="login-form" action="/songs")
             label(for="upload-title") Title:&nbsp;&nbsp;
             input(type="text" id="upload-title" name="title")
@@ -30,4 +28,5 @@ block page-specific-content
             input(type="file" name="songUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
             <br><br>
             input(type="submit" value="Upload Song")
-    
+    else
+        p Please log in to upload a song
