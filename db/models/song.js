@@ -21,11 +21,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: true,
       },
-      thumbnailUrl: {
-        type: DataTypes.STRING(255),
-        allowNull: false,
-        unique: true,
-      },
       userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
