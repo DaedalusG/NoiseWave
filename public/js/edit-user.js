@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const editUserForm = document.querySelector(".edit-user-form");
-
   editUserForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
