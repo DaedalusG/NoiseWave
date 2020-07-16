@@ -1,7 +1,5 @@
 extends templates/nav_logged-in
 block page-specific-content
-    script
-        include ../scripts/edit-user.js
     p Hello #{user.username}, you may edit your account with the form below.
     div.edit-errors
     form.edit-user-form(action=`/users/${user.id}` method='put')
