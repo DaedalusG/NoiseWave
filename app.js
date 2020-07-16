@@ -12,7 +12,7 @@ const cors = require("cors");
 
 const app = express();
 app.set("view engine", "pug");
-
+app.set("case sensitive routing", true);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(morgan("dev"));
@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({ origin: "localhost:4000" }));
+// app.use("case sensitive routing", true);
 
 app.use("/", indexRoutes);
 app.use("/songs", songRoutes);

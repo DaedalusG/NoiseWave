@@ -48,7 +48,11 @@ nav(class="navbar sticky")
             li: a.user(href=`/${user.username}` class='ajax')= user.username
             li: a.logout Log Out?
     else
-       ul(class="navbar__col navbar__col-3")
+        form(class="navbar__col navbar__col-" id="searchbar" method="post" action="/search")
+            label(for="search") Search:
+            input(type="search" id="search" name="search")
+            input(type="submit" value="Search")
+        ul(class="navbar__col navbar__col-3")
             li(class="btn-group")
                 button(type="button" class="open-modal" data-open="modal1") Sign In
             div(class="modal" id="modal1" data-animation="zoomInOut")

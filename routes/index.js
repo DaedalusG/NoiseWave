@@ -64,7 +64,7 @@ router.get(
   loggedInUser,
   asyncHandler(async (req, res) => {
     //made event handler that leads to this route. whatever was search is in params
-    const {query} = req.params;
+    const { query } = req.params;
     console.log(query);
     //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
     const resUsers = await axios.get(
@@ -107,6 +107,7 @@ router.get(
     const { username } = req.params;
     if (username !== 'login' || username !== 'search' ||username !== 'explore') {
       next();
+      return;
     }
     const userData = await User.findOne({
       include: [{ model: Song }, { model: Like }],
