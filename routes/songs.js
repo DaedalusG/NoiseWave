@@ -30,4 +30,25 @@ router.post(
   })
 );
 
+router.put(
+  "/songs/:id(\\d+)",
+  handleValidationErrors,
+  asyncHandler(async (req, res) => {
+    const songId = req.params.id;
+    const song = await Song.findByPk(songId);
+    if (!song) {
+      next(songNotFound());
+      return;
+    }
+    // TODO add editing thumbnail image with s3
+    const { title, artist, album, genre } = req.body;
+    song.title = title;
+    song.artist = artist;
+    song.album = album;
+    song.genre = genre;
+    await song.save();
+    return res.json(song);
+  })
+);
+
 module.exports = router;
