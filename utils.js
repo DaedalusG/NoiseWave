@@ -124,9 +124,11 @@ const editUserValidations = [
     }),
 ];
 
-songCheck = [check("title").notEmpty().withMessage("Title cannot be empty"),
-check('songUrl')
-//we want to check filetype, ask warren for help];
+songCheck = [
+  check("title").notEmpty().withMessage("Title cannot be empty"),
+  check("songUrl"),
+  //we want to check filetype, ask warren for help];
+];
 
 module.exports = {
   asyncHandler,
