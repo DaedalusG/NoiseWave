@@ -5,26 +5,26 @@ const userRoutes = require("./routes/users");
 
 const express = require("express");
 const morgan = require("morgan");
-const multer = require('multer');
-const multerS3 = require('multer-s3');
-const AWS = require('aws-sdk');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const path = require('path');
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const path = require("path");
 
 const app = express();
 app.set("view engine", "pug");
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.json());
 
-app.use('/', indexRoutes);
-app.use('/songs', songRoutes);
-app.use('/users', userRoutes);
+app.use("/", indexRoutes);
+app.use("/songs", songRoutes);
+app.use("/users", userRoutes);
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
@@ -37,20 +37,20 @@ const S3 = new AWS.S3();
 const upload = multer({
   storage: multerS3({
     s3: S3,
-    bucket: 'noisewave',
+    bucket: "noisewave",
     // metadata: function (req, file, cb) {
     //   cb(null, { fieldName: file.fieldname });
     // },
     key: function (req, file, cb) {
-      cb(null, file.originalname)
-    }
-  })
-})
+      cb(null, file.originalname);
+    },
+  }),
+});
 
 //example route handler to post file
-app.post('/post_file', upload.single('to_s3'), function (req, res, next) {
-  res.send({ success: true })
-})
+app.post("/post_file", upload.single("to_s3"), function (req, res, next) {
+  res.send({ success: true });
+});
 
 // middleware to catch errors caused by unhandled requests
 app.use((req, res, next) => {
@@ -63,7 +63,6 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
   const isProduction = environment === "production";
-  console.log(req.user);
   res.render("error", {
     user: req.user,
     title: err.title || "Server Error",

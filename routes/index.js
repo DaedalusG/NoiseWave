@@ -5,13 +5,13 @@ const { asyncHandler, modelNotFound } = require("../utils");
 const express = require("express");
 const csrf = require("csurf");
 const bcrypt = require("bcryptjs");
-const pug = require('pug');
-const path = require('path');
+const pug = require("pug");
+const path = require("path");
 
 const router = express.Router();
 
 const csrfProtection = csrf({ cookie: true });
-const userNotFound = modelNotFound('User');
+const userNotFound = modelNotFound("User");
 
 // router.get("/", loggedInUser, (req, res) => {
 //   if (req.user) res.redirect("/explore");
@@ -19,7 +19,7 @@ const userNotFound = modelNotFound('User');
 // });
 
 router.get("/", loggedInUser, (req, res) => {
-  res.render('templates/ajaxLayout.pug', {user: req.user})
+  res.render("templates/ajaxLayout.pug", { user: req.user });
 });
 
 // router.get("/explore", loggedInUser, (req, res) => {
@@ -28,16 +28,29 @@ router.get("/", loggedInUser, (req, res) => {
 //   res.render("explore", { user: req.user });
 // });
 
-router.get('/explore', loggedInUser, asyncHandler((req, res) => {
-  const ajaxExplore = pug.compileFile(path.join(express().get('views'), 'explore.pug'), {user: req.user});
-  console.log(req.user)
-  res.send(ajaxExplore());
-}))
+router.get(
+  "/explore",
+  loggedInUser,
+  asyncHandler((req, res) => {
+    const ajaxExplore = pug.compileFile(
+      path.join(express().get("views"), "explore.pug"),
+      { user: req.user }
+    );
+    res.send(ajaxExplore());
+  })
+);
 
-router.get("/upload", loggedInUser, asyncHandler((req, res) => {
-  const upload = pug.compileFile(path.join(express().get('views'), 'upload.pug'), {user: req.user});
-  res.send(upload());
-}));
+router.get(
+  "/upload",
+  loggedInUser,
+  asyncHandler((req, res) => {
+    const upload = pug.compileFile(
+      path.join(express().get("views"), "upload.pug"),
+      { user: req.user }
+    );
+    res.send(upload());
+  })
+);
 
 router.get("/search?=:string", loggedInUser, (req, res) => {
   //made event handler that leads to this route. whatever was search is in params
@@ -67,21 +80,20 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const { username } = req.params;
     const userData = await User.findOne({
-      include: [{model: Song}, {model: Like}],
+      include: [{ model: Song }, { model: Like }],
       where: { username: username },
     });
-    if(!userData) {
+    if (!userData) {
       next(userNotFound());
-      
     }
     res.render("user-page", { userData, user: req.user });
   })
-  );
-  
-  //song !== edit
-  router.get(
-    "/:username(\\w+)/:song(\\w+)",
-    loggedInUser,
+);
+
+//song !== edit
+router.get(
+  "/:username(\\w+)/:song(\\w+)",
+  loggedInUser,
   asyncHandler(async (req, res) => {
     const { song } = req.params;
     const songData = await Song.findOne({
@@ -121,6 +133,5 @@ router.post(
     }
   })
 );
-
 
 module.exports = router;
