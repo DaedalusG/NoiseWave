@@ -5,9 +5,6 @@ const userRoutes = require("./routes/users");
 
 const express = require("express");
 const morgan = require("morgan");
-const multer = require("multer");
-const multerS3 = require("multer-s3");
-const AWS = require("aws-sdk");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const path = require("path");
