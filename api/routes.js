@@ -20,7 +20,7 @@ const router = express.Router();
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
-const { awsKeys } = require('./config');
+const { awsKeys } = require('../config');
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
