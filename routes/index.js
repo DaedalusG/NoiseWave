@@ -59,14 +59,13 @@ router.get(
   })
 );
 
-router.post(
-  "/search",
+router.get(
+  "/search/:query",
   loggedInUser,
   asyncHandler(async (req, res) => {
     //made event handler that leads to this route. whatever was search is in params
-
-    const query = req.body.search;
-
+    const {query} = req.params;
+    console.log(query);
     //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
     const resUsers = await axios.get(
       `http://localhost:4000/search/users/${query}`
@@ -80,11 +79,22 @@ router.post(
 
     const matchingSongsArr = resSongs.data;
 
+    console.log(matchingUsersArr);
     res.render("search-results", {
       user: req.user,
       matchingSongsArr,
       matchingUsersArr,
     });
+
+    const searchResults = pug.compileFile(
+      path.join(express().get("views"), "search-results.pug"),
+      {
+        user: req.user,
+        matchingSongsArr,
+        matchingUsersArr,
+      }
+    );
+    res.send(searchResults());
   })
 );
 
