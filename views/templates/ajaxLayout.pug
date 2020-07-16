@@ -25,6 +25,88 @@ html(lang="en")
             h1 Welcome to NoiseWave!
             p The latest hits, updated all the time
             a(href="/explore" class="ajax") Click Here to explore our songs
+            br
+            br
+            //- User Template
+            h2 User Page Template:
+            br
+            section(class='user-header')
+                div(class='user-cover-image' style='background-image: url(https://i1.sndcdn.com/visuals-000000557633-UFhDc9-t2480x520.jpg)')
+                    div(class='user-profile-image' style='background-image: url(https://i1.sndcdn.com/avatars-000330871676-7lnquw-t500x500.jpg)')
+                div(class='user-name') Macklemore
+            section(class='user-nav')
+                button Uploads
+                button Likes
+            section(id='latest' class="songCard__section")
+                section(class='songCards')
+                    div(class='card')
+                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
+                        div(class='card__label')
+                            div(class='card__label__album') Too Good to Say Goodbye
+                            div(class='card__label__artist') Macklemore
+                    div(class='card')
+                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
+                        div(class='card__label')
+                            div(class='card__label__album') Too Good to Say Goodbye
+                            div(class='card__label__artist') Macklemore
+                    div(class='card')
+                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
+                        div(class='card__label')
+                            div(class='card__label__album') Too Good to Say Goodbye
+                            div(class='card__label__artist') Macklemore
+                    div(class='card')
+                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
+                        div(class='card__label')
+                            div(class='card__label__album') Too Good to Say Goodbye
+                            div(class='card__label__artist') Macklemore
+                    div(class='card')
+                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
+                        div(class='card__label')
+                            div(class='card__label__album') Too Good to Say Goodbye
+                            div(class='card__label__artist') Macklemore
+                    div(class='card')
+                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
+                        div(class='card__label')
+                            div(class='card__label__album') Too Good to Say Goodbye
+                            div(class='card__label__artist') Macklemore
+            //- Song Template
+            h2 Song Template:
+            br
+            section(class='song-wrapper')
+                section(class='song-header')
+                    div(class='song-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='song-info')
+                        div(class='song-name') Good Old Days (feat. Kesha)
+                        div(class='artist-name') Macklemore
+                        div(class='button-wrapper')
+                            button(class='song-play-button') Play
+                            button(class='song-like-button') Like
+                section(class='song-comments')
+                    div(class='post-comment')
+                        form(class="post-comment" method="get" action="/search")
+                            label(for="search") Write a comment:
+                            input(type="text" id="comment")
+                            input(type="submit" value="Post")
+                    div(class='posted-comments')
+                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                        div(class='user-comment')
+                            div(class='user-name') Cole Hunter
+                            div(class='user-comment-text') Sweet song!
+                    div(class='posted-comments')
+                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                        div(class='user-comment')
+                            div(class='user-name') Chris Cottier
+                            div(class='user-comment-text') I agree!
+                    div(class='posted-comments')
+                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                        div(class='user-comment')
+                            div(class='user-name') Ben Anderson
+                            div(class='user-comment-text') What Chris said
+                    div(class='posted-comments')
+                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                        div(class='user-comment')
+                            div(class='user-name') Warren Gifford
+                            div(class='user-comment-text') ^ this
         include footer.pug
         include simple-playbar.pug
 
