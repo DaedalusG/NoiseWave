@@ -6,6 +6,7 @@ const {
   handleValidationErrors,
   signUpValidation,
   editUserValidations,
+  getS3Url
 } = require("../utils");
 
 const express = require("express");
@@ -56,15 +57,18 @@ router.post(
   "/",
   signUpValidation,
   handleValidationErrors,
+  upload.single('profilePic'),
   asyncHandler(async (req, res) => {
     // TODO save uploaded pictures to s3
-    const { username, password, email, confirmPassword } = req.body;
+    const { username, password, email, confirmPassword, } = req.body;
+    const profilePicUrl = await getS3Url(req.file.key)
 
     const hashedPassword = await bcrypt.hash(password, 8);
     const user = await User.create({
       username,
       hashedPassword,
       email,
+      profilePicUrl,
       createdAt: new Date(),
       updatedAt: new Date(),
     });
