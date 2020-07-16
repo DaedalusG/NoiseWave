@@ -164,6 +164,7 @@ const userIsAuthorized = (
   return authenticatedUserFromReqObject.id === userSpecificiedByUrl.id;
 };
 
+
 module.exports = {
   generateUserToken,
   requireAuth,

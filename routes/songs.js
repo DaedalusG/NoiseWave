@@ -1,6 +1,6 @@
 const { Song } = require("../db/models");
 const { apiPort } = require("../config");
-const { asyncHandler, handleValidationErrors } = require("../utils");
+const { asyncHandler, handleValidationErrors, getS3Url } = require("../utils");
 const { requireAuth } = require("../auth");
 
 const express = require("express");
@@ -40,7 +40,7 @@ router.post(
   asyncHandler(async (req, res) => {
     console.log(req.file)
     const { title, artist, album, genre } = req.body;
-    const songUrl = req.file.location
+    const songUrl = getS3Url(req.file.key)
     //the file in song url, and the thumbnail need to be sourced to s3
     // TODO handle upload of mp3 and image files to s3
     // TODO get the id of the logged in user

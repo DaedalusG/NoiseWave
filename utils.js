@@ -137,7 +137,37 @@ songCheck = [
   //we want to check filetype, ask warren for help];
 ];
 
+const AWS = require("aws-sdk");
+const { awsKeys } = require('./config');
+
+//setting AWS credentials and initializing aws-sdk object instance
+// remember to import keys from config: const { awsKeys } = require('./config');
+AWS.config = new AWS.Config();
+AWS.config.accessKeyId = awsKeys.IAM_ACCESS_ID;
+AWS.config.secretAccessKey = awsKeys.IAM_SECRET;
+const S3 = new AWS.S3();
+
+
+const getS3Url = async (imgKey) => {
+  const getImage = async () => {
+    return S3.getObject({
+      Bucket: 'noisewave',
+      Key: imgKey
+    }).promise();
+  }
+
+  const encode = data => {
+    const buf = Buffer.from(data);
+    const base64 = buf.toString('base64');
+    return base64
+  }
+
+  const img = await getImage()
+  return  `data:image/jpeg;base64,${encode(img.Body)}`;
+}
+
 module.exports = {
+  getS3Url,
   asyncHandler,
   handleValidationErrors,
   modelNotFound,
