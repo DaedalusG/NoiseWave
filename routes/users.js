@@ -5,6 +5,7 @@ const {
   asyncHandler,
   handleValidationErrors,
   signUpValidation,
+  editUserValidations,
 } = require("../utils");
 
 const express = require("express");
@@ -54,31 +55,53 @@ router.post(
 router.get(
   "/:id(\\d+)/edit",
   requireAuth,
-  csrfProtection,
-  asyncHandler(async (req, res) => {
-    const userId = req.params.id;
-    if (userId !== req.user.id) redirect("/");
-    const user = await getUser(userId);
-    res.render("user-edit", { user, csrfToken: req.csrfToken() });
-  })
+  // csrfProtection,
+  (req, res) => {
+    const authenticatedId = req.user.id;
+    const userId = parseInt(req.params.id, 10);
+    console.log(authenticatedId, userId);
+    if (userId !== authenticatedId) res.redirect("/");
+    const user = req.user;
+    res.render("user-edit", { user });
+    //csrfToken: req.csrfToken()
+  }
 );
 
 // User profile edit form action
 router.put(
   "/:id(\\d+)",
   requireAuth,
+  editUserValidations,
   handleValidationErrors,
-  csrfProtection,
+  // csrfProtection,
   asyncHandler(async (req, res) => {
-    const userId = req.params.id;
-    if (userId !== req.user.id) redirect("/");
-    const user = await getUser(userId);
-    const { username, password, email } = req.body;
-    const hashedPassword = password
-      ? await bcrypt.hash(password, 8)
-      : user.hashedPassword;
-    user.save({ username, hashedPassword, email });
-    res.redirect(`/${username}`);
+    const userId = parseInt(req.params.id, 10);
+    if (userId !== req.user.id) {
+      res.redirect("/");
+      return;
+    }
+
+    const user = await User.findByPk(userId);
+    const {
+      username,
+      password,
+      email,
+      profilePicUrl,
+      backgroundUrl,
+    } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 8);
+
+    user.username = username;
+    user.hashedPassword = hashedPassword;
+    user.email = email;
+    if (profilePicUrl) user.profilePicUrl = profilePicUrl;
+
+    if (backgroundUrl) user.backgroundUrl = backgroundUrl;
+
+    //error here when saving instance
+    await user.save();
+
+    res.json(user);
   })
 );
 

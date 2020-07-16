@@ -2,6 +2,13 @@ const { User, Song, Like } = require("../db/models");
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
 const { asyncHandler, modelNotFound } = require("../utils");
 
+// const fetch = require("node-fetch");
+// const https = require("https");
+// const httpsAgent = new https.Agent({
+//   rejectUnauthorized: false,
+// });
+const axios = require("axios");
+
 const express = require("express");
 const csrf = require("csurf");
 const bcrypt = require("bcryptjs");
@@ -52,30 +59,38 @@ router.get(
   })
 );
 
-router.get("/search?=:string", loggedInUser, (req, res) => {
-  //made event handler that leads to this route. whatever was search is in params
+router.post(
+  "/search",
+  loggedInUser,
+  asyncHandler(async (req, res) => {
+    //made event handler that leads to this route. whatever was search is in params
 
-  const query = req.params.string;
+    const query = req.body.search;
 
-  // const fetchSongs= await fetch().....
-  //run query through search api for users
-  //run query through search api for songs
+    //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
+    const resUsers = await axios.get(
+      `http://localhost:4000/search/users/${query}`
+    );
 
-  //then
-  //const matchingUsers = await res.json()
-  //const matchingSongs = await res.json()
-  //plug in these 2 to render
+    const matchingUsersArr = resUsers.data;
 
-  res.render("search-results", {
-    user: req.user,
-    search: req.query,
-    test: "THIS IS A TEST",
-  });
-});
+    const resSongs = await axios.get(
+      `http://localhost:4000/search/songs/${query}`
+    );
+
+    const matchingSongsArr = resSongs.data;
+
+    res.render("search-results", {
+      user: req.user,
+      matchingSongsArr,
+      matchingUsersArr,
+    });
+  })
+);
 
 //the username search !== (search,upload,explore)
 router.get(
-  "/:username(\\w+)",
+  "/:username(?!search)(?!explore)(?!upload)",
   loggedInUser,
   asyncHandler(async (req, res, next) => {
     const { username } = req.params;
@@ -97,7 +112,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const { song } = req.params;
     const songData = await Song.findOne({
-      include: ["User", "Like", "Comment"],
+      include: ["Users", "Likes", "Comments"],
       where: { title: song },
     });
     res.render("song-page", { songData, currentUser: req.user });

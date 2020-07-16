@@ -11,6 +11,7 @@ const AWS = require("aws-sdk");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 app.set("view engine", "pug");
@@ -21,6 +22,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors({ origin: "localhost:4000" }));
 
 app.use("/", indexRoutes);
 app.use("/songs", songRoutes);

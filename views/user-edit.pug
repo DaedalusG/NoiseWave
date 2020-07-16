@@ -1,0 +1,34 @@
+extends templates/nav_logged-in
+block page-specific-content
+    script
+        include ../scripts/edit-user.js
+    p Hello #{user.username}, you may edit your account with the form below.
+    div.edit-errors
+    form.edit-user-form(action=`/users/${user.id}` method='put')
+        input(type='hidden' value=csrfToken name='_csrf')
+        input(type='hidden' value=user.id name='id')
+        label(for='edit-username') Edit Username:
+        input(type='text' placeholder=user.username name='username')
+        br
+        label(for='edit-email') Edit Email:
+        input(type='text' placeholder=user.email name='email')
+        br
+        label(for='edit-password') Edit Password:
+        input(type='password' name='password')
+        br
+        label(for='confirm-edit') Confirm Password:
+        input(type='password' name='confirmPassword')
+        br
+        label(for='profile-pic-edit') Edit Profile Pic:
+        input(type='file' name='profilePicUrl')
+        br
+        label(for='backgroundUrl-edit') Edit Bckground Url:
+        input(type='file' name='backgroundUrl')
+        br
+
+
+        button(type='submit') Submit Changes
+
+        p Please make sure all fields are filled
+
+    //- placeholder

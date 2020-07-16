@@ -1,5 +1,8 @@
 extends templates/nav
 block page-specific-content
-    h1 SEARCH
-    h3= test
-    p= search
+    h1 Users
+        each user in matchingUsersArr
+            p=user.username
+    h1 Songs
+        each song in matchingSongsArr
+            p=song.title

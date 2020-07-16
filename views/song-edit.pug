@@ -1,0 +1,36 @@
+extends templates/nav_logged-in
+block page-specific-content
+    script
+        include ../scripts/edit-song.js
+    p Hello #{user.username}, you may edit your account with the form below.
+    div.edit-errors
+    form.edit-song-form(action=`/users/${song.id}` method='put')
+        input(type='hidden' value=csrfToken name='_csrf')
+        input(type='hidden' value=song.id name='id')
+        input(type='hidden' value=user.song.userId name='userId')
+        label(for='edit-title') Edit Title:
+        input(type='text' placeholder=song.title name='title')
+        br
+        label(for='edit-aritist') Edit Artist:
+        input(type='text' placeholder=song.artist name='artist')
+        br
+        label(for="edit-album") Edit Album:&nbsp;&nbsp;
+        input(type="text" id="edit-album" name="album" placeholder=song.album)
+        br
+        label(for='edit-genre') Edit genre:
+        select(id="edit-genre" name="genre")
+            option(value='')
+            option(value='Classical') Classical
+            option(value='Electronic') Electronic
+            option(value='Hip Hop') Hip Hop
+            option(value='Indie') Indie
+            option(value='Jazz') Jazz
+            option(value='Rock') Rock
+        <br><br>
+        label(for="edit-songUrl") Song File: &nbsp;&nbsp;
+        input(type="file" name="songUrl" accept=".mp3,.flac" id="edit-songUrl")
+        <br><br>
+        label(for="edit-thumbnailUrl") Picture File: &nbsp;&nbsp;
+        input(type="file" name="thumbnailUrl" accept=".jpg,.png" id="edit-thumbnailUrl")
+        <br><br>
+        input(type="submit" value="Upload Song")
