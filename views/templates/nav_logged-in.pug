@@ -9,7 +9,7 @@ block navigation
                 //- img(class="logo" src="header-logo.jpg")
             li
                 a(href="/explore") Explore
-        form(class="navbar__col navbar__col-" id="searchbar" method="get" action="/search")
+        form(class="navbar__col navbar__col-" id="searchbar" method="post" action="/search")
             label(for="search") Search:
             input(type="search" id="search" name="search")
             input(type="submit" value="Search")

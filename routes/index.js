@@ -32,13 +32,13 @@ router.get("/upload", requireAuth, (req, res) => {
   res.render("upload", { user: req.user });
 });
 
-router.get(
-  "/search/:string",
+router.post(
+  "/search",
   loggedInUser,
   asyncHandler(async (req, res) => {
     //made event handler that leads to this route. whatever was search is in params
 
-    const query = req.params.string;
+    const query = req.body.search;
 
     //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
     const resUsers = await axios.get(
