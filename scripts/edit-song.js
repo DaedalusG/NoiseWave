@@ -1,30 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const editUserForm = document.querySelector(".edit-user-form");
+  const editSongForm = document.querySelector(".edit-song-form");
 
   editUserForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(editUserForm);
+    const formData = new FormData(editSongForm);
 
-    const username = formData.get("username");
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const confirmPassword = formData.get("confirmPassword");
-    const profilePicUrl = formData.get("profilePicUrl");
-    const backgroundUrl = formData.get("backgroundUrl");
     const id = formData.get("id");
+    const userId = formData.get("userId");
+    const title = formData.get("title");
+    const artist = formData.get("artist");
+    const album = formData.get("album");
+    const genre = formData.get("genre");
+    const songUrl = formData.get("songUrl");
+    const thumbnailUrl = formData.get("thumbnailUrl");
 
     const body = {
-      email,
-      password,
-      username,
-      confirmPassword,
-      profilePicUrl,
-      backgroundUrl,
+      id,
+      title,
+      artist,
+      album,
+      genre,
+      songUrl,
+      thumbnailUrl,
+      userId,
     };
 
     try {
-      const res = await fetch(`http://localHost:8080/users/${id}`, {
+      const res = await fetch(`http://localHost:8080/songs/${id}`, {
         method: "put",
         body: JSON.stringify(body),
         headers: {
@@ -38,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       //HERE IS WHERE WE NEED TO BE DOING S3 STUFF!! If database change successful
-      const user = await res.json();
-      document.cookie = `NOISEWAVE_ACCESS_TOKEN=;`;
+      const song = await res.json();
 
       // redirect to home page:
       window.location.href = "/";

@@ -56,7 +56,7 @@ router.get(
   "/:id(\\d+)/edit",
   requireAuth,
   // csrfProtection,
-  asyncHandler(async (req, res) => {
+  (req, res) => {
     const authenticatedId = req.user.id;
     const userId = parseInt(req.params.id, 10);
     console.log(authenticatedId, userId);
@@ -64,7 +64,7 @@ router.get(
     const user = req.user;
     res.render("user-edit", { user });
     //csrfToken: req.csrfToken()
-  })
+  }
 );
 
 // User profile edit form action
@@ -76,7 +76,11 @@ router.put(
   // csrfProtection,
   asyncHandler(async (req, res) => {
     const userId = parseInt(req.params.id, 10);
-    if (userId !== req.user.id) res.redirect("/");
+    if (userId !== req.user.id) {
+      res.redirect("/");
+      return;
+    }
+
     const user = await User.findByPk(userId);
     const {
       username,
@@ -90,12 +94,13 @@ router.put(
     user.username = username;
     user.hashedPassword = hashedPassword;
     user.email = email;
-    // user.profilePicUrl = profilePicUrl;
-    // user.backgroundUrl = backgroundUrl;
+    if (profilePicUrl) user.profilePicUrl = profilePicUrl;
+
+    if (backgroundUrl) user.backgroundUrl = backgroundUrl;
 
     //error here when saving instance
     await user.save();
-    console.log(user);
+
     res.json(user);
   })
 );
