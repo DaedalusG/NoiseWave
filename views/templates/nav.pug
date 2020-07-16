@@ -1,65 +1,91 @@
-extends footer
-block navigation
-    script
-        if user
-            include ../../scripts/logout.js
-        else
-            include ../../scripts/login.js
-            include ../../scripts/sign-up.js
-    nav(class="navbar sticky")
-        ul(class="navbar__col navbar__col-1")
-            li
-                img(class="logo" src="header-logo.jpg")
-            li
-                a(href="/explore") Explore
-        if user
-            form(class="navbar__col navbar__col-" id="searchbar" method="get" action="/search")
-                label(for="search") Search:
-                input(type="search" id="search" name="search")
-                input(type="submit" value="Search")
-            ul(class="navbar__col navbar__col-3")
-                li: a(href="/explore") Upload
-                li: a.user(href="/explore") User
-                li: a.logout Log Out?
-        else
-           ul(class="navbar__col navbar__col-3")
-                li(class="btn-group")
-                    button(type="button" class="open-modal" data-open="modal1") Sign In
-                div(class="modal" id="modal1" data-animation="zoomInOut")
-                    div(class="modal-dialog")
-                        header(class="modal-header") Sign in to your NoiseWave account
-                            button(class="close-modal" aria-label="close modal" data-close) X
-                        section(class="modal-content")
-                            p.login-errors
-                            form(method="post" class="login-form" action="/login")
-                                label(for="display-name") Username:&nbsp;&nbsp;
-                                input(type="text" id="display-name" name="username")
-                                <br><br>
-                                label(for="password") Password:&nbsp;&nbsp;
-                                input(type="password" id="password1" name="password")
-                                <br><br>
-                                input(type="submit" value="Sign in")
-                li(class="btn-group")
-                    button(type="button" class="open-modal" data-open="modal2") Create Account
-                div(class="modal" id="modal2" data-animation="zoomInOut")
-                    div(class="modal-dialog")
-                        header(class="modal-header") Create your NoiseWave account
-                            button(class="close-modal" aria-label="close modal" data-close) X
-                        section(class="modal-content")
-                            ul.signup-errors
-                            form(method="post" class="sign-up-form" action="/users")
-                                label(for="usernameSignUp") Username:&nbsp;&nbsp;
-                                input(type="text" id="usernameSignUp" name="username")
-                                <br><br>
-                                label(for="emailSignUp") Email:&nbsp;&nbsp;
-                                input(type="email" id="emailSignUp" name="email")
-                                <br><br>
-                                label(for="password2") Password:&nbsp;&nbsp;
-                                input(type="password" id="password2" name="password")
-                                <br><br>
-                                label(for="confirmPassword") Confirm password:&nbsp;&nbsp;
-                                input(type="password" id="confirmPassword" name="confirmPassword")
-                                <br><br>
-                                input(type="submit" value="Get Started")
-                        footer(class="modal-footer") By signing up I accept the Terms of Use. I have read and understood the Privacy Policy and Cookies Policy.
-        li: a(href="/explore") ...
+nav(class="navbar sticky")
+    ul(class="navbar__col navbar__col-1")
+        li
+            img(class="logo" src="images/header-logo.jpg")
+        li
+            a(href="/explore" class="ajax") Explore
+    if user
+        form(class="navbar__col navbar__col-" id="searchbar" method="get" action="/search")
+            label(for="search") Search:
+            input(type="search" id="search" name="search")
+            input(type="submit" value="Search")
+        ul(class="navbar__col navbar__col-3")
+            li(class="btn-group")
+                button(type="button" class="open-modal" data-open="modal1") Upload
+            div(class="modal" id="modal1" data-animation="zoomInOut")
+                div(class="modal-dialog")
+                    header(class="modal-header") Upload a song
+                        button(class="close-modal" aria-label="close modal" data-close) X
+                    section(class="modal-content")
+                        p.upload-errors
+                        form(method="post" class="login-form" action="/songs")
+                            label(for="upload-title") Title:&nbsp;&nbsp;
+                            input(type="text" id="upload-title" name="title")
+                            <br><br>
+                            label(for="upload-artist") Artist:&nbsp;&nbsp;
+                            input(type="text" id="upload-artist" name="artist")
+                            <br><br>
+                            label(for="upload-album") Album:&nbsp;&nbsp;
+                            input(type="text" id="upload-album" name="album")
+                            <br><br>
+                            label(for="upload-genre") Genre: &nbsp;&nbsp;
+                            select(id="upload-genre" name="genre")
+                                option(value='')
+                                option(value='Classical') Classical
+                                option(value='Electronic') Electronic
+                                option(value='Hip Hop') Hip Hop
+                                option(value='Indie') Indie
+                                option(value='Jazz') Jazz
+                                option(value='Rock') Rock
+                            <br><br>
+                            label(for="upload-songUrl") Song File: &nbsp;&nbsp;
+                            input(type="file" name="songUrl" accept=".mp3,.flac" id="upload-songUrl")
+                            <br><br>
+                            label(for="upload-thumbnailUrl") Picture File: &nbsp;&nbsp;
+                            input(type="file" name="songUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
+                            <br><br>
+                            input(type="submit" value="Upload Song")
+            li: a.user(href=`/${user.username}` class='ajax')= user.username
+            li: a.logout Log Out?
+    else
+       ul(class="navbar__col navbar__col-3")
+            li(class="btn-group")
+                button(type="button" class="open-modal" data-open="modal1") Sign In
+            div(class="modal" id="modal1" data-animation="zoomInOut")
+                div(class="modal-dialog")
+                    header(class="modal-header") Sign in to your NoiseWave account
+                        button(class="close-modal" aria-label="close modal" data-close) X
+                    section(class="modal-content")
+                        p.login-errors
+                        form(method="post" class="login-form" action="/login")
+                            label(for="display-name") Username:&nbsp;&nbsp;
+                            input(type="text" id="display-name" name="username")
+                            <br><br>
+                            label(for="password") Password:&nbsp;&nbsp;
+                            input(type="password" id="password1" name="password")
+                            <br><br>
+                            input(type="submit" value="Sign in")
+            li(class="btn-group")
+                button(type="button" class="open-modal" data-open="modal2") Create Account
+            div(class="modal" id="modal2" data-animation="zoomInOut")
+                div(class="modal-dialog")
+                    header(class="modal-header") Create your NoiseWave account
+                        button(class="close-modal" aria-label="close modal" data-close) X
+                    section(class="modal-content")
+                        ul.signup-errors
+                        form(method="post" class="sign-up-form" action="/users")
+                            label(for="usernameSignUp") Username:&nbsp;&nbsp;
+                            input(type="text" id="usernameSignUp" name="username")
+                            <br><br>
+                            label(for="emailSignUp") Email:&nbsp;&nbsp;
+                            input(type="email" id="emailSignUp" name="email")
+                            <br><br>
+                            label(for="password2") Password:&nbsp;&nbsp;
+                            input(type="password" id="password2" name="password")
+                            <br><br>
+                            label(for="confirmPassword") Confirm password:&nbsp;&nbsp;
+                            input(type="password" id="confirmPassword" name="confirmPassword")
+                            <br><br>
+                            input(type="submit" value="Get Started")
+                    footer(class="modal-footer") By signing up I accept the Terms of Use. I have read and understood the Privacy Policy and Cookies Policy.
+    li: a(href="/explore") ...

@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.cookie = `NOISEWAVE_ACCESS_TOKEN=${token}`;
 
       // redirect to home page to see explore page:
-      window.location.href = "/explore";
+      window.location.href = "/";
     } catch (res) {
       let errors = await res.json();
 

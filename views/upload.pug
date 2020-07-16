@@ -1,29 +1,28 @@
-extends templates/nav_logged-out
-block page-specific-content
-    form(method="post" class="login-form" action="/songs")
-        label(for="upload-title") Title:&nbsp;&nbsp;
-        input(type="text" id="upload-title" name="title")
-        <br><br>
-        label(for="upload-artist") Artist:&nbsp;&nbsp;
-        input(type="text" id="upload-artist" name="artist")
-        <br><br>
-        label(for="upload-album") Album:&nbsp;&nbsp;
-        input(type="text" id="upload-album" name="album")
-        <br><br>
-        label(for="upload-genre") Genre: &nbsp;&nbsp;
-        select(id="upload-genre" name="genre")
-            option(value='')
-            option(value='Classical') Classical
-            option(value='Electronic') Electronic
-            option(value='Hip Hop') Hip Hop
-            option(value='Indie') Indie
-            option(value='Jazz') Jazz
-            option(value='Rock') Rock
-        <br><br>
-        label(for="upload-songUrl") Song File: &nbsp;&nbsp;
-        input(type="file" name="songUrl" accept=".mp3,.flac" id="upload-songUrl")
-        <br><br>
-        label(for="upload-thumbnailUrl") Picture File: &nbsp;&nbsp;
-        input(type="file" name="songUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
-        <br><br>
-        input(type="submit" value="Upload Song")
+h1= user.username
+form(method="post" class="login-form" action="/songs")
+    label(for="upload-title") Title:&nbsp;&nbsp;
+    input(type="text" id="upload-title" name="title")
+    <br><br>
+    label(for="upload-artist") Artist:&nbsp;&nbsp;
+    input(type="text" id="upload-artist" name="artist")
+    <br><br>
+    label(for="upload-album") Album:&nbsp;&nbsp;
+    input(type="text" id="upload-album" name="album")
+    <br><br>
+    label(for="upload-genre") Genre: &nbsp;&nbsp;
+    select(id="upload-genre" name="genre")
+        option(value='')
+        option(value='Classical') Classical
+        option(value='Electronic') Electronic
+        option(value='Hip Hop') Hip Hop
+        option(value='Indie') Indie
+        option(value='Jazz') Jazz
+        option(value='Rock') Rock
+    <br><br>
+    label(for="upload-songUrl") Song File: &nbsp;&nbsp;
+    input(type="file" name="songUrl" accept=".mp3,.flac" id="upload-songUrl")
+    <br><br>
+    label(for="upload-thumbnailUrl") Picture File: &nbsp;&nbsp;
+    input(type="file" name="songUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
+    <br><br>
+    input(type="submit" value="Upload Song")
