@@ -50,7 +50,8 @@ const upload = multer({
 });
 
 //example route handler to post file
-app.post("/post_file", upload.single("to_s3"), function (req, res, next) {
+app.post("/postfile", upload.single("to_s3"), function (req, res, next) {
+  console.log(req.file);
   res.send({ success: true });
 });
 
@@ -73,5 +74,6 @@ app.use((err, req, res, next) => {
     stack: isProduction ? null : err.stack,
   });
 });
+
 
 module.exports = app;
