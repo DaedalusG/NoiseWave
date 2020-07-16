@@ -33,7 +33,7 @@ const handleValidationErrors = (req, res, next) => {
 
 const modelNotFound = (model) => {
   return () => {
-    const err = new Error(`The specified ${model} could not be found`);
+    const err = new Error(`The Specified ${model} could not be found`);
     err.title = `${model} not found`;
     err.status = 404;
     return err;
