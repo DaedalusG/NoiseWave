@@ -42,6 +42,7 @@ button {
   border: none;
   outline: none;
   font-size: inherit;
+  font-weight: inherit;
 }
 
 /* body {
@@ -57,7 +58,7 @@ button {
 }
 
 .open-modal {
-  font-weight: bold;
+  /* font-weight: bold; */
   background: var(--blue);
   color: var(--white);
   /* padding: 0.75rem 1.75rem; */
@@ -65,6 +66,7 @@ button {
   /* margin-bottom: 1rem; */
   margin-right: 1rem;
   border-radius: 5px;
+  border: 2px solid rgb(26, 26, 26);
 }
 
 .open-modal:hover {
