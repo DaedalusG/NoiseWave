@@ -7,6 +7,32 @@ const express = require("express");
 
 const router = express.Router();
 
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
+const { awsKeys } = require('../config');
+
+//setting AWS credentials and initializing aws-sdk object instance
+// remember to import keys from config: const { awsKeys } = require('./config');
+AWS.config = new AWS.Config();
+AWS.config.accessKeyId = awsKeys.IAM_ACCESS_ID;
+AWS.config.secretAccessKey = awsKeys.IAM_SECRET;
+const S3 = new AWS.S3();
+
+//setting up direct stream to s3 bucket using multer and multer-s3
+const upload = multer({
+  storage: multerS3({
+    s3: S3,
+    bucket: 'noisewave',
+    // metadata: function (req, file, cb) {
+    //   cb(null, { fieldName: file.fieldname });
+    // },
+    key: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
+  })
+})
+
 router.post(
   "/",
   requireAuth,

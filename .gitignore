@@ -105,3 +105,5 @@ dist
 
 #S3 bucket access keys
 ./keys.js
+
+.env

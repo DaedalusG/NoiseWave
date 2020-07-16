@@ -5,9 +5,6 @@ const userRoutes = require("./routes/users");
 
 const express = require("express");
 const morgan = require("morgan");
-const multer = require("multer");
-const multerS3 = require("multer-s3");
-const AWS = require("aws-sdk");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const path = require("path");
@@ -28,6 +25,10 @@ app.use("/", indexRoutes);
 app.use("/songs", songRoutes);
 app.use("/users", userRoutes);
 
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
+
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
 AWS.config = new AWS.Config();
@@ -39,21 +40,27 @@ const S3 = new AWS.S3();
 const upload = multer({
   storage: multerS3({
     s3: S3,
-    bucket: "noisewave",
+    bucket: 'noisewave',
     // metadata: function (req, file, cb) {
     //   cb(null, { fieldName: file.fieldname });
     // },
     key: function (req, file, cb) {
-      cb(null, file.originalname);
-    },
-  }),
-});
+      cb(null, file.originalname)
+    }
+  })
+})
 
 //example route handler to post file
+<<<<<<< HEAD
 app.post("/postfile", upload.single("to_s3"), function (req, res, next) {
   console.log(req.file);
   res.send({ success: true });
 });
+=======
+app.post('/post_file', upload.single('to_s3'), function (req, res, next) {
+  res.send({ success: true })
+})
+>>>>>>> 2cec6c01c3eb49d15502f2e603655695ef800a8e
 
 // middleware to catch errors caused by unhandled requests
 app.use((req, res, next) => {
