@@ -79,12 +79,12 @@ router.get(
 
     const matchingSongsArr = resSongs.data;
 
-    console.log(matchingUsersArr);
-    res.render("search-results", {
-      user: req.user,
-      matchingSongsArr,
-      matchingUsersArr,
-    });
+    // console.log(matchingUsersArr);
+    // res.render("search-results", {
+    //   user: req.user,
+    //   matchingSongsArr,
+    //   matchingUsersArr,
+    // });
 
     const searchResults = pug.compileFile(
       path.join(express().get("views"), "search-results.pug"),
