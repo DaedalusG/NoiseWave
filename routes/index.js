@@ -100,14 +100,19 @@ router.get(
 
 //the username search !== (search,upload,explore)
 router.get(
-  "/:username(?!search)(?!explore)(?!upload)",
+  "/:username",
   loggedInUser,
   asyncHandler(async (req, res, next) => {
+
     const { username } = req.params;
+    if (username !== 'login' || username !== 'search' ||username !== 'explore') {
+      next();
+    }
     const userData = await User.findOne({
       include: [{ model: Song }, { model: Like }],
       where: { username: username },
     });
+
     if (!userData) {
       next(userNotFound());
     }

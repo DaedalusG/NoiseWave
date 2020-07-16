@@ -2,6 +2,13 @@ const expressValidator = require("express-validator");
 const { User } = require("./db/models");
 const { check, validationResult } = expressValidator;
 
+// const multer = require("multer");
+// const multerS3 = require("multer-s3");
+// const AWS = require("aws-sdk");
+// const { awsKeys } = require('./config');
+
+
+
 const asyncHandler = (handler) => (req, res, next) => {
   return handler(req, res, next).catch(next);
 };

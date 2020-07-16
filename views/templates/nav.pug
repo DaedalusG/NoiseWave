@@ -18,7 +18,7 @@ nav(class="navbar sticky")
                         button(class="close-modal" aria-label="close modal" data-close) X
                     section(class="modal-content")
                         p.upload-errors
-                        form(method="post" class="login-form" action="/songs")
+                        form(method="post" class="login-form" action="/songs" enctype="multipart/form-data")
                             label(for="upload-title") Title:&nbsp;&nbsp;
                             input(type="text" id="upload-title" name="title")
                             <br><br>
@@ -41,8 +41,8 @@ nav(class="navbar sticky")
                             label(for="upload-songUrl") Song File: &nbsp;&nbsp;
                             input(type="file" name="songUrl" accept=".mp3,.flac" id="upload-songUrl")
                             <br><br>
-                            label(for="upload-thumbnailUrl") Picture File: &nbsp;&nbsp;
-                            input(type="file" name="songUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
+                            //- label(for="upload-thumbnailUrl") Picture File: &nbsp;&nbsp;
+                            //- input(type="file" name="thumbnailUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
                             <br><br>
                             input(type="submit" value="Upload Song")
             li: a.user(href=`/${user.username}` class='ajax')= user.username

@@ -12,23 +12,19 @@ const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
 const { awsKeys } = require('../config');
 
-//setting AWS credentials and initializing aws-sdk object instance
-// remember to import keys from config: const { awsKeys } = require('./config');
 AWS.config = new AWS.Config();
 AWS.config.accessKeyId = awsKeys.IAM_ACCESS_ID;
 AWS.config.secretAccessKey = awsKeys.IAM_SECRET;
 const S3 = new AWS.S3();
 
-//setting up direct stream to s3 bucket using multer and multer-s3
 const upload = multer({
   storage: multerS3({
     s3: S3,
     bucket: 'noisewave',
-    // metadata: function (req, file, cb) {
-    //   cb(null, { fieldName: file.fieldname });
-    // },
     key: function (req, file, cb) {
-      cb(null, file.originalname)
+      //console.log('testy string')
+      //console.log(file);
+      cb(null, `${newDate}${file.originalname}`)
     }
   })
 })
@@ -36,20 +32,25 @@ const upload = multer({
 router.post(
   "/",
   requireAuth,
-  handleValidationErrors,
+   handleValidationErrors,
+  upload.single('songUrl'),
   asyncHandler(async (req, res) => {
-    const { title, artist, album, genre, songUrl, thumbnailUrl } = req.body;
+    console.log(req.file)
+    const { title, artist, album, genre } = req.body;
+    const songUrl = req.file.location
     //the file in song url, and the thumbnail need to be sourced to s3
     // TODO handle upload of mp3 and image files to s3
     // TODO get the id of the logged in user
+    const userId = req.user.id;
     if (!title || !songUrl) {
       res.status(400);
       res.redirect("/explore");
       return;
     }
-    await Song.create({ title, artist, album, genre });
+
+    await Song.create({ title, artist, album, genre, songUrl, userId });
     res.status(200);
-    res.redirect("/discover");
+    res.redirect(`/${req.user.username}`);
   })
 );
 
@@ -86,7 +87,6 @@ router.put(
       album,
       genre,
       songUrl,
-      thumbnailUrl,
       userId,
     } = req.body;
     if (req.user.id !== userId || songId !== id) {
