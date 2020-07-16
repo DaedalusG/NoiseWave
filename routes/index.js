@@ -64,7 +64,6 @@ router.post(
   loggedInUser,
   asyncHandler(async (req, res) => {
     //made event handler that leads to this route. whatever was search is in params
-
     const query = req.body.search;
 
     //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
@@ -80,11 +79,22 @@ router.post(
 
     const matchingSongsArr = resSongs.data;
 
+    console.log(matchingUsersArr);
     res.render("search-results", {
       user: req.user,
       matchingSongsArr,
       matchingUsersArr,
     });
+
+    const searchResults = pug.compileFile(
+      path.join(express().get("views"), "search-results.pug"),
+      {
+        user: req.user,
+        matchingSongsArr,
+        matchingUsersArr,
+      }
+    );
+    res.send(searchResults());
   })
 );
 
