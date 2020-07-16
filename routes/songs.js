@@ -27,7 +27,7 @@ const upload = multer({
     key: function (req, file, cb) {
       //console.log('testy string')
       //console.log(file);
-      cb(null, `${newDate}${file.originalname}`)
+      cb(null, `${new Date()}${file.originalname}`)
     }
   })
 })
