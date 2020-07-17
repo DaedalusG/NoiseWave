@@ -47,13 +47,15 @@ router.get(
     //Generate Array of 6 random Song objects
     sixSongs = []
     for (let i = 0; i < 6; i++) {
-      sixSongs.push(songData[i].dataValues.title);
+      let random = Math.floor(Math.random() * songData.length) - 1
+      console.log(random)
+      sixSongs.push(songData[random].dataValues);
     }
 
     //Testing to access single song
     const singleSong = songData[0].dataValues.title
 
-    console.log(singleSong);
+    //console.log(singleSong);
     console.log(songData.length)
     console.log(sixSongs)
 
@@ -63,7 +65,7 @@ router.get(
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore({ user: req.user, singleSong }));
+    res.send(ajaxExplore({ user: req.user, singleSong, sixSongs }));
   })
 );
 
