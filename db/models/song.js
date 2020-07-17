@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       songLocalPath: {
-        type: Sequelize.STRING(100),
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
     },

@@ -154,6 +154,23 @@ const getS3Url = async (key) => {
   });
 };
 
+const createLocalPath = (songTitle) => {
+  const chars = songTitle.split("");
+  const bannedUrlChars = "!@#$%^&*()`~{}[]\\|;:'=+\"_,<.>/?*";
+
+  const path = chars.map((char) => {
+    if (bannedUrlChars.includes(char)) {
+      return "";
+    } else if (char === " ") {
+      return "-";
+    } else return char;
+  });
+
+  return path.join("");
+};
+
+// console.log(createLocalPath(`*$#)@(*!_*@#)(&)*$&@*($&My favorite's son%g`));
+
 module.exports = {
   getS3Url,
   asyncHandler,
@@ -161,4 +178,5 @@ module.exports = {
   modelNotFound,
   signUpValidation,
   editUserValidations,
+  createLocalPath,
 };

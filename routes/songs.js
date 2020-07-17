@@ -1,6 +1,11 @@
 const { Song } = require("../db/models");
 const { apiPort } = require("../config");
-const { asyncHandler, handleValidationErrors, getS3Url } = require("../utils");
+const {
+  asyncHandler,
+  handleValidationErrors,
+  getS3Url,
+  createLocalPath,
+} = require("../utils");
 const { requireAuth } = require("../auth");
 
 const express = require("express");
@@ -10,7 +15,7 @@ const router = express.Router();
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
-const { awsKeys } = require('../config');
+const { awsKeys } = require("../config");
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
@@ -23,36 +28,48 @@ const S3 = new AWS.S3();
 const upload = multer({
   storage: multerS3({
     s3: S3,
-    bucket: 'noisewave',
+    bucket: "noisewave",
     key: function (req, file, cb) {
       //console.log('testy string')
       //console.log(file);
-      cb(null, `${new Date()}${file.originalname}`)
-    }
-  })
-})
+      cb(null, `${new Date()}${file.originalname}`);
+    },
+  }),
+});
 
 router.post(
   "/",
   requireAuth,
-   handleValidationErrors,
-  upload.single('songUrl'),
-  asyncHandler(async (req, res) => {
-    console.log(req.file)
+  handleValidationErrors,
+  upload.single("songUrl"),
+  asyncHandler(async (req, res, next) => {
     const { title, artist, album, genre } = req.body;
-    const songUrl = getS3Url(req.file.key)
+    if (!title || !req.file.key) {
+      console.log("UPLOAD FAILED");
+      // //improve error handling if time
+      res.redirect("/");
+      return;
+    }
     //the file in song url, and the thumbnail need to be sourced to s3
     // TODO handle upload of mp3 and image files to s3
     // TODO get the id of the logged in user
+    const songUrl = getS3Url(req.file.key);
     const userId = req.user.id;
-    if (!title || !songUrl) {
-      res.status(400);
-      res.redirect("/explore");
-      return;
-    }
+    const songLocalPath = createLocalPath(title);
 
-    await Song.create({ title, artist, album, genre, songUrl, userId });
+    await Song.create({
+      title,
+      artist,
+      album,
+      genre,
+      songUrl,
+      userId,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      songLocalPath,
+    });
     res.status(200);
+    //WELL WANT TO AJAX THIS
     res.redirect(`/${req.user.username}`);
   })
 );
@@ -83,15 +100,7 @@ router.put(
 
     const song = await Song.findByPk(songId);
 
-    const {
-      id,
-      title,
-      artist,
-      album,
-      genre,
-      songUrl,
-      userId,
-    } = req.body;
+    const { id, title, artist, album, genre, songUrl, userId } = req.body;
     if (req.user.id !== userId || songId !== id) {
       res.redirect("/");
       return;
