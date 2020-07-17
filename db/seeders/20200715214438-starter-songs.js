@@ -8,8 +8,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/01+-+Bone+Thugs+-+Carole+of+the+Bones.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/01 - Bone Thugs - Carole of the Bones.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -20,8 +19,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/02+-+Bone+Thugs+-+Thugish+Rugish+Bone.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/02 - Bone Thugs - Thugish Rugish Bone.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -32,8 +30,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/03+-+Bone+Thugs+-+Foe+tha+Love+of+Money+(Feat+Eazy+E).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/03 - Bone Thugs - Foe tha Love of Money (Feat Eazy E).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -44,8 +41,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/04+-+Bone+Thugs+-+1st+of+the+Month.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/04 - Bone Thugs - 1st of the Month.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -56,8 +52,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/05+-+Bone+Thugs+-+Shoot+'Em+Up.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/05 - Bone Thugs - Shoot 'Em Up.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -68,8 +63,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/06+-+Bone+Thugs+-+Buddah+Lovaz.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/06 - Bone Thugs - Buddah Lovaz.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -80,8 +74,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/07+-+Bone+Thugs+-+Days+of+Our+Livez.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/07 - Bone Thugs - Days of Our Livez.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -92,8 +85,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/08+-+Bone+Thugs+-+Tha+Crossroads.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/08 - Bone Thugs - Tha Crossroads.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -104,8 +96,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/09+-+Bone+Thugs+-+Thug+Luv+(Feat+2+Pac).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/09 - Bone Thugs - Thug Luv (Feat 2 Pac).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -116,8 +107,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/10+-+Bone+Thugs+-+Notorious+Thugs+(Notorious+B.I.G.+Feat+Bone+Thugs).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/10 - Bone Thugs - Notorious Thugs (Notorious B.I.G. Feat Bone Thugs).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -128,8 +118,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/11+-+Bone+Thugs+-+Breakdown+(Mariah+Carey+Feat++Bone+Thugs).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/11 - Bone Thugs - Breakdown (Mariah Carey Feat  Bone Thugs).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -140,8 +129,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/12+-+Bone+Thugs+-+All+Good.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/12 - Bone Thugs - All Good.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -152,8 +140,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/13+-+Bone+Thugs+-+Look+into+My+Eyes.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/13 - Bone Thugs - Look into My Eyes.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -164,8 +151,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/14+-+Bone+Thugs+-+Blaze+It.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/14 - Bone Thugs - Blaze It.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -176,8 +162,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/15+-+Bone+Thugs+-+Get+'Cha+Thug+On.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/15 - Bone Thugs - Get 'Cha Thug On.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -188,8 +173,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/16+-+Bone+Thugs+-+Thug+Mentality.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/16 - Bone Thugs - Thug Mentality.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -200,8 +184,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/17+-+Bone+Thugs+-+Resurrection+(Paper+Paper).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/17 - Bone Thugs - Resurrection (Paper Paper).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -212,8 +195,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/18+-+Bone+Thugs+-+Ecstasy.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/18 - Bone Thugs - Ecstasy.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -224,8 +206,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/19+-+Bone+Thugs+-+Weed+Song.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/19 - Bone Thugs - Weed Song.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -236,8 +217,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/20+-+Bone+Thugs+-+Still+the+Greatest+(Feat+Big+Chan).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/20 - Bone Thugs - Still the Greatest (Feat Big Chan).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -248,8 +228,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/21+-+Bone+Thugs+-+Get+Up+and+Get+It+(Feat+3LW+%26+Felecia).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/21 - Bone Thugs - Get Up and Get It (Feat 3LW & Felecia).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -260,8 +239,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/22+-+Bone+Thugs+-+Money%2C+Money.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/22 - Bone Thugs - Money, Money.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -272,8 +250,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/23+-+Bone+Thugs+-+Thugz+Cry.mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/23 - Bone Thugs - Thugz Cry.mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -284,8 +261,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/24+-+Bone+Thugs+-+Home+(Feat+Phil+Collins).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/24 - Bone Thugs - Home (Feat Phil Collins).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -296,8 +272,7 @@ module.exports = {
         artist: "Bone Thugs & Harmony",
         album: "Bone Thugs Greatest Hits",
         genre: "hip-hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/(2004)+Bone+Thugs+-+Greatest+Hits/25+-+Bone+Thugs+-+Cleveland+is+the+City+(Feat+Avant).mp3",
+        songUrl: `songs/(2004) Bone Thugs - Greatest Hits/25 - Bone Thugs - Cleveland is the City (Feat Avant).mp3`,
         userId: 29,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -308,8 +283,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/01+-+Ahwach.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/01 - Ahwach.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -320,8 +294,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/02+-+Eruko.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/02 - Eruko.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -332,8 +305,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/03+-+Bobangi.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/03 - Bobangi.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -344,8 +316,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/04+-+Mebasi.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/04 - Mebasi.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -356,8 +327,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/05+-+Mikadenunasho.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/05 - Mikadenunasho.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -368,8 +338,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/07+-+Prayer+Of+The+Gerre.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/07 - Prayer Of The Gerre.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -380,8 +349,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/08+-+Agba'a.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/08 - Agba'a.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -392,8 +360,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/09+-+Ehsho+~+Sari+~+Dama-e.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/09 - Ehsho ~ Sari ~ Dama-e.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -404,8 +371,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/10+-+Jaliye.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/10 - Jaliye.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -416,8 +382,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/11+-+Gemsbok.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/11 - Gemsbok.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -428,8 +393,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/12+-+J'aime+Mari.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/12 - J'aime Mari.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -440,8 +404,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/13+-+Nindo.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/13 - Nindo.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -452,8 +415,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Africa Genjoh",
         genre: "Electronic/World",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/07+-+Africa+Genjoh+(The+African+Vision+Singing)+(1982)/14+-+Ulepa.mp3",
+        songUrl: `songs/07 - Africa Genjoh (The African Vision Singing) (1982)/14 - Ulepa.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -464,8 +426,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/01+-+Kaneda.mp3",
+        songUrl: `songs/09 - Akira (1990)/01 - Kaneda.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -476,8 +437,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/02+-+The+Battle+Against+The+Clowns.mp3",
+        songUrl: `songs/09 - Akira (1990)/02 - The Battle Against The Clowns.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -488,8 +448,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/03+-+Winds+Over+Neo-Tokyo.mp3",
+        songUrl: `songs/09 - Akira (1990)/03 - Winds Over Neo-Tokyo.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -500,8 +459,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/04+-+Tetsuo.mp3",
+        songUrl: `songs/09 - Akira (1990)/04 - Tetsuo.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -512,8 +470,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/05+-+Doll's+Polyphony.mp3",
+        songUrl: `songs/09 - Akira (1990)/05 - Doll's Polyphony.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -524,8 +481,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/06+-+Shohmyoh.mp3",
+        songUrl: `songs/09 - Akira (1990)/06 - Shohmyoh.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -536,8 +492,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/07+-+Mutation.mp3",
+        songUrl: `songs/09 - Akira (1990)/07 - Mutation.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -548,8 +503,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/08+-+Exodus+From+The+Underground+Fortress.mp3",
+        songUrl: `songs/09 - Akira (1990)/08 - Exodus From The Underground Fortress.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -560,8 +514,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/09+-+Illusion.mp3",
+        songUrl: `songs/09 - Akira (1990)/09 - Illusion.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -572,8 +525,7 @@ module.exports = {
         artist: "Geinoh Yamashirogumi",
         album: "Akira",
         genre: "Soundtrack",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/09+-+Akira+(1990)/10+-+Requiem.mp3",
+        songUrl: `songs/09 - Akira (1990)/10 - Requiem.mp3`,
         userId: 47,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -584,8 +536,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/01-Do+You+Love+Me.mp3",
+        songUrl: `songs/08-Let Love In (1994)/01-Do You Love Me.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -596,8 +547,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/02-Nobody's+Baby+Now.mp3",
+        songUrl: `songs/08-Let Love In (1994)/02-Nobody's Baby Now.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -608,8 +558,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/03-Loverman.mp3",
+        songUrl: `songs/08-Let Love In (1994)/03-Loverman.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -620,8 +569,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/04-Jangling+Jack.mp3",
+        songUrl: `songs/08-Let Love In (1994)/04-Jangling Jack.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -632,8 +580,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/05-Red+Right+Hand.mp3",
+        songUrl: `songs/08-Let Love In (1994)/05-Red Right Hand.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -644,8 +591,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/06-I+Let+Love+In.mp3",
+        songUrl: `songs/08-Let Love In (1994)/06-I Let Love In.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -656,8 +602,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/07-Thirsty+Dog.mp3",
+        songUrl: `songs/08-Let Love In (1994)/07-Thirsty Dog.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -668,8 +613,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/08-Ain't+Gonna+Rain+Anymore.mp3",
+        songUrl: `songs/08-Let Love In (1994)/08-Ain't Gonna Rain Anymore.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -680,8 +624,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/09-Lay+Me+Low.mp3",
+        songUrl: `songs/08-Let Love In (1994)/09-Lay Me Low.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -692,8 +635,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Let Love In",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/08-Let+Love+In+(1994)/10-Do+You+Love+Me+(Part+2).mp3",
+        songUrl: `songs/08-Let Love In (1994)/10-Do You Love Me (Part 2).mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -704,8 +646,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/01-Dig%2C+Lazarus%2C+Dig!!!.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/01-Dig, Lazarus, Dig!!!.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -716,8 +657,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/02-Today's+Lesson.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/02-Today's Lesson.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -728,8 +668,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/03-Moonland.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/03-Moonland.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -740,8 +679,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/04-Night+Of+The+Lotus+Eaters.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/04-Night Of The Lotus Eaters.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -752,8 +690,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/05-Albert+Goes+West.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/05-Albert Goes West.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -764,8 +701,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/06-We+Call+Upon+The+Author.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/06-We Call Upon The Author.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -776,8 +712,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/07-Hold+On+To+Yourself.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/07-Hold On To Yourself.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -788,8 +723,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/08-Lie+Down+Here+%26+Be+My+Girl.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/08-Lie Down Here & Be My Girl.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -800,8 +734,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/09-Jesus+Of+The+Moon.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/09-Jesus Of The Moon.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -812,8 +745,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/10-Midnight+Man.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/10-Midnight Man.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -824,8 +756,7 @@ module.exports = {
         artist: "Nick Cave",
         album: "Dig, Lazarus, Dig!!!",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/14-Dig%2C+Lazarus%2C+Dig!!!+(2008)/11-More+News+From+Nowhere.mp3",
+        songUrl: `songs/14-Dig, Lazarus, Dig!!! (2008)/11-More News From Nowhere.mp3`,
         userId: 56,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -836,8 +767,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/01.+Rags+And+Old+Iron.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/01. Rags And Old Iron.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -848,8 +778,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/02.+No+Good+Man.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/02. No Good Man.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -860,8 +789,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/03.+Gin+House+Blues.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/03. Gin House Blues.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -872,8 +800,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/04.+I'll+Look+Around.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/04. I'll Look Around.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -884,8 +811,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/05.+I+Love+To+Love.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/05. I Love To Love.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -896,8 +822,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/06.+Work+Song.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/06. Work Song.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -908,8 +833,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/07.+Where+Can+I+Go+Without+You.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/07. Where Can I Go Without You.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -920,8 +844,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/08.+Just+Say+I+Love+Him+(English+Version).mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/08. Just Say I Love Him (English Version).mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -932,8 +855,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/09.+Memphis+In+June.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/09. Memphis In June.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -944,8 +866,7 @@ module.exports = {
         artist: "Nina Simone",
         album: "Forbidden Fruit",
         genre: "Jazz",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1961+-+Forbidden+Fruit/10.+Forbidden+Fruit.mp3",
+        songUrl: `songs/1961 - Forbidden Fruit/10. Forbidden Fruit.mp3`,
         userId: 13,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -956,8 +877,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/01+Till+Victory.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/01 Till Victory.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -968,8 +888,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/03+Because+the+Night.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/03 Because the Night.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -980,8 +899,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/04+Ghost+Dance.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/04 Ghost Dance.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -992,8 +910,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/05+Babelogue.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/05 Babelogue.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1004,8 +921,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/06+Rock+N+Roll+Nigger.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/06 Rock N Roll Nigger.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1016,8 +932,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/07+Privilege+(Set+Me+Free).mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/07 Privilege (Set Me Free).mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1028,8 +943,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/08+We+Three.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/08 We Three.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1040,8 +954,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/09+25th+Floor.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/09 25th Floor.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1052,8 +965,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/10+High+on+Rebellion.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/10 High on Rebellion.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1064,8 +976,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/11+Easter.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/11 Easter.mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1076,8 +987,7 @@ module.exports = {
         artist: "Patti Smith",
         album: "Easter",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1978+-+Patti+Smith+-+Easter/12+Godspeed+%5B-%5D.mp3",
+        songUrl: `songs/1978 - Patti Smith - Easter/12 Godspeed [-].mp3`,
         userId: 23,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1088,8 +998,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/01+-+Money+Changes+Everything.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/01 - Money Changes Everything.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1100,8 +1009,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/02+-+Girls+Just+Want+To+Have+Fun.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/02 - Girls Just Want To Have Fun.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1112,8 +1020,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/03+-+When+You+Were+Mine.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/03 - When You Were Mine.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1124,8 +1031,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/04+-+Time+After+Time.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/04 - Time After Time.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1136,8 +1042,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/05+-+She+Bop.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/05 - She Bop.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1148,8 +1053,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/06+-+All+Through+The+Night.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/06 - All Through The Night.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1160,8 +1064,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/07+-+Witness.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/07 - Witness.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1172,8 +1075,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/08+-+I'll+Kiss+You.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/08 - I'll Kiss You.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1184,8 +1086,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/09+-+He's+So+Unusual.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/09 - He's So Unusual.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1196,8 +1097,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/10+-+Yeah+Yeah.mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/10 - Yeah Yeah.mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1208,8 +1108,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/11+-+Money+Changes+Everything+(live).mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/11 - Money Changes Everything (live).mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1220,8 +1119,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/12+-+She+Bop+(live).mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/12 - She Bop (live).mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1232,8 +1130,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/13+-+All+Through+The+Night+(live).mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/13 - All Through The Night (live).mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1244,8 +1141,7 @@ module.exports = {
         artist: "Cyndi Lauper",
         album: "She's So Unusual",
         genre: "Pop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1983+-+She's+So+Unusual+(remastered+2000)(Japan+edition)/14+-+Money+Changes+Everything+(Summer+Sonic+07).mp3",
+        songUrl: `songs/1983 - She's So Unusual (remastered 2000)(Japan edition)/14 - Money Changes Everything (Summer Sonic 07).mp3`,
         userId: 22,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1256,8 +1152,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/01+Dance+Me+To+The+End+Of+Love.mp3",
+        songUrl: `songs/1984 - Various Positions/01 Dance Me To The End Of Love.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1268,8 +1163,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/02+Coming+Back+To+You.mp3",
+        songUrl: `songs/1984 - Various Positions/02 Coming Back To You.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1280,8 +1174,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/03+The+Law.mp3",
+        songUrl: `songs/1984 - Various Positions/03 The Law.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1292,8 +1185,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/04+Night+Comes+On.mp3",
+        songUrl: `songs/1984 - Various Positions/04 Night Comes On.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1304,8 +1196,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/05+Hallelujah.mp3",
+        songUrl: `songs/1984 - Various Positions/05 Hallelujah.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1316,8 +1207,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/06+The+Captain.mp3",
+        songUrl: `songs/1984 - Various Positions/06 The Captain.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1328,8 +1218,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/07+Hunter's+Lullaby.mp3",
+        songUrl: `songs/1984 - Various Positions/07 Hunter's Lullaby.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1340,8 +1229,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/08+Heart+With+No+Companion.mp3",
+        songUrl: `songs/1984 - Various Positions/08 Heart With No Companion.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1352,8 +1240,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Various Positions",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1984+-+Various+Positions/09+If+It+Be+You+Will.mp3",
+        songUrl: `songs/1984 - Various Positions/09 If It Be You Will.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1364,8 +1251,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/01+In+My+Secret+Life.mp3",
+        songUrl: `songs/2001 - Ten New Songs/01 In My Secret Life.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1376,8 +1262,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/02+A+Thousand+Kisses+Deep.mp3",
+        songUrl: `songs/2001 - Ten New Songs/02 A Thousand Kisses Deep.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1388,8 +1273,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/03+That+Don't+Make+It+Junk.mp3",
+        songUrl: `songs/2001 - Ten New Songs/03 That Don't Make It Junk.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1400,8 +1284,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/04+Here+It+Is.mp3",
+        songUrl: `songs/2001 - Ten New Songs/04 Here It Is.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1412,8 +1295,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/05+Love+Itself.mp3",
+        songUrl: `songs/2001 - Ten New Songs/05 Love Itself.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1424,8 +1306,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/06+By+The+Rivers+Dark.mp3",
+        songUrl: `songs/2001 - Ten New Songs/06 By The Rivers Dark.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1436,8 +1317,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/07+Alexandra+Leaving.mp3",
+        songUrl: `songs/2001 - Ten New Songs/07 Alexandra Leaving.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1448,8 +1328,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/08+You+Have+Loved+Enough.mp3",
+        songUrl: `songs/2001 - Ten New Songs/08 You Have Loved Enough.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1460,8 +1339,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/09+Boogie+Street.mp3",
+        songUrl: `songs/2001 - Ten New Songs/09 Boogie Street.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1472,8 +1350,7 @@ module.exports = {
         artist: "Leonard Cohen",
         album: "Ten New Songs",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/2001+-+Ten+New+Songs/10+The+Land+Of+Plenty.mp3",
+        songUrl: `songs/2001 - Ten New Songs/10 The Land Of Plenty.mp3`,
         userId: 52,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1484,8 +1361,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/01+-+If+There's+A+Heaven+Above.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/01 - If There's A Heaven Above.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1496,8 +1372,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/02+-+A+Private+Future.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/02 - A Private Future.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1508,8 +1383,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/03+-+The+Dog-End+Of+A+Day+Gone+By.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/03 - The Dog-End Of A Day Gone By.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1520,8 +1394,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/04+-+The+Game.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/04 - The Game.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1532,8 +1405,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/05+-+Seventh+Dream+Of+Teenage+Heaven.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/05 - Seventh Dream Of Teenage Heaven.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1544,8 +1416,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/06+-+Haunted+When+The+Minutes+Drag.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/06 - Haunted When The Minutes Drag.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1556,8 +1427,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/07+-+Saudade.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/07 - Saudade.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1568,8 +1438,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/08+-+Ball+Of+Confusion+(12''+UK+Mix).flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/08 - Ball Of Confusion (12'' UK Mix).flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1580,8 +1449,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/09+-+Inside+The+Outside.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/09 - Inside The Outside.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1592,8 +1460,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/12+-+Haunted+When+The+Minutes+Drag+(USA+Mix).flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/12 - Haunted When The Minutes Drag (USA Mix).flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1604,8 +1471,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/10+-+If+There's+A+Heaven+Above+(12''+UK+Mix).flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/10 - If There's A Heaven Above (12'' UK Mix).flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1616,8 +1482,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/11+-+God+And+Mr.+Smith.flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/11 - God And Mr. Smith.flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1628,8 +1493,7 @@ module.exports = {
         artist: "Love and Rocketships",
         album: "Seventh Dream Of Teenage Heaven",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1985+-+Seventh+Dream+Of+Teenage+Heaven/13+-+If+There's+A+Heaven+Above+(Canada+Mix).flac",
+        songUrl: `songs/1985 - Seventh Dream Of Teenage Heaven/13 - If There's A Heaven Above (Canada Mix).flac`,
         userId: 25,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1640,8 +1504,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/01+-+graveyard.mp3",
+        songUrl: `songs/1988 - in the graveyard/01 - graveyard.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1652,8 +1515,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/02+-+out+on+a+wire.mp3",
+        songUrl: `songs/1988 - in the graveyard/02 - out on a wire.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1664,8 +1526,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/03+-+can't+help+falling +in +love.mp3",
+        songUrl: `songs/1988 - in the graveyard/03 - can't help falling  in  love.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1676,8 +1537,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/04+-+parchment+farm.mp3",
+        songUrl: `songs/1988 - in the graveyard/04 - parchment farm.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1688,8 +1548,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/05+-+dead+in+the+saddle.mp3",
+        songUrl: `songs/1988 - in the graveyard/05 - dead in the saddle.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1700,8 +1559,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/06+-+hey+joe.mp3",
+        songUrl: `songs/1988 - in the graveyard/06 - hey joe.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1712,8 +1570,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/07+-+don't+burn+the+fires.mp3",
+        songUrl: `songs/1988 - in the graveyard/07 - don't burn the fires.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1724,8 +1581,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/08+-+where+did+i+go+wrong.mp3",
+        songUrl: `songs/1988 - in the graveyard/08 - where did i go wrong.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1736,8 +1592,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/09+-+remember+me.mp3",
+        songUrl: `songs/1988 - in the graveyard/09 - remember me.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1748,8 +1603,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "In The Graveyard",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1988+-+in+the+graveyard/10+-+i+hate+the+blues.mp3",
+        songUrl: `songs/1988 - in the graveyard/10 - i hate the blues.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1760,8 +1614,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/01+-+dead+moon+night.mp3",
+        songUrl: `songs/1989 - unknown passage/01 - dead moon night.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1772,8 +1625,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/02+-+my+escape.mp3",
+        songUrl: `songs/1989 - unknown passage/02 - my escape.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1784,8 +1636,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/03+-+a+miss+of+you.mp3",
+        songUrl: `songs/1989 - unknown passage/03 - a miss of you.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1796,8 +1647,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/04+-+54-40.mp3",
+        songUrl: `songs/1989 - unknown passage/04 - 54-40.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1808,8 +1658,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/05+-+i'm+wise.mp3",
+        songUrl: `songs/1989 - unknown passage/05 - i'm wise.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1820,8 +1669,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/06+-+evil+eye.mp3",
+        songUrl: `songs/1989 - unknown passage/06 - evil eye.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1832,8 +1680,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/07+-+i+tried.mp3",
+        songUrl: `songs/1989 - unknown passage/07 - i tried.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1844,8 +1691,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/08+-+time+has+come+today.mp3",
+        songUrl: `songs/1989 - unknown passage/08 - time has come today.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1856,8 +1702,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/09+-+demona.mp3",
+        songUrl: `songs/1989 - unknown passage/09 - demona.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1868,8 +1713,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Unknown Passage",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1989+-+unknown+passage/10+-+on+my+own.mp3",
+        songUrl: `songs/1989 - unknown passage/10 - on my own.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1880,8 +1724,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/01+Diamonds+in+the+Rough.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/01 Diamonds in the Rough.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1892,8 +1735,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/02+Say+It+Isn't+So.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/02 Say It Isn't So.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1904,8 +1746,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/03+I+Won't+Be+the+One.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/03 I Won't Be the One.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1916,8 +1757,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/04+Can't+Let+Go.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/04 Can't Let Go.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1928,8 +1768,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/05+Running+Out+of+Time.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/05 Running Out of Time.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1940,8 +1779,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/06+Psychodelic+Nightmare.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/06 Psychodelic Nightmare.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1952,8 +1790,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/07+Area+51.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/07 Area 51.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1964,8 +1801,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/08+Somewhere+Far+Away.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/08 Somewhere Far Away.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1976,8 +1812,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/09+I'm+Not+Afraid.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/09 I'm Not Afraid.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -1988,8 +1823,7 @@ module.exports = {
         artist: "Dead Moon",
         album: "Nervous Sooner Changes",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1995+Nervous+Sooner+Changes/10+Windows+of+Time.mp3",
+        songUrl: `songs/1995 Nervous Sooner Changes/10 Windows of Time.mp3`,
         userId: 43,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2000,8 +1834,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/01+-+Somebody+To+Love.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/01 - Somebody To Love.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2012,8 +1845,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/02+-+Erotica.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/02 - Erotica.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2024,8 +1856,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/03+-+Rollin'+'N'+Tumblin'.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/03 - Rollin' 'N' Tumblin'.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2036,8 +1867,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/04+-+Ah+Ah+Ah+Ay.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/04 - Ah Ah Ah Ay.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2048,8 +1878,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/05+-+Crimson+%26+Clover.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/05 - Crimson & Clover.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2060,8 +1889,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/06+-+Heartbreaker.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/06 - Heartbreaker.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2072,8 +1900,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/07+-+Blues+On+The+Westside.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/07 - Blues On The Westside.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2084,8 +1911,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/08+-+Waterfall.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/08 - Waterfall.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2096,8 +1922,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/09+-+Evil.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/09 - Evil.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2108,8 +1933,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/10+-+I+Wonder+Who.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/10 - I Wonder Who.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2120,8 +1944,7 @@ module.exports = {
         artist: "Aguaturbia",
         album: "Psychedelic Drugstore",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1993+-+Psychedelic+Drugstore/11+-+Aguaturbia.mp3",
+        songUrl: `songs/1993 - Psychedelic Drugstore/11 - Aguaturbia.mp3`,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2132,8 +1955,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/01+Mean+Machine.mp3",
+        songUrl: `songs/1994 - Flamejob/01 Mean Machine.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2144,8 +1966,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/02+Ultra+Twist.mp3",
+        songUrl: `songs/1994 - Flamejob/02 Ultra Twist.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2156,8 +1977,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/03+Let's+Get+F - cked+Up.mp3",
+        songUrl: `songs/1994 - Flamejob/03 Let's Get F - cked Up.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2168,8 +1988,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/04+Nest+of+the+Cuckoo+Bird.mp3",
+        songUrl: `songs/1994 - Flamejob/04 Nest of the Cuckoo Bird.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2180,8 +1999,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/05+I'm+Customized.mp3",
+        songUrl: `songs/1994 - Flamejob/05 I'm Customized.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2192,8 +2010,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/06+Sado+County+Auto+Show.mp3",
+        songUrl: `songs/1994 - Flamejob/06 Sado County Auto Show.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2204,8 +2021,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/07+Naked+Girl+Falling+Down+the+Stairs.mp3",
+        songUrl: `songs/1994 - Flamejob/07 Naked Girl Falling Down the Stairs.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2216,8 +2032,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/08+How+Come+You+Do+Me.mp3",
+        songUrl: `songs/1994 - Flamejob/08 How Come You Do Me.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2228,8 +2043,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/09+Inside+Out+and+Upside+Down+(With+You).mp3",
+        songUrl: `songs/1994 - Flamejob/09 Inside Out and Upside Down (With You).mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2240,8 +2054,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/10+Trapped+Love.mp3",
+        songUrl: `songs/1994 - Flamejob/10 Trapped Love.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2252,8 +2065,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/11+Swing+the+Big+Eyed+Rabbit.mp3",
+        songUrl: `songs/1994 - Flamejob/11 Swing the Big Eyed Rabbit.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2264,8 +2076,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/12+Strange+Love.mp3",
+        songUrl: `songs/1994 - Flamejob/12 Strange Love.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2276,8 +2087,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/13+Blues+Blues+Blues.mp3",
+        songUrl: `songs/1994 - Flamejob/13 Blues Blues Blues.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2288,8 +2098,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/14+Sinners.mp3",
+        songUrl: `songs/1994 - Flamejob/14 Sinners.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2300,8 +2109,7 @@ module.exports = {
         artist: "The Cramps",
         album: "Flamejob",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/1994+-+Flamejob/15+Route+66.mp3",
+        songUrl: `songs/1994 - Flamejob/15 Route 66.mp3`,
         userId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2312,8 +2120,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/01.+Time+Away.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/01. Time Away.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2324,8 +2131,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/02.+Violence.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/02. Violence.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2336,8 +2142,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/03.+On+Oath.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/03. On Oath.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2348,8 +2153,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/04.+Science+%26+Industry.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/04. Science & Industry.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2360,8 +2164,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/05.+No+Surrender.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/05. No Surrender.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2372,8 +2175,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/06.+How+It+Was.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/06. How It Was.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2384,8 +2186,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/07.+Damage.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/07. Damage.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2396,8 +2197,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/08.+Faith+In+Strangers.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/08. Faith In Strangers.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2408,8 +2208,7 @@ module.exports = {
         artist: "Andy Stott",
         album: "Faith In Strangers",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Andy+Stott+-+Faith+In+Strangers+(2014)+Album+%40+MP3/09.+Missing.mp3",
+        songUrl: `songs/Andy Stott - Faith In Strangers (2014) Album @ MP3/09. Missing.mp3`,
         userId: 27,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2420,8 +2219,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Bullet+Chained.mp3",
+        songUrl: `songs/Arca - Xen/Bullet Chained.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2432,8 +2230,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Failed.mp3",
+        songUrl: `songs/Arca - Xen/Failed.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2444,8 +2241,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Family+Violence.mp3",
+        songUrl: `songs/Arca - Xen/Family Violence.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2456,8 +2252,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Fish.mp3",
+        songUrl: `songs/Arca - Xen/Fish.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2468,8 +2263,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Held+Apart.mp3",
+        songUrl: `songs/Arca - Xen/Held Apart.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2480,8 +2274,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Lonely+Thugg.mp3",
+        songUrl: `songs/Arca - Xen/Lonely Thugg.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2492,8 +2285,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Now+You+Know.mp3",
+        songUrl: `songs/Arca - Xen/Now You Know.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2504,8 +2296,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Promise.mp3",
+        songUrl: `songs/Arca - Xen/Promise.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2516,8 +2307,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Sad+Bitch.mp3",
+        songUrl: `songs/Arca - Xen/Sad Bitch.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2528,8 +2318,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Sisters.mp3",
+        songUrl: `songs/Arca - Xen/Sisters.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2540,8 +2329,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Slit+Thru.mp3",
+        songUrl: `songs/Arca - Xen/Slit Thru.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2552,8 +2340,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Thievery.mp3",
+        songUrl: `songs/Arca - Xen/Thievery.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2564,8 +2351,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Tongue.mp3",
+        songUrl: `songs/Arca - Xen/Tongue.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2576,8 +2362,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Wound.mp3",
+        songUrl: `songs/Arca - Xen/Wound.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2588,8 +2373,7 @@ module.exports = {
         artist: "Arca",
         album: "Xen",
         genre: "Electronic",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Arca+-+Xen/Xen.mp3",
+        songUrl: `songs/Arca - Xen/Xen.mp3`,
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2600,8 +2384,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Absolutely.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Absolutely.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2612,8 +2395,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Angelz+(Feat.+Tony+Starks).mp3",
+        songUrl: `songs/Born Like This/MF Doom - Angelz (Feat. Tony Starks).mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2624,8 +2406,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Ballskin.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Ballskin.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2636,8 +2417,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Batty+Boyz.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Batty Boyz.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2648,8 +2428,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Bumpy's+Message.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Bumpy's Message.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2660,8 +2439,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Cellz.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Cellz.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2672,8 +2450,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Gazzillion+Ear.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Gazzillion Ear.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2684,8 +2461,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Lightworks.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Lightworks.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2696,8 +2472,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Microwave+Mayo.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Microwave Mayo.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2708,8 +2483,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+More+Rhymin'+(Feat.+Kurious).mp3",
+        songUrl: `songs/Born Like This/MF Doom - More Rhymin' (Feat. Kurious).mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2720,8 +2494,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Rap+Ambush.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Rap Ambush.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2732,8 +2505,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Still+Dope+(Feat.+Empress+Sharhh).mp3",
+        songUrl: `songs/Born Like This/MF Doom - Still Dope (Feat. Empress Sharhh).mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2744,8 +2516,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Supervillain+Intro.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Supervillain Intro.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2756,8 +2527,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Supervillainz.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Supervillainz.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2768,8 +2538,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Thank+Yah.mp3",
+        songUrl: `songs/Born Like This/MF Doom - Thank Yah.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2780,8 +2549,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+That's+That.mp3",
+        songUrl: `songs/Born Like This/MF Doom - That's That.mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2792,8 +2560,7 @@ module.exports = {
         artist: "MF Doom",
         album: "Born Like This",
         genre: "Hip-Hop",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Born+Like+This/MF+Doom+-+Yessir!+(Feat.+Raekwon).mp3",
+        songUrl: `songs/Born Like This/MF Doom - Yessir! (Feat. Raekwon).mp3`,
         userId: 34,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2804,8 +2571,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/01+Bruce+Springsteen+-+Born+In+The+U.S.A.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/01 Bruce Springsteen - Born In The U.S.A.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2816,8 +2582,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/02+Bruce+Springsteen+-+Cover+Me.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/02 Bruce Springsteen - Cover Me.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2828,8 +2593,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/03+Bruce+Springsteen+-+Darlington+County.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/03 Bruce Springsteen - Darlington County.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2840,8 +2604,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/04+Bruce+Springsteen+-+Working+On+The+Highway.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/04 Bruce Springsteen - Working On The Highway.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2852,8 +2615,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/05+Bruce+Springsteen+-+Downbound+Train.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/05 Bruce Springsteen - Downbound Train.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2864,8 +2626,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/06+Bruce+Springsteen+-+I'm+On+Fire.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/06 Bruce Springsteen - I'm On Fire.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2876,8 +2637,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/07+Bruce+Springsteen+-+No+Surrender.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/07 Bruce Springsteen - No Surrender.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2888,8 +2648,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/08+Bruce+Springsteen+-+Bobby+Jean.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/08 Bruce Springsteen - Bobby Jean.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2900,8 +2659,7 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/09+Bruce+Springsteen+-+I'm+Goin'+Down.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/09 Bruce Springsteen - I'm Goin' Down.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -2912,24 +2670,11 @@ module.exports = {
         artist: "Bruce Springsteen",
         album: "Born In The USA",
         genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/10+Bruce+Springsteen+-+Glory+Days.mp3",
+        songUrl: `songs/Bruce Springsteen - Born In The USA 1984 Rock 320kbps CBR MP3 [VX]/10 Bruce Springsteen - Glory Days.mp3`,
         userId: 28,
         createdAt: new Date(),
         updatedAt: new Date(),
         songLocalPath: "Glory-Days",
-      },
-      {
-        title: "My Hometown",
-        artist: "Bruce Springsteen",
-        album: "Born In The USA",
-        genre: "Rock",
-        songUrl:
-          "https://noisewave.s3-us-west-2.amazonaws.com/songs/Bruce+Springsteen+-+Born+In+The+USA+1984+Rock+320kbps+CBR+MP3+%5BVX%5D/12+Bruce+Springsteen+-+My+Hometown.mp3",
-        userId: 28,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        songLocalPath: "My-Hometown",
       },
     ]);
   },
