@@ -58,7 +58,7 @@ router.get(
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore({ user: req.user, singleSong, sixSongs }));
+    res.send(ajaxExplore({ user: req.user, sixSongs }));
   })
 );
 
