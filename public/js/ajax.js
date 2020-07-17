@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         event.stopPropagation();
         const targetUrl = event.target.title;
         console.log(targetUrl);
-        const res = await fetch(`${targetUrl}`);
+        const res = await fetch(`/${targetUrl}`);
         const html = await res.text();
         document.querySelector("#page-specific-content").innerHTML = html;
       }
