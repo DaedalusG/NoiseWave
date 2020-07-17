@@ -64,6 +64,9 @@ nav {
   margin: 0;
 }
 
+.dropbtn {
+  /* font-size: 40px; */
+}
 .navbar a:hover, .dropdown:hover .dropbtn, .dropdown-content a:hover {
   /* background-color: rgb(155, 24, 24); */
 }
