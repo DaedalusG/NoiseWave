@@ -83,30 +83,51 @@ html(lang="en")
                             button(class='song-like-button') Like
                 section(class='song-comments')
                     div(class='post-comment')
-                        form(class="post-comment" method="get" action="/search")
-                            label(for="search") Write a comment:
+                        form(class="post-comment-form" method="get" action="/search")
+                            label(for="search") Write a comment: &nbsp;&nbsp;
                             input(type="text" id="comment")
                             input(type="submit" value="Post")
                     div(class='posted-comments')
-                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                        div(class='user-comment')
-                            div(class='user-name') Cole Hunter
-                            div(class='user-comment-text') Sweet song!
-                    div(class='posted-comments')
-                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                        div(class='user-comment')
-                            div(class='user-name') Chris Cottier
-                            div(class='user-comment-text') I agree!
-                    div(class='posted-comments')
-                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                        div(class='user-comment')
-                            div(class='user-name') Ben Anderson
-                            div(class='user-comment-text') What Chris said
-                    div(class='posted-comments')
-                        div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                        div(class='user-comment')
-                            div(class='user-name') Warren Gifford
-                            div(class='user-comment-text') ^ this
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Cole Hunter
+                                div(class='user-comment-text') Sweet song!
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Chris Cottier
+                                div(class='user-comment-text') I agree!
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Ben Anderson
+                                div(class='user-comment-text') What Chris said
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Warren Gifford
+                                div(class='user-comment-text') ^ this
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Cole Hunter
+                                div(class='user-comment-text') Sweet song!
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Chris Cottier
+                                div(class='user-comment-text') I agree!
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Ben Anderson
+                                div(class='user-comment-text') What Chris said
+                        div(class='posted-comment')
+                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                            div(class='user-comment')
+                                div(class='user-name') Warren Gifford
+                                div(class='user-comment-text') ^ this
         include footer.pug
         include simple-playbar.pug
 

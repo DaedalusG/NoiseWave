@@ -124,10 +124,11 @@ section.song-wrapper {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    /* max-height: 358px; */
 }
 
 section.song-header {
-    width: 50%;
+    width: 35%;
 }
 
 .song-header .song-image {
@@ -165,38 +166,63 @@ section.song-comments {
     flex-flow: column nowrap;
     justify-content: space-between;
     /* align-content: center; */
-    width: 50%;
-    padding: 15px;
-    background-color: rgb(238, 238, 238);
+    width: 65%;
+    /* padding: 15px; */
+
+    /* background-color: rgb(238, 238, 238); */
 }
 
 .post-comment {
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .posted-comments {
     display: flex;
+    flex-flow: column nowrap;
+    background-color: rgb(238, 238, 238);
+    border: 1px dotted rgb(218, 218, 218);
+    height: 308px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    bottom: 15px;
+    position: relative;
+}
+
+.posted-comment {
+    display: flex;
     flex-flow: row nowrap;
     background-color: aliceblue;
+    /* padding: 15px; */
+    margin: 10px;
+    border: 1px solid rgb(218, 218, 218);
+    /* width: 100%;
+    height: 100%; */
     /* align-content: center; */
     /* height: 50px; */
     /* justify-content: space-between; */
 }
 
-.posted-comments .user-image {
+.posted-comment .user-image {
     background-repeat: no-repeat;
     background-size: contain;
     box-sizing: border-box;
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 55px;
+    /* width: 90%;
+    height: 90%; */
     margin-right: 10px;
 }
 
 .posted-comments .user-comment {
     /* margin: 8px; */
+    padding: 8px;
+    font-size: 15px;
 }
 
 .posted-comments .user-name {
     color: rgb(126, 126, 126);
+    font-size: 13px;
 }
