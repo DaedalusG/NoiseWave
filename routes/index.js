@@ -109,7 +109,8 @@ router.get(
     if (
       username === "login" ||
       username === "search" ||
-      username === "explore"
+      username === "explore" ||
+      username === 'audio-test'
     ) {
       next();
       return;
