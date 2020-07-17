@@ -1,16 +1,6 @@
 "use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
     return queryInterface.bulkInsert(
       "Users",
       [
@@ -27,10 +17,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "BadPlus@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/BadPlus.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/BadPlus.jpg",
+          profilePicUrl: "profile-pics/BadPlus.jpg",
+          backgroundUrl: "background-pics/BadPlus.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -39,10 +27,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Aguaturbia@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/Aguaturbia.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/Aguaturbia.jpg",
+          profilePicUrl: "profile-pics/Aguaturbia.jpg",
+          backgroundUrl: "background-pics/Aguaturbia.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -51,10 +37,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Arca@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/Arca.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/Arca.png",
+          profilePicUrl: "profile-pics/Arca.jpg",
+          backgroundUrl: "background-pics/Arca.png",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -63,10 +47,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "TownesVanZandt@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/TownesVanZandt.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/TownesVanZandt.jpg",
+          profilePicUrl: "profile-pics/TownesVanZandt.jpg",
+          backgroundUrl: "background-pics/TownesVanZandt.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -75,10 +57,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "TimberTimbre@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/TimberTimbre.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/TimberTimbre.jpg",
+          profilePicUrl: "profile-pics/TimberTimbre.jpg",
+          backgroundUrl: "background-pics/TimberTimbre.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -87,10 +67,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "TheNerves@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/TheNerves.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/TheNerves.jpg",
+          profilePicUrl: "profile-pics/TheNerves.jpg",
+          backgroundUrl: "background-pics/TheNerves.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -99,10 +77,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "TheCramps@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/TheCramps.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/TheCramps.jpg",
+          profilePicUrl: "profile-pics/TheCramps.jpg",
+          backgroundUrl: "background-pics/TheCramps.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -111,10 +87,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Swans@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/TheSwans.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/Swans.jpg",
+          profilePicUrl: "profile-pics/TheSwans.jpg",
+          backgroundUrl: "background-pics/Swans.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -123,10 +97,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "SnarkyPuppy@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/SnarkyPuppy.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/SnarkyPuppy.jpg",
+          profilePicUrl: "profile-pics/SnarkyPuppy.jpg",
+          backgroundUrl: "background-pics/SnarkyPuppy.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -135,10 +107,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "FleetwoodMac@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/FleetwoodMac.png",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/FleetwoodMac.jpg",
+          profilePicUrl: "profile-pics/FleetwoodMac.png",
+          backgroundUrl: "background-pics/FleetwoodMac.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -147,10 +117,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "RodrigoYGabriela@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/RodrigoYGabriela.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/RodrigoYGabriela.jpg",
+          profilePicUrl: "profile-pics/RodrigoYGabriela.jpg",
+          backgroundUrl: "background-pics/RodrigoYGabriela.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -159,10 +127,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "NinaSimone@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/NinaSimone.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/NinaSimone.jpg",
+          profilePicUrl: "profile-pics/NinaSimone.jpg",
+          backgroundUrl: "background-pics/NinaSimone.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -171,10 +137,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "MarvinGaye@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/MarvinGaye.png",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/MarvinGaye.jpg",
+          profilePicUrl: "profile-pics/MarvinGaye.png",
+          backgroundUrl: "background-pics/MarvinGaye.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -183,10 +147,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "LeeFields@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/LeeFields.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/LeeFields.jpg",
+          profilePicUrl: "profile-pics/LeeFields.jpg",
+          backgroundUrl: "background-pics/LeeFields.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -195,10 +157,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "JohnFahay@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/JohnFahay.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/JohnFahey.jpg",
+          profilePicUrl: "profile-pics/JohnFahay.jpg",
+          backgroundUrl: "background-pics/JohnFahey.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -207,10 +167,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "JDilla@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/JDilla.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/JDilla.jpg",
+          profilePicUrl: "profile-pics/JDilla.jpg",
+          backgroundUrl: "background-pics/JDilla.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -219,10 +177,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "TheGunClub@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/GunClub.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/GunClub.jpg",
+          profilePicUrl: "profile-pics/GunClub.jpg",
+          backgroundUrl: "background-pics/GunClub.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -231,10 +187,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "FlyingLotus@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/FlyingLotus.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/FlyingLotus.jpg",
+          profilePicUrl: "profile-pics/FlyingLotus.jpg",
+          backgroundUrl: "background-pics/FlyingLotus.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -243,10 +197,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "CharlesWright@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/CharlesWright.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/CharlesWright.jpg",
+          profilePicUrl: "profile-pics/CharlesWright.jpg",
+          backgroundUrl: "background-pics/CharlesWright.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -255,10 +207,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Health@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/HEALTH.png",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/HEALTH.jpg",
+          profilePicUrl: "profile-pics/HEALTH.png",
+          backgroundUrl: "background-pics/HEALTH.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -267,10 +217,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "CyndiLauper@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/CyndiLauper.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/CyndiLauper.jpg",
+          profilePicUrl: "profile-pics/CyndiLauper.jpg",
+          backgroundUrl: "background-pics/CyndiLauper.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -279,10 +227,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "PattiSmith@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/PattiSmith.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/PattiSmith.jpg",
+          profilePicUrl: "profile-pics/PattiSmith.jpg",
+          backgroundUrl: "background-pics/PattiSmith.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -291,10 +237,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "NeilYoung@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/NeilYoung.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/NeilYoung.jpg",
+          profilePicUrl: "profile-pics/NeilYoung.jpg",
+          backgroundUrl: "background-pics/NeilYoung.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -303,10 +247,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "LoveAndRocketships@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/LoveAndRocketships.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/LoveAndRocketShips.jpg",
+          profilePicUrl: "profile-pics/LoveAndRocketships.jpg",
+          backgroundUrl: "background-pics/LoveAndRocketShips.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -315,10 +257,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DirtyThree@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DirtyThree.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DirtyThree.jpg",
+          profilePicUrl: "profile-pics/DirtyThree.jpg",
+          backgroundUrl: "background-pics/DirtyThree.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -327,10 +267,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "AndyStott@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/AndyStott.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/AndyStott.jpg",
+          profilePicUrl: "profile-pics/AndyStott.jpg",
+          backgroundUrl: "background-pics/AndyStott.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -339,10 +277,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "BruceSpringsteen@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/BruceSpringsteen.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/BruceSpringsteen.jpg",
+          profilePicUrl: "profile-pics/BruceSpringsteen.jpg",
+          backgroundUrl: "background-pics/BruceSpringsteen.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -351,10 +287,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "BoneThugs@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/BoneThugsAndHarmony.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/BoneThugs.jpg",
+          profilePicUrl: "profile-pics/BoneThugsAndHarmony.jpg",
+          backgroundUrl: "background-pics/BoneThugs.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -363,10 +297,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "ThePogues@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/ThePogues.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/ThePogues.jpg",
+          profilePicUrl: "profile-pics/ThePogues.jpg",
+          backgroundUrl: "background-pics/ThePogues.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -375,10 +307,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "BadBrains@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/BadBrains.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/BadBrains.jpg",
+          profilePicUrl: "profile-pics/BadBrains.jpg",
+          backgroundUrl: "background-pics/BadBrains.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -387,10 +317,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "BillEvans@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/BillEvans.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/BillEvans.jpg",
+          profilePicUrl: "profile-pics/BillEvans.jpg",
+          backgroundUrl: "background-pics/BillEvans.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -399,10 +327,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "BlondeRedhead@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/BlondeRedhead.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/BlondeRedhead.jpg",
+          profilePicUrl: "profile-pics/BlondeRedhead.jpg",
+          backgroundUrl: "background-pics/BlondeRedhead.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -411,10 +337,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "MFDoom@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/MFDoom.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/MFDoom.jpg",
+          profilePicUrl: "profile-pics/MFDoom.jpg",
+          backgroundUrl: "background-pics/MFDoom.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -423,10 +347,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "CharlesBradley@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/CharlesBradley.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/CharlesBradley.jpg",
+          profilePicUrl: "profile-pics/CharlesBradley.jpg",
+          backgroundUrl: "background-pics/CharlesBradley.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -435,10 +357,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "CharlesMingus@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/CharlesMingus.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/CharlesMingus.jpg",
+          profilePicUrl: "profile-pics/CharlesMingus.jpg",
+          backgroundUrl: "background-pics/CharlesMingus.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -447,10 +367,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "ChadVanGaalen@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/ChadVanGaalen.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/ChadVanGaalen.jpg",
+          profilePicUrl: "profile-pics/ChadVanGaalen.jpg",
+          backgroundUrl: "background-pics/ChadVanGaalen.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -459,10 +377,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DaftPunk@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DaftPunk.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DaftPunk.jpg",
+          profilePicUrl: "profile-pics/DaftPunk.jpg",
+          backgroundUrl: "background-pics/DaftPunk.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -471,10 +387,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DangerMouse@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DangerMouse.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DangerMouse.jpg",
+          profilePicUrl: "profile-pics/DangerMouse.jpg",
+          backgroundUrl: "background-pics/DangerMouse.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -483,10 +397,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DangerMouseAndDanieleLuppi@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DangerMouseAndDanieleLuppi.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DangerMOuseAndDanieleLuppi.jpg",
+          profilePicUrl: "profile-pics/DangerMouseAndDanieleLuppi.jpg",
+          backgroundUrl: "background-pics/DangerMOuseAndDanieleLuppi.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -495,10 +407,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DavidOistrakh@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DavidOistrakh.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DavidOistrakh.jpg",
+          profilePicUrl: "profile-pics/DavidOistrakh.jpg",
+          backgroundUrl: "background-pics/DavidOistrakh.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -507,10 +417,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DeLaSoul@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DeLaSoul.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DeLaSoul.png",
+          profilePicUrl: "profile-pics/DeLaSoul.jpg",
+          backgroundUrl: "background-pics/DeLaSoul.png",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -519,10 +427,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DeadMoon@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DeadMoon.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DeadMoon.png",
+          profilePicUrl: "profile-pics/DeadMoon.jpg",
+          backgroundUrl: "background-pics/DeadMoon.png",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -531,10 +437,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "DeathGrips@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/DeathGrips.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/DeathGrips.jpg",
+          profilePicUrl: "profile-pics/DeathGrips.jpg",
+          backgroundUrl: "background-pics/DeathGrips.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -543,10 +447,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "ElectricWizard@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/ElectricWizard.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/ElectricWizard.jpg",
+          profilePicUrl: "profile-pics/ElectricWizard.jpg",
+          backgroundUrl: "background-pics/ElectricWizard.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -555,10 +457,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "GangStarr@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/GangStarr.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/GangStarr.jpg",
+          profilePicUrl: "profile-pics/GangStarr.jpg",
+          backgroundUrl: "background-pics/GangStarr.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -567,10 +467,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "GeinohYamashirogumi@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/GeinohYamashirogumi.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/GeinohYamashirogumi.jpg",
+          profilePicUrl: "profile-pics/GeinohYamashirogumi.jpg",
+          backgroundUrl: "background-pics/GeinohYamashirogumi.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -579,10 +477,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "HandsomeBoys@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/HandsomeBoyModellingSchool.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/HandsomeBoyModelingSchool.jpg",
+          profilePicUrl: "profile-pics/HandsomeBoyModellingSchool.jpg",
+          backgroundUrl: "background-pics/HandsomeBoyModelingSchool.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -591,10 +487,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "KateBush@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/KateBush.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/KateBush.jpg",
+          profilePicUrl: "profile-pics/KateBush.jpg",
+          backgroundUrl: "background-pics/KateBush.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -603,10 +497,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "KingCrimson@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/KingCrimson.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/KingCrimson.jpg",
+          profilePicUrl: "profile-pics/KingCrimson.jpg",
+          backgroundUrl: "background-pics/KingCrimson.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -615,10 +507,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "LauraMvula@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/LauraMvula.png",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/LauraMvula.png",
+          profilePicUrl: "profile-pics/LauraMvula.png",
+          backgroundUrl: "background-pics/LauraMvula.png",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -627,10 +517,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "LeonardCohen@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/LeonardCohen.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/LeonardCohen.jpg",
+          profilePicUrl: "profile-pics/LeonardCohen.jpg",
+          backgroundUrl: "background-pics/LeonardCohen.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -639,10 +527,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Madlib@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/Madlib.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/Madlib.png",
+          profilePicUrl: "profile-pics/Madlib.jpg",
+          backgroundUrl: "background-pics/Madlib.png",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -651,10 +537,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Moondog@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/Moondog.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/MoonDog.jpg",
+          profilePicUrl: "profile-pics/Moondog.jpg",
+          backgroundUrl: "background-pics/MoonDog.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -663,10 +547,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "MyBloodyValentine@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/MyBloodyValentine.png",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/MyBloodyValentine.jpg",
+          profilePicUrl: "profile-pics/MyBloodyValentine.png",
+          backgroundUrl: "background-pics/MyBloodyValentine.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -675,10 +557,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "NickCave@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/NickCave.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/NickCave.jpg",
+          profilePicUrl: "profile-pics/NickCave.jpg",
+          backgroundUrl: "background-pics/NickCave.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -687,10 +567,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Onra@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/Onra.jpg",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/Onra.jpg",
+          profilePicUrl: "profile-pics/Onra.jpg",
+          backgroundUrl: "background-pics/Onra.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -699,10 +577,8 @@ module.exports = {
           hashedPassword:
             "$2a$10$QHrZC7/Hvox7VsdU1qLMu.Hd0X8S57lko8BGokHPYNZqhIKdLnVgG",
           email: "Prince@gmail.com",
-          profilePicUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/profile-pics/Prince.png",
-          backgroundUrl:
-            "https://noisewave.s3-us-west-2.amazonaws.com/background-pics/Prince.jpg",
+          profilePicUrl: "profile-pics/Prince.png",
+          backgroundUrl: "background-pics/Prince.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

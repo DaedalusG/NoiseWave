@@ -53,7 +53,7 @@ router.post(
     //the file in song url, and the thumbnail need to be sourced to s3
     // TODO handle upload of mp3 and image files to s3
     // TODO get the id of the logged in user
-    const songUrl = getS3Url(req.file.key);
+    const songUrl = req.file.key;
     const userId = req.user.id;
     const songLocalPath = createLocalPath(title);
 
