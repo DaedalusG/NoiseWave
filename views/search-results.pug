@@ -1,9 +1,9 @@
 h1 Users
-if users
-    each user in users
+if matchingUsers
+    each user in matchingUsers
         div(title=`${user.username}` class='ajax-link')=user.username
         p
 h1 Songs
-if songs
-    each song in songs
-        p=song.title
+if matchingSongs
+    each song in matchingSongs
+        div(title=`${song.songLocalPath}` class='ajax-link')=song.title

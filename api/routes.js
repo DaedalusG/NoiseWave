@@ -1,4 +1,4 @@
-const { User, Song } = require("../db/models");
+const { User, Song, Comment } = require("../db/models");
 // const db = require("../db/models/index");
 // const { Op } = db.Sequelize;
 const Sequelize = require("../db/models/index").Sequelize;
@@ -62,7 +62,7 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const songId = req.params.id;
     const song = await Song.findByPk(songId, {
-      include: ["Users", "Likes", "Comments"],
+      include: [{ model: User }, { model: Like }, { model: Comment }],
     });
     if (!song) {
       next(songNotFound());

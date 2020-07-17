@@ -75,7 +75,7 @@ nav(class="navbar sticky")
                         button(class="close-modal" aria-label="close modal" data-close) X
                     section(class="modal-content")
                         ul.signup-errors
-                        form(method="post" class="sign-up-form" action="/users")
+                        form(method="post" class="sign-up-form" action="/users" enctype="multipart/form-data")
                             label(for="usernameSignUp") Username:&nbsp;&nbsp;
                             input(type="text" id="usernameSignUp" name="username")
                             <br><br>

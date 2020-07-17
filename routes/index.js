@@ -1,4 +1,4 @@
-const { User, Song, Like } = require("../db/models");
+const { User, Song, Like, Comment } = require("../db/models");
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
 const { asyncHandler, modelNotFound, getS3Url } = require("../utils");
 
@@ -70,13 +70,13 @@ router.get(
       `http://localhost:${apiPort}/search/users/${query}`
     );
 
-    const users = resUsers.data;
+    const matchingUsers = resUsers.data;
 
     const resSongs = await axios.get(
       `http://localhost:${apiPort}/search/songs/${query}`
     );
 
-    const songs = resSongs.data;
+    const matchingSongs = resSongs.data;
     // console.log(matchingUsersArr);
 
     // console.log(matchingUsersArr);
@@ -87,14 +87,17 @@ router.get(
     //   users,
     // });
 
+    console.log(matchingSongs);
+    console.log(matchingUsers);
+
     const searchResults = pug.compileFile(
       path.join(express().get("views"), "search-results.pug")
     );
     res.send(
       searchResults({
         user: req.user,
-        songs,
-        users,
+        matchingSongs,
+        matchingUsers,
       })
     );
   })
@@ -146,10 +149,15 @@ router.get(
   "/:username(\\w+)/:song(\\w+)",
   loggedInUser,
   asyncHandler(async (req, res) => {
-    const { song } = req.params;
+    if (req.params.username === "search" || req.params.song === "edit") {
+      next();
+      return;
+    }
+    const { song } = req.params.song;
+
     const songData = await Song.findOne({
-      include: ["Users", "Likes", "Comments"],
-      where: { title: song },
+      include: [{ model: User }, { model: Comment }, { model: Like }],
+      where: { songLocalPath: song },
     });
     // res.render("song-page", { songData, currentUser: req.user });
     const songPage = pug.compileFile(
@@ -189,11 +197,14 @@ router.post(
   })
 );
 
-router.get('/audio-test', asyncHandler(async (req, res) => {
-  const audioFile = await getS3Url('songs/09 - Akira (1990)/01 - Kaneda.mp3')
-  const imgFile = await getS3Url('raiseDeadMagic.jpg');
+router.get(
+  "/audio-test",
+  asyncHandler(async (req, res) => {
+    const audioFile = await getS3Url("songs/09 - Akira (1990)/01 - Kaneda.mp3");
+    const imgFile = await getS3Url("raiseDeadMagic.jpg");
 
-  res.render('audiofile', { audioFile, imgFile })
-}))
+    res.render("audiofile", { audioFile, imgFile });
+  })
+);
 
 module.exports = router;
