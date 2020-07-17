@@ -20,7 +20,7 @@ const router = express.Router();
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
-const { awsKeys } = require('../config');
+const { awsKeys } = require("../config");
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
@@ -33,15 +33,15 @@ const S3 = new AWS.S3();
 const upload = multer({
   storage: multerS3({
     s3: S3,
-    bucket: 'noisewave',
+    bucket: "noisewave",
     // metadata: function (req, file, cb) {
     //   cb(null, { fieldName: file.fieldname });
     // },
     key: function (req, file, cb) {
-      cb(null, file.originalname)
-    }
-  })
-})
+      cb(null, file.originalname);
+    },
+  }),
+});
 
 router.get(
   "/users/:id(\\d+)",
@@ -100,6 +100,7 @@ router.get(
         },
       },
     });
+    // console.log(matchingUsers);
     return res.json(matchingUsers);
   })
 );
@@ -127,6 +128,7 @@ router.get(
         },
       },
     });
+    // console.log(matchingSongs);
     return res.json(matchingSongs);
   })
 );

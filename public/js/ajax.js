@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
   });
 
-  document.getElementById('searchbar').addEventListener('submit', async event => {
-    event.preventDefault();
-    const search = document.getElementById('search').value;
-    res = await fetch(`/search/${search}`);
-    html = await res.text();
-    document.querySelector("#page-specific-content").innerHTML = html;
-  });
+  document
+    .getElementById("searchbar")
+    .addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const search = document.getElementById("search").value;
+      res = await fetch(`/search/${search}`);
+      html = await res.text();
+      document.querySelector("#page-specific-content").innerHTML = html;
+    });
 });
-
-

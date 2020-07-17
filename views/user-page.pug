@@ -1,3 +1,29 @@
 h1= userData.username
-if !userData.Song
+     section(class='user-header')
+                div(class='user-cover-image' style=`background-image: url(${userData.backgroundUrl})`)
+                    div(class='user-profile-image' style=`background-image: url(${userData.profilePicUrl})`)
+if !userData.Songs
     p This user hasn't uploaded a song yet
+else
+    p User's Uploads:
+    //- lets put this in a flex container
+    each song in userData.Songs
+        section(class='song-wrapper')
+                section(class='song-header')
+                    div(class='song-image' style=`background-image: url(${userData.profilePicUrl})`)
+                    div(class='song-info')
+                        div(class='song-name') #{song.title}
+                        div(class='artist-name') #{song.artist}
+                        audio(src='' controls)
+
+
+
+p User Likes
+    if likedSongs
+        each likedSong in likedSongs
+             div(class='card')
+                        div(class='card__image' style=`background-image: url(${likedSong.User.profilePicUrl})`)
+                        div(class='card__label')
+                            div(class='card__label__album') #{likedSong.title}
+                            div(class='card__label__artist') #{likedSong.artist}
+
