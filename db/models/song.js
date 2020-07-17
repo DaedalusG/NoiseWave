@@ -33,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
       },
+      songLocalPath: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
     },
     {}
   );

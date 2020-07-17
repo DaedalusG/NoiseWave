@@ -7,8 +7,6 @@ const { check, validationResult } = expressValidator;
 // const AWS = require("aws-sdk");
 // const { awsKeys } = require('./config');
 
-
-
 const asyncHandler = (handler) => (req, res, next) => {
   return handler(req, res, next).catch(next);
 };
@@ -51,6 +49,8 @@ const signUpValidation = [
     .withMessage("Username must be at least 1 character.")
     .isLength({ max: 100 })
     .withMessage("Username must be less than 100 characters")
+    .custom((value) => !/\s/.test(value))
+    .withMessage("No spaces are allowed in the username")
     .custom(async (value) => {
       const inUse = await User.findAll({
         where: {
@@ -138,7 +138,7 @@ songCheck = [
 ];
 
 const AWS = require("aws-sdk");
-const { awsKeys } = require('./config');
+const { awsKeys } = require("./config");
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
@@ -147,13 +147,12 @@ AWS.config.accessKeyId = awsKeys.IAM_ACCESS_ID;
 AWS.config.secretAccessKey = awsKeys.IAM_SECRET;
 const S3 = new AWS.S3();
 
-
 const getS3Url = async (key) => {
-  return S3.getSignedUrl('getObject', {
-        Bucket: 'noisewave',
-        Key: key
+  return S3.getSignedUrl("getObject", {
+    Bucket: "noisewave",
+    Key: key,
   });
-}
+};
 
 module.exports = {
   getS3Url,
