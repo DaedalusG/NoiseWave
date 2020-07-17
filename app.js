@@ -40,7 +40,7 @@ app.use((req, res, next) => {
   next(err);
 });
 
-// user-frienndly error handler
+// user-friendly error handler
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
   const isProduction = environment === "production";

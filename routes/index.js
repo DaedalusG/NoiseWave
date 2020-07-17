@@ -52,13 +52,6 @@ router.get(
       sixSongs.push(songData[random].dataValues);
     }
 
-    //Testing to access single song
-    const singleSong = songData[0].dataValues.title
-
-    //console.log(singleSong);
-    console.log(songData.length)
-    console.log(sixSongs)
-
 
 
 
