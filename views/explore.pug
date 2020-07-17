@@ -75,7 +75,7 @@ section(id='latest' class="songCard__section")
     div(class='songCards')
         each song in sixSongs
             div(class='card')
-                div(class='card__image' style=`background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)`)
+                div(class='card__image' style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
                     div(class='card__label__album')=song.album
                     div(class='card__label__artist')=song.artist
