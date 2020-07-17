@@ -8,6 +8,7 @@ const { asyncHandler, modelNotFound } = require("../utils");
 //   rejectUnauthorized: false,
 // });
 const axios = require("axios");
+const { apiPort } = require("../config/index");
 
 const express = require("express");
 const csrf = require("csurf");
@@ -66,13 +67,13 @@ router.get(
     console.log(query);
     //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
     const resUsers = await axios.get(
-      `http://localhost:4000/search/users/${query}`
+      `http://localhost:${apiPort}/search/users/${query}`
     );
 
     const users = resUsers.data;
 
     const resSongs = await axios.get(
-      `http://localhost:4000/search/songs/${query}`
+      `http://localhost:${apiPort}/search/songs/${query}`
     );
 
     const songs = resSongs.data;
@@ -122,12 +123,19 @@ router.get(
       next(userNotFound());
     }
 
+    const likedSongs = userData.Likes.map(async (like) => {
+      return await Song.findOne({
+        include: [{ model: User }],
+        where: { id: like.songId },
+      });
+    });
+
     // res.render("user-page", { userData, user: req.user });
 
     const userPage = pug.compileFile(
       path.join(express().get("views"), "user-page.pug")
     );
-    res.send(userPage({ user: req.user, userData }));
+    res.send(userPage({ user: req.user, userData, likedSongs }));
   })
 );
 
