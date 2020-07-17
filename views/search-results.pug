@@ -1,6 +1,8 @@
 h1 Users
-    each user in matchingUsersArr
+if users
+    each user in users
         p=user.username
 h1 Songs
-    each song in matchingSongsArr
+if songs
+    each song in songs
         p=song.title

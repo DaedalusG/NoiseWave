@@ -40,10 +40,9 @@ router.get(
   loggedInUser,
   asyncHandler((req, res) => {
     const ajaxExplore = pug.compileFile(
-      path.join(express().get("views"), "explore.pug"),
-      { user: req.user }
+      path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore());
+    res.send(ajaxExplore({ user: req.user }));
   })
 );
 
@@ -52,10 +51,9 @@ router.get(
   loggedInUser,
   asyncHandler((req, res) => {
     const upload = pug.compileFile(
-      path.join(express().get("views"), "upload.pug"),
-      { user: req.user }
+      path.join(express().get("views"), "upload.pug")
     );
-    res.send(upload());
+    res.send(upload({ user: req.user }));
   })
 );
 
@@ -71,41 +69,47 @@ router.get(
       `http://localhost:4000/search/users/${query}`
     );
 
-    const matchingUsersArr = resUsers.data;
+    const users = resUsers.data;
 
     const resSongs = await axios.get(
       `http://localhost:4000/search/songs/${query}`
     );
 
-    const matchingSongsArr = resSongs.data;
+    const songs = resSongs.data;
+    // console.log(matchingUsersArr);
 
     // console.log(matchingUsersArr);
+    //AJAX SEARCH NOT WORKING, BUT PUG NO LONGER CRASHING
     // res.render("search-results", {
     //   user: req.user,
-    //   matchingSongsArr,
-    //   matchingUsersArr,
+    //   songs,
+    //   users,
     // });
 
     const searchResults = pug.compileFile(
-      path.join(express().get("views"), "search-results.pug"),
-      {
-        user: req.user,
-        matchingSongsArr,
-        matchingUsersArr,
-      }
+      path.join(express().get("views"), "search-results.pug")
     );
-    res.send(searchResults());
+    res.send(
+      searchResults({
+        user: req.user,
+        songs,
+        users,
+      })
+    );
   })
 );
 
-//the username search !== (search,upload,explore)
 router.get(
   "/:username",
   loggedInUser,
   asyncHandler(async (req, res, next) => {
-
     const { username } = req.params;
-    if (username !== 'login' || username !== 'search' ||username !== 'explore') {
+
+    if (
+      username === "login" ||
+      username === "search" ||
+      username === "explore"
+    ) {
       next();
       return;
     }
@@ -117,7 +121,13 @@ router.get(
     if (!userData) {
       next(userNotFound());
     }
-    res.render("user-page", { userData, user: req.user });
+
+    // res.render("user-page", { userData, user: req.user });
+
+    const userPage = pug.compileFile(
+      path.join(express().get("views"), "user-page.pug")
+    );
+    res.send(userPage({ user: req.user, userData }));
   })
 );
 
@@ -131,7 +141,11 @@ router.get(
       include: ["Users", "Likes", "Comments"],
       where: { title: song },
     });
-    res.render("song-page", { songData, currentUser: req.user });
+    // res.render("song-page", { songData, currentUser: req.user });
+    const songPage = pug.compileFile(
+      path.join(express().get("views"), "song-page.pug")
+    );
+    res.send(songPage({ user: req.user, songData }));
   })
 );
 
