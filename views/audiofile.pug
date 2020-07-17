@@ -4,19 +4,20 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
-        script(async defer src="js/audioPlayer.js")
+        script( async defer src="js/renderWaveform.js")
+        script(  src="js/audioPlayer.js")
     body
         h2= songData.title
         h2= songData.User.username
         p= url
 
         #player
-            a#player__control.paused(href=''): img#play-pause(src="images/play.png")
-
-            audio#player__audio(src=url)
+            //- a#player__control.paused(href=''): img#play-pause(src="images/play.png")
+            input#controls(type="image", src="images/play.png")
+            audio#  (src=url)
             
-            span#current-time
-            span#duration
+            p#current-time
+            p#duration
 
 
             //- canvas goes here

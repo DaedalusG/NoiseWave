@@ -190,11 +190,11 @@ router.get(
 
 router.get('/:song', asyncHandler(async (req, res) => {
   const { song } = req.params;
-    const songData = await Song.findOne({
+  const songData = await Song.findOne({
       include: User,
-      where: { title: song },
+      where: { songLocalPath: song },
     });
-    const url =await getS3Url('Fri Jul 17 2020 12:07:57 GMT-0600 (Mountain Daylight Time)bensound-punky.mp3')
+    const url =await getS3Url(songData.songUrl)
     
   res.render('audiofile', { songData, url })
 }))

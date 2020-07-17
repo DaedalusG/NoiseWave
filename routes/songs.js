@@ -69,12 +69,7 @@ router.post(
       songLocalPath,
     });
     res.status(200);
-<<<<<<< HEAD
     res.redirect(`/`);
-=======
-    //WELL WANT TO AJAX THIS
-    res.redirect(`/${req.user.username}`);
->>>>>>> 9cccd03710d42d4f932b4e477a7ababfff2586d9
   })
 );
 
