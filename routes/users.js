@@ -6,7 +6,7 @@ const {
   handleValidationErrors,
   signUpValidation,
   editUserValidations,
-  getS3Url
+  getS3Url,
 } = require("../utils");
 
 const express = require("express");
@@ -23,7 +23,7 @@ const csrfProtection = csrf({ cookie: true });
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
-const { awsKeys } = require('../config');
+const { awsKeys } = require("../config");
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
@@ -36,15 +36,15 @@ const S3 = new AWS.S3();
 const upload = multer({
   storage: multerS3({
     s3: S3,
-    bucket: 'noisewave',
+    bucket: "noisewave",
     // metadata: function (req, file, cb) {
     //   cb(null, { fieldName: file.fieldname });
     // },
     key: function (req, file, cb) {
-      cb(null, file.originalname)
-    }
-  })
-})
+      cb(null, file.originalname);
+    },
+  }),
+});
 
 const getUser = async (userId) => {
   // Change fetch url for heroku deployment
@@ -57,11 +57,11 @@ router.post(
   "/",
   signUpValidation,
   handleValidationErrors,
-  upload.single('profilePic'),
+  upload.single("profilePic"),
   asyncHandler(async (req, res) => {
     // TODO save uploaded pictures to s3
-    const { username, password, email, confirmPassword, } = req.body;
-    const profilePicUrl = await getS3Url(req.file.key)
+    const { username, password, email, confirmPassword } = req.body;
+    const profilePicUrl = req.file.key;
 
     const hashedPassword = await bcrypt.hash(password, 8);
     const user = await User.create({
