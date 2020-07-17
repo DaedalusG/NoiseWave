@@ -148,22 +148,11 @@ AWS.config.secretAccessKey = awsKeys.IAM_SECRET;
 const S3 = new AWS.S3();
 
 
-const getS3Url = async (imgKey) => {
-  const getImage = async () => {
-    return S3.getObject({
-      Bucket: 'noisewave',
-      Key: imgKey
-    }).promise();
-  }
-
-  const encode = data => {
-    const buf = Buffer.from(data);
-    const base64 = buf.toString('base64');
-    return base64
-  }
-
-  const img = await getImage()
-  return  `data:image/jpeg;base64,${encode(img.Body)}`;
+const getS3Url = async (key) => {
+  return S3.getSignedUrl('getObject', {
+        Bucket: 'noisewave',
+        Key: key
+  });
 }
 
 module.exports = {

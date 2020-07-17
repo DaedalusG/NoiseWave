@@ -1,6 +1,6 @@
 const { User, Song, Like } = require("../db/models");
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
-const { asyncHandler, modelNotFound } = require("../utils");
+const { asyncHandler, modelNotFound, getS3Url } = require("../utils");
 
 // const fetch = require("node-fetch");
 // const https = require("https");
@@ -99,27 +99,27 @@ router.get(
 );
 
 //the username search !== (search,upload,explore)
-router.get(
-  "/:username",
-  loggedInUser,
-  asyncHandler(async (req, res, next) => {
+// router.get(
+//   "/:username",
+//   loggedInUser,
+//   asyncHandler(async (req, res, next) => {
 
-    const { username } = req.params;
-    if (username !== 'login' || username !== 'search' ||username !== 'explore') {
-      next();
-      return;
-    }
-    const userData = await User.findOne({
-      include: [{ model: Song }, { model: Like }],
-      where: { username: username },
-    });
+//     const { username } = req.params;
+//     if (username !== 'login' || username !== 'search' ||username !== 'explore') {
+//       next();
+//       return;
+//     }
+//     const userData = await User.findOne({
+//       include: [{ model: Song }, { model: Like }],
+//       where: { username: username },
+//     });
 
-    if (!userData) {
-      next(userNotFound());
-    }
-    res.render("user-page", { userData, user: req.user });
-  })
-);
+//     if (!userData) {
+//       next(userNotFound());
+//     }
+//     res.render("user-page", { userData, user: req.user });
+//   })
+// );
 
 //song !== edit
 router.get(
@@ -164,5 +164,12 @@ router.post(
     }
   })
 );
+
+router.get('/audio-test', asyncHandler(async (req, res) => {
+  const audioFile = await getS3Url('songs/09 - Akira (1990)/01 - Kaneda.mp3')
+  const imgFile = await getS3Url('raiseDeadMagic.jpg');
+
+  res.render('audiofile', { audioFile, imgFile })
+}))
 
 module.exports = router;
