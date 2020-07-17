@@ -58,6 +58,7 @@ router.get(
       const profPic = await getS3Url(profKey);
       song.User.dataValues.profilePicUrl = profPic;
     }
+
     //test to access user profile pic
     //example sixSongs[0]
     // {
