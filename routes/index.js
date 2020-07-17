@@ -39,11 +39,31 @@ router.get("/", loggedInUser, (req, res) => {
 router.get(
   "/explore",
   loggedInUser,
-  asyncHandler((req, res) => {
+  asyncHandler(async (req, res) => {
+    const songData = await Song.findAll({
+      include: [{ model: User }],
+    });
+
+    //Generate Array of 6 random Song objects
+    sixSongs = []
+    for (let i = 0; i < 6; i++) {
+      sixSongs.push(songData[i].dataValues.title);
+    }
+
+    //Testing to access single song
+    const singleSong = songData[0].dataValues.title
+
+    console.log(singleSong);
+    console.log(songData.length)
+    console.log(sixSongs)
+
+
+
+
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore({ user: req.user }));
+    res.send(ajaxExplore({ user: req.user, singleSong }));
   })
 );
 
@@ -111,7 +131,8 @@ router.get(
       username === "search" ||
       username === "explore" ||
       username === "audio-test" ||
-      username === "imagetest"
+      username === "imagetest" ||
+      username === ""
     ) {
       next();
       return;
