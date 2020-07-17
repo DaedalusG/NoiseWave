@@ -1,6 +1,12 @@
 const { User, Song, Like, Comment } = require("../db/models");
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
-const { asyncHandler, modelNotFound, getS3Url } = require("../utils");
+const {
+  asyncHandler,
+  modelNotFound,
+  getS3Url,
+  attachPicAndAudiotoSong,
+  attachPicsToUser,
+} = require("../utils");
 
 // const fetch = require("node-fetch");
 // const https = require("https");
@@ -87,16 +93,34 @@ router.get(
     //   users,
     // });
 
-    console.log(matchingSongs);
-    console.log(matchingUsers);
+    const matchingSongsFull = [];
 
+    for (song of matchingSongs) {
+      const fullInfo = await Song.findOne({
+        include: [{ model: User }],
+        where: {
+          id: song.id,
+        },
+      });
+      matchingSongsFull.push(fullInfo);
+    }
+
+    for (song of matchingSongsFull) {
+      attachPicAndAudiotoSong(song);
+    }
+
+    for (user of matchingUsers) {
+      attachPicsToUser(user);
+    }
+
+    console.log(matchingSongs);
     const searchResults = pug.compileFile(
       path.join(express().get("views"), "search-results.pug")
     );
     res.send(
       searchResults({
         user: req.user,
-        matchingSongs,
+        matchingSongsFull,
         matchingUsers,
       })
     );
@@ -146,7 +170,7 @@ router.get(
 
 //song !== edit
 router.get(
-  "/:username(\\w+)/:song(\\w+)",
+  "/:username/:song",
   loggedInUser,
   asyncHandler(async (req, res) => {
     if (req.params.username === "search" || req.params.song === "edit") {
@@ -157,7 +181,7 @@ router.get(
 
     const songData = await Song.findOne({
       include: [{ model: User }, { model: Comment }, { model: Like }],
-      where: { songLocalPath: song },
+      where: { songLocalPath: req.params.song },
     });
     // res.render("song-page", { songData, currentUser: req.user });
     const songPage = pug.compileFile(

@@ -4,6 +4,6 @@ if matchingUsers
         div(title=`${user.username}` class='ajax-link')=user.username
         p
 h1 Songs
-if matchingSongs
-    each song in matchingSongs
-        div(title=`${song.songLocalPath}` class='ajax-link')=song.title
+if matchingSongsFull
+    each song in matchingSongsFull
+        div(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link')=song.title

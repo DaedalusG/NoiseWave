@@ -169,6 +169,26 @@ const createLocalPath = (songTitle) => {
   return path.join("");
 };
 
+const attachPicAndAudiotoSong = async (song) => {
+  const picKey = song.User.profilePicUrl;
+  const audioKey = song.songUrl;
+
+  const pic = await getS3Url(picKey);
+  const audio = await getS3Url(audioKey);
+  song.pic = pic;
+  song.audio = audio;
+};
+
+const attachPicsToUser = async (user) => {
+  const profilePicKey = user.profilePicUrl;
+  const backgroundPicKey = user.backgroundPicUrl;
+
+  const profilePic = await getS3Url(profilePicKey);
+  const backgroundPic = await getS3Url(backgroundPicKey);
+  user.profilePic = profilePic;
+  user.backgroundPic = backgroundPic;
+};
+
 // console.log(createLocalPath(`*$#)@(*!_*@#)(&)*$&@*($&My favorite's son%g`));
 
 module.exports = {
@@ -179,4 +199,6 @@ module.exports = {
   signUpValidation,
   editUserValidations,
   createLocalPath,
+  attachPicAndAudiotoSong,
+  attachPicsToUser,
 };
