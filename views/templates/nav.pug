@@ -7,7 +7,7 @@ nav(class="navbar sticky")
     if user
         form(class="navbar__col" id="searchbar" method="post" action="/search")
             input(type="search" id="search" name="search")
-            input(type="submit" value="Search")
+            input(type="submit" value="Search" id='submit-search')
         ul(class="navbar__col")
             li(class="btn-group")
                 button(type="button" class="open-modal" data-open="modal1") Upload
@@ -49,7 +49,7 @@ nav(class="navbar sticky")
     else
         form(class="navbar__col navbar__col-" id="searchbar" method="post" action="/search")
             input(type="search" id="search" name="search")
-            input(type="submit" value="Search")
+            input(type="submit" value="Search" id='submit-search')
         ul(class="navbar__col navbar__col-3")
             li(class="btn-group")
                 button(type="button" class="open-modal" data-open="modal1") Sign In

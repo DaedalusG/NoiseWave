@@ -1,7 +1,7 @@
 h1 Users
 if users
     each user in users
-        a(href=`/${user.username}` class='ajax')=user.username
+        div(title=`/${user.username}` class='ajax-link')=user.username
         p
 h1 Songs
 if songs
