@@ -1,47 +1,51 @@
-'use strict';
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Songs', {
+    return queryInterface.createTable("Songs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       title: {
         type: Sequelize.STRING(100),
-        allowNull: false
+        allowNull: false,
       },
       artist: {
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(100),
       },
       album: {
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(100),
       },
       genre: {
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(100),
       },
       songUrl: {
         type: Sequelize.STRING(255),
         allowNull: false,
-        unique: true
+        unique: true,
       },
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: "Users" }
+        references: { model: "Users" },
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
+      songLocalPath: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Songs');
-  }
+    return queryInterface.dropTable("Songs");
+  },
 };
