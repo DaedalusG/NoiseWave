@@ -4,9 +4,19 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
+        script(async defer src="js/audioPlayer.js")
     body
-    p= audioFile
-    audio(src=audioFile controls)
+        h2= songData.title
+        h2= songData.User.username
+        p= url
 
-    p= imgFile
-    img(src=imgFile)
+        #player
+            a#player__control.paused(href=''): img#play-pause(src="images/play.png")
+
+            audio#player__audio(src=url)
+            
+            span#current-time
+            span#duration
+
+
+            //- canvas goes here

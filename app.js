@@ -20,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({ origin: "localhost:4000" }));
+app.use(cors({ origin: "noisewave.s3.us-west-2.amazonaws.com/" }));
+
 // app.use("case sensitive routing", true);
 
 app.use("/", indexRoutes);

@@ -40,7 +40,8 @@ router.post(
   asyncHandler(async (req, res) => {
     console.log(req.file)
     const { title, artist, album, genre } = req.body;
-    const songUrl = getS3Url(req.file.key)
+    const songUrl = req.file.key
+    console.log(songUrl)
     //the file in song url, and the thumbnail need to be sourced to s3
     // TODO handle upload of mp3 and image files to s3
     // TODO get the id of the logged in user
@@ -53,7 +54,7 @@ router.post(
 
     await Song.create({ title, artist, album, genre, songUrl, userId });
     res.status(200);
-    res.redirect(`/${req.user.username}`);
+    res.redirect(`/`);
   })
 );
 
