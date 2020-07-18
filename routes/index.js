@@ -67,58 +67,6 @@ router.get(
   "/search/:query",
   loggedInUser,
   asyncHandler(async (req, res) => {
-    //made event handler that leads to this route. whatever was search is in params
-    // console.log(query);
-    // //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
-    // const resUsers = await axios.get(
-    //   `http://localhost:${apiPort}/search/users/${query}`
-    // );
-
-    // const matchingUsers = resUsers.data;
-
-    // const resSongs = await axios.get(
-    //   `http://localhost:${apiPort}/search/songs/${query}`
-    // );
-
-    // const matchingSongs = resSongs.data;
-    // // console.log(matchingUsersArr);
-
-    // // console.log(matchingUsersArr);
-    // //AJAX SEARCH NOT WORKING, BUT PUG NO LONGER CRASHING
-    // // res.render("search-results", {
-    // //   user: req.user,
-    // //   songs,
-    // //   users,
-    // // });
-
-    // const matchingSongsFull = [];
-
-    // for (song of matchingSongs) {
-    //   const fullInfo = await Song.findOne({
-    //     include: [{ model: User }],
-    //     where: {
-    //       id: song.id,
-    //     },
-    //   });
-    //   matchingSongsFull.push(fullInfo);
-    // }
-
-    // for (song of matchingSongsFull) {
-    //   attachPicAndAudiotoSong(song);
-    // }
-
-    // // const matchingUsersFull = [];
-
-    // // for (user in matchingUsers) {
-    // //   const fullInfo = await User.findByPk(user.id);
-    // //   matchingUsersFull.push(fullInfo);
-    // // }
-
-    // console.log(matchingUsers);
-
-    // for (user of matchingUsersFull) {
-    //   attachPicsToUser(user);
-    // }
     const { query } = req.params;
 
     const matchingUsers = await User.findAll({
