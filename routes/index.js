@@ -44,11 +44,29 @@ router.get("/", loggedInUser, (req, res) => {
 router.get(
   "/explore",
   loggedInUser,
-  asyncHandler((req, res) => {
+  asyncHandler(async (req, res) => {
+    const songData = await Song.findAll({
+      include: [{ model: User }],
+    });
+
+    //Generate Array of 6 random Song objects
+    sixSongs = []
+    for (let i = 0; i < 6; i++) {
+      let random = Math.floor(Math.random() * songData.length) - 1
+      console.log(random)
+      sixSongs.push(songData[random].dataValues);
+    }
+    for (song of sixSongs) {
+      const profKey = song.User.dataValues.profilePicUrl;
+      console.log(profKey, 'key');
+      const profPic = await getS3Url(profKey);
+      song.User.dataValues.profilePicUrl = profPic;
+    }
+
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore({ user: req.user }));
+    res.send(ajaxExplore({ user: req.user, sixSongs }));
   })
 );
 
@@ -149,7 +167,8 @@ router.get(
       username === "search" ||
       username === "explore" ||
       username === "audio-test" ||
-      username === "imagetest"
+      username === "imagetest" ||
+      username === ""
     ) {
       next();
       return;
