@@ -62,3 +62,9 @@ footer {
   visibility: visible;
   border-radius: 90%;
 }
+
+#audio-player {
+  min-width: 400px;
+  height: auto;
+  object-fit: inherit;
+}
