@@ -12,12 +12,12 @@ window.AudioContext = (window.AudioContext ||
   var currentBuffer  = null;
   
   // CANVAS
-  const canvasWidth = window.innerWidth - (window.innerWidth * 0.3),  canvasHeight = 120 ;
+  let canvasWidth = window.innerWidth - (window.innerWidth * 0.3),  canvasHeight = 120 ;
     var newCanvas   = createCanvas (canvasWidth, canvasHeight);
     var context     = null;
     
     window.onload = appendCanvas;
-    function appendCanvas() { document.body.appendChild(newCanvas);
+    function appendCanvas() { document.getElementById('player').appendChild(newCanvas);
                           context = newCanvas.getContext('2d'); }
     
     // MUSIC LOADER + DECODE
@@ -78,7 +78,60 @@ window.AudioContext = (window.AudioContext ||
         newCanvas.setAttribute('id', 'progress-bar');
         return newCanvas;
     };
+    document.addEventListener('DOMContentLoaded', async e => {
+      const source = document.getElementById('player__audio').getAttribute('src')
+      await loadMusic(source);
+      playSong();
+    })
     
-    // const source = document.getElementById('player__audio').getAttribute('src')
-    
-    loadMusic(source);
+    function playSong() {
+      const audio = document.getElementById('player__audio');
+    const controls = document.getElementById('controls');
+    controls.addEventListener('click', e => {
+      // e.preventDefault();
+          console.log('CLICKED')
+          if(controls.classList.contains('paused')) {
+              controls.classList.remove('paused');
+              controls.setAttribute('src', '../images/pause.png');
+              audio.play();
+          } else {
+            controls.classList.add('paused');
+            controls.setAttribute('src', '../images/play.png');
+            audio.pause();
+          }
+        });
+        
+      audio.addEventListener('timeupdate', e => {
+        let progressBar = document.getElementsByTagName('canvas')[0];
+        console.log(progressBar)
+          let canvasWidth = window.innerWidth - (window.innerWidth * 0.3),  canvasHeight = 120 ;
+          progressBar.getContext('2d').clearRect(0, 0, canvasWidth, canvasHeight);
+          progressBar.fillStyle = '#555';
+          progressBar.getContext('2d').fillRect(0, 0, canvasWidth, canvasHeight);
+        
+          const currentTime = audio.currentTime;
+          const duration = audio.duration;
+  
+          if(currentTime === duration) {
+              controls.classList.add('paused');
+              controls.setAttribute('src', '../images/play.png');
+              audio[pause]();
+          }
+  
+          document.getElementById('current-time').innerHTML = convertElapsedTime(currentTime);
+  
+          const percentage = currentTime / duration;
+          const progress = canvasWidth * percentage;
+          progressBar.getContext('2d').strokeStyle = '#000000';
+          progressBar.getContext('2d').fillRect(0, 0, progress, canvasHeight);
+      });
+  }
+  
+  function convertElapsedTime(secs) {
+      let seconds = Math.floor(secs % 60);
+      if(seconds > 10) {
+          seconds = '0' + seconds;
+      }
+      let minutes = Math.floor(secs / 60);
+      return `${minutes}:${seconds}`;
+    }

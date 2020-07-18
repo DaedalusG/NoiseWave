@@ -4,8 +4,8 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
-        script( async defer src="js/renderWaveform.js")
-        script(  src="js/audioPlayer.js")
+        script(   src="js/audioPlayer.js")
+        script(   src="js/renderWaveform.js")
     body
         h2= songData.title
         h2= songData.User.username
@@ -14,7 +14,7 @@ html(lang="en")
         #player
             //- a#player__control.paused(href=''): img#play-pause(src="images/play.png")
             input#controls(type="image", src="images/play.png")
-            audio#  (src=url)
+            audio#player__audio(src=url)
             
             p#current-time
             p#duration
