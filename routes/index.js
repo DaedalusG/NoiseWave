@@ -1,12 +1,6 @@
 const { User, Song, Like, Comment } = require("../db/models");
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
-const {
-  asyncHandler,
-  modelNotFound,
-  getS3Url,
-  attachPicAndAudiotoSong,
-  attachPicsToUser,
-} = require("../utils");
+const { asyncHandler, modelNotFound, getS3Url } = require("../utils");
 const Sequelize = require("../db/models/index").Sequelize;
 const Op = Sequelize.Op;
 
@@ -24,6 +18,8 @@ const bcrypt = require("bcryptjs");
 const pug = require("pug");
 const path = require("path");
 const { match } = require("assert");
+const { S3 } = require("aws-sdk");
+const song = require("../db/models/song");
 
 const router = express.Router();
 
@@ -153,8 +149,16 @@ router.get(
       },
     });
 
-    for (song of matchingSongs) {
-      attachPicAndAudiotoSong(song);
+    for (let i = 0; i < matchingSongs.length; i++) {
+      let song = matchingSongs[i];
+      const profilePicKey = song.User.profilePicUrl;
+      const musicKey = song.songUrl;
+
+      const songPic = await getS3Url(profilePicKey);
+      const music = await getS3Url(musicKey);
+
+      song.music = music;
+      song.pic = songPic;
     }
 
     for (let i = 0; i < matchingUsers.length; i++) {
@@ -170,7 +174,8 @@ router.get(
       user.background = backgroundPic;
     }
 
-    console.log(matchingUsers[1]);
+    // console.log(matchingUsers[1]);
+    // console.log(matchingSongs[0]);
 
     const searchResults = pug.compileFile(
       path.join(express().get("views"), "search-results.pug")
