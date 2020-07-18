@@ -170,23 +170,33 @@ const createLocalPath = (songTitle) => {
 };
 
 const attachPicAndAudiotoSong = async (song) => {
-  const picKey = song.User.profilePicUrl;
-  const audioKey = song.songUrl;
+  try {
+    const picKey = song.User.profilePicUrl;
+    const audioKey = song.songUrl;
 
-  const pic = await getS3Url(picKey);
-  const audio = await getS3Url(audioKey);
-  song.pic = pic;
-  song.audio = audio;
+    const pic = await getS3Url(picKey);
+    const audio = await getS3Url(audioKey);
+    song.pic = pic;
+    song.audio = audio;
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 const attachPicsToUser = async (user) => {
-  const profilePicKey = user.profilePicUrl;
-  const backgroundPicKey = user.backgroundPicUrl;
+  try {
+    const profilePicKey = user.profilePicUrl;
+    const backgroundPicKey = user.backgroundUrl;
+    console.log(profilePicKey);
 
-  const profilePic = await getS3Url(profilePicKey);
-  const backgroundPic = await getS3Url(backgroundPicKey);
-  user.profilePic = profilePic;
-  user.backgroundPic = backgroundPic;
+    const profilePic = await getS3Url(profilePicKey);
+    const backgroundPic = await getS3Url(backgroundPicKey);
+    console.log(profilePic);
+    user.profilePic = profilePic;
+    user.backgroundPic = backgroundPic;
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 // console.log(createLocalPath(`*$#)@(*!_*@#)(&)*$&@*($&My favorite's son%g`));

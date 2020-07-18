@@ -7,6 +7,8 @@ const {
   attachPicAndAudiotoSong,
   attachPicsToUser,
 } = require("../utils");
+const Sequelize = require("../db/models/index").Sequelize;
+const Op = Sequelize.Op;
 
 // const fetch = require("node-fetch");
 // const https = require("https");
@@ -21,6 +23,7 @@ const csrf = require("csurf");
 const bcrypt = require("bcryptjs");
 const pug = require("pug");
 const path = require("path");
+const { match } = require("assert");
 
 const router = express.Router();
 
@@ -69,43 +72,88 @@ router.get(
   loggedInUser,
   asyncHandler(async (req, res) => {
     //made event handler that leads to this route. whatever was search is in params
+    // console.log(query);
+    // //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
+    // const resUsers = await axios.get(
+    //   `http://localhost:${apiPort}/search/users/${query}`
+    // );
+
+    // const matchingUsers = resUsers.data;
+
+    // const resSongs = await axios.get(
+    //   `http://localhost:${apiPort}/search/songs/${query}`
+    // );
+
+    // const matchingSongs = resSongs.data;
+    // // console.log(matchingUsersArr);
+
+    // // console.log(matchingUsersArr);
+    // //AJAX SEARCH NOT WORKING, BUT PUG NO LONGER CRASHING
+    // // res.render("search-results", {
+    // //   user: req.user,
+    // //   songs,
+    // //   users,
+    // // });
+
+    // const matchingSongsFull = [];
+
+    // for (song of matchingSongs) {
+    //   const fullInfo = await Song.findOne({
+    //     include: [{ model: User }],
+    //     where: {
+    //       id: song.id,
+    //     },
+    //   });
+    //   matchingSongsFull.push(fullInfo);
+    // }
+
+    // for (song of matchingSongsFull) {
+    //   attachPicAndAudiotoSong(song);
+    // }
+
+    // // const matchingUsersFull = [];
+
+    // // for (user in matchingUsers) {
+    // //   const fullInfo = await User.findByPk(user.id);
+    // //   matchingUsersFull.push(fullInfo);
+    // // }
+
+    // console.log(matchingUsers);
+
+    // for (user of matchingUsersFull) {
+    //   attachPicsToUser(user);
+    // }
     const { query } = req.params;
-    console.log(query);
-    //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
-    const resUsers = await axios.get(
-      `http://localhost:${apiPort}/search/users/${query}`
-    );
 
-    const matchingUsers = resUsers.data;
+    const matchingUsers = await User.findAll({
+      where: {
+        username: {
+          [Op.iLike]: `%${query}%`,
+        },
+      },
+    });
 
-    const resSongs = await axios.get(
-      `http://localhost:${apiPort}/search/songs/${query}`
-    );
-
-    const matchingSongs = resSongs.data;
-    // console.log(matchingUsersArr);
-
-    // console.log(matchingUsersArr);
-    //AJAX SEARCH NOT WORKING, BUT PUG NO LONGER CRASHING
-    // res.render("search-results", {
-    //   user: req.user,
-    //   songs,
-    //   users,
-    // });
-
-    const matchingSongsFull = [];
+    const matchingSongs = await Song.findAll({
+      include: [{ model: User }],
+      where: {
+        [Op.or]: {
+          title: {
+            [Op.iLike]: `%${query}%`,
+          },
+          artist: {
+            [Op.iLike]: `%${query}%`,
+          },
+          album: {
+            [Op.iLike]: `%${query}%`,
+          },
+          genre: {
+            [Op.iLike]: `%${query}%`,
+          },
+        },
+      },
+    });
 
     for (song of matchingSongs) {
-      const fullInfo = await Song.findOne({
-        include: [{ model: User }],
-        where: {
-          id: song.id,
-        },
-      });
-      matchingSongsFull.push(fullInfo);
-    }
-
-    for (song of matchingSongsFull) {
       attachPicAndAudiotoSong(song);
     }
 
@@ -113,14 +161,15 @@ router.get(
       attachPicsToUser(user);
     }
 
-    console.log(matchingSongs);
+    console.log(matchingUsers[1]);
+
     const searchResults = pug.compileFile(
       path.join(express().get("views"), "search-results.pug")
     );
     res.send(
       searchResults({
         user: req.user,
-        matchingSongsFull,
+        matchingSongs,
         matchingUsers,
       })
     );
