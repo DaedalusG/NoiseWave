@@ -1,40 +1,42 @@
-.playbar {
-    color: #333;
-    z-index: 1001;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f2f2f2;
-    border-top: 1px solid #cecece;
-    font-size: 14px;
+#jp_container_1 {
+  color: #333;
+  z-index: 1001;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  border-top: 1px solid #cecece;
+  font-size: 14px;
 }
 .playbar__elements {
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    height: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.playbar button, .playbar div {
-    padding: 8px 0;
-    cursor: pointer;
-    border: 0;
-    margin: 0 6px;
+.playbar button,
+.playbar div {
+  padding: 8px 0;
+  cursor: pointer;
+  border: 0;
+  margin: 0 6px;
 }
 
 .playbar__elements div {
-    background-color: peachpuff;
+  background-color: peachpuff;
 }
 
-.playbar__timeline, .playbar__soundBadge {
-    display: flex;
+.playbar__timeline,
+.playbar__soundBadge {
+  display: flex;
 }
 
 .playbar button:hover {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
