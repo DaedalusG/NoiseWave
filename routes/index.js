@@ -50,16 +50,14 @@ router.get(
     });
 
     //Generate Array of 6 random Song objects
-    sixSongs = []
+    const sixSongs = [];
     for (let i = 0; i < 6; i++) {
-      let random = Math.floor(Math.random() * songData.length) - 1
-      console.log(random)
+      let random = Math.floor(Math.random() * songData.length) - 1;
       sixSongs.push(songData[random].dataValues);
     }
-    for (song of sixSongs) {
-      const profKey = song.User.dataValues.profilePicUrl;
-      console.log(profKey, 'key');
-      const profPic = await getS3Url(profKey);
+    for (let song of sixSongs) {
+      let profKey = song.User.dataValues.profilePicUrl;
+      let profPic = await getS3Url(profKey);
       song.User.dataValues.profilePicUrl = profPic;
     }
 
