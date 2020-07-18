@@ -7,5 +7,5 @@ if matchingUsers
 h1 Songs
 if matchingSongs
     each song in matchingSongs
-        img(src=song.pic)
+        img(src=song.pic id=song.music)
         div(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link')=song.title
