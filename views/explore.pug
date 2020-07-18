@@ -1,73 +1,25 @@
 section(id='latest' class="songCard__section")
     header
-        h2 What's New
-        p The latest hits, updated all the time
+        h2 Six Random Songs
+        p generated in the /explore route handler
     div(class='songCards')
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
+        each song in sixSongs
+            div(class='card')
+                div(class='card__image' style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
+                div(class='card__label')
+                    div(class='card__label__album')=song.album
+                    div(class='card__label__artist')=song.artist
 section(id='latest' class="songCard__section")
     header
-        h2 Album Feature
-        p The latest hits, updated all the time
+        h2 Six Random Songs
+        p generated in the /explore route handler
     div(class='songCards')
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
-        div(class='card')
-            div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg)')
-            div(class='card__label')
-                div(class='card__label__album') Oops!... I Did It Again
-                div(class='card__label__artist') Britney Spears · 2000
+        each song in sixSongs
+            div(class='card')
+                div(class='card__image' style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
+                div(class='card__label')
+                    div(class='card__label__album')=song.album
+                    div(class='card__label__artist')=song.artist
 section(id='latest' class="songCard__section")
     header
         h2 Six Random Songs
