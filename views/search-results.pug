@@ -1,11 +1,14 @@
 h1 Users
-if matchingUsers
-    each user in matchingUsers
-        img(src=user.profilePic)
-        div(title=`${user.username}` class='ajax-link')=user.username
-        p
-h1 Songs
-if matchingSongs
-    each song in matchingSongs
-        img(src=song.pic)
-        div(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link')=song.title
+div
+    if matchingUsers
+        each user in matchingUsers
+            img(src=user.profilePic)
+            div(title=`${user.username}` class='ajax-link')=user.username
+
+h1 Matching songs
+div
+    if matchingSongs
+        each song in matchingSongs
+            div
+            img.searchSongImg(src=song.pic)
+            div(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link')=song.title
