@@ -30,11 +30,6 @@ app.use("/users", userRoutes);
 
 const { getS3Image } = require('./utils')
 
-app.get('/imagetest', async (req, res) => {
-  const image = await getS3Image('Dr Doom.jpg');
-  res.render('img-test', { image });
-})
-
 // middleware to catch errors caused by unhandled requests
 app.use((req, res, next) => {
   const err = new Error("The requested resource couldn't be found.");

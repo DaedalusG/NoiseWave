@@ -1,0 +1,36 @@
+#song-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+#song-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: fr 1fr;
+    grid-template-areas:    "description description img" 
+                            "button waveform waveform";
+    background-color: #444;
+}
+
+#song-description {
+    grid-area: description;
+}
+
+#song-img {
+    grid-area: img
+}
+
+#song-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+#play-song {
+    grid-area: button;
+}
+
+#waveform {
+    grid-area: waveform;
+}

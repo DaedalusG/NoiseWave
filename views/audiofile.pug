@@ -4,20 +4,23 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
-        script(   src="js/audioPlayer.js")
+        link(rel="stylesheet", href="styles/song-page.css")
         script(   src="js/renderWaveform.js")
     body
-        h2= songData.title
-        h2= songData.User.username
-        p= url
-
-        #player
-            //- a#player__control.paused(href=''): img#play-pause(src="images/play.png")
-            input#controls(type="image", src="images/play.png")
-            audio#player__audio(src=url)
-            
-            p#current-time
-            p#duration
-
+        #song-content
+            #song-overview 
+                #song-description
+                    a(href=`/${songData.User.username}`)= songData.User.username
+                    h2= songData.title
+                    if songData.User.username !== songData.artist
+                        p= songData.artist
+                    p= songData.album
+                    p= songData.genre
+                #song-img
+                    img(src=songData.User.profilePicUrl, alt=songData.User.username)
+                #play-song
+                    a#start-song(href=songData.songUrl ): img(src="images/play.png")
+                #waveform
+            #comments
 
             //- canvas goes here

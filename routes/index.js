@@ -20,6 +20,7 @@ const router = express.Router();
 
 const csrfProtection = csrf({ cookie: true });
 const userNotFound = modelNotFound("User");
+const songNotFound = modelNotFound("Song");
 
 // router.get("/", loggedInUser, (req, res) => {
 //   if (req.user) res.redirect("/explore");
@@ -100,103 +101,108 @@ router.get(
   })
 );
 
-// router.get(
-//   "/:username",
-//   loggedInUser,
-//   asyncHandler(async (req, res, next) => {
-//     const { username } = req.params;
+router.get(
+  "/:username",
+  loggedInUser,
+  asyncHandler(async (req, res, next) => {
+    const { username } = req.params;
 
-//     if (
-//       username === "login" ||
-//       username === "search" ||
-//       username === "explore" ||
-//       username === 'audio-test'
-//     ) {
-//       next();
-//       return;
-//     }
-//     const userData = await User.findOne({
-//       include: [{ model: Song }, { model: Like }],
-//       where: { username: username },
-//     });
+    if (
+      username === "login" ||
+      username === "search" ||
+      username === "explore" ||
+      username === /\w+\/\w+/ ||
+      username === //
+    ) {
+      next();
+      return;
+    }
+    const userData = await User.findOne({
+      include: [{ model: Song }, { model: Like }],
+      where: { username: username },
+    });
 
-//     if (!userData) {
-//       next(userNotFound());
-//     }
+    if (!userData) {
+      next(userNotFound());
+    }
 
-//     const likedSongs = userData.Likes.map(async (like) => {
-//       return await Song.findOne({
-//         include: [{ model: User }],
-//         where: { id: like.songId },
-//       });
-//     });
+    const likedSongs = userData.Likes.map(async (like) => {
+      return await Song.findOne({
+        include: [{ model: User }],
+        where: { id: like.songId },
+      });
+    });
 
-//     // res.render("user-page", { userData, user: req.user });
+    // res.render("user-page", { userData, user: req.user });
 
-//     const userPage = pug.compileFile(
-//       path.join(express().get("views"), "user-page.pug")
-//     );
-//     res.send(userPage({ user: req.user, userData, likedSongs }));
-//   })
-// );
+    const userPage = pug.compileFile(
+      path.join(express().get("views"), "user-page.pug")
+    );
+    res.send(userPage({ user: req.user, userData, likedSongs }));
+  })
+);
 
-// //song !== edit
-// router.get(
-//   "/:username(\\w+)/:song(\\w+)",
-//   loggedInUser,
-//   asyncHandler(async (req, res) => {
-//     const { song } = req.params;
-//     const songData = await Song.findOne({
-//       include: [User, Like, Comment],
-//       where: { title: song },
-//     });
-//     // res.render("song-page", { songData, currentUser: req.user });
-//     const songPage = pug.compileFile(
-//       path.join(express().get("views"), "song-page.pug")
-//     );
-//     res.send(songPage({ user: req.user, songData }));
-//   })
-// );
+//song !== edit
+router.get(
+  "/:username(\\w+)/:song(\\w+)",
+  loggedInUser,
+  asyncHandler(async (req, res) => {
+    const { song } = req.params;
+    const songData = await Song.findOne({
+      include: [User, Like, Comment],
+      where: { title: song },
+    });
+    // res.render("song-page", { songData, currentUser: req.user });
+    const songPage = pug.compileFile(
+      path.join(express().get("views"), "song-page.pug")
+    );
+    res.send(songPage({ user: req.user, songData }));
+  })
+);
 
-// router.post(
-//   "/login",
-//   asyncHandler(async (req, res, next) => {
-//     const { username, password } = req.body;
-//     const user = await User.findOne({
-//       where: {
-//         username,
-//       },
-//     });
+router.post(
+  "/login",
+  asyncHandler(async (req, res, next) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({
+      where: {
+        username,
+      },
+    });
 
-//     let validPassword = false;
-//     if (user) {
-//       validPassword = bcrypt.compareSync(
-//         password,
-//         user.hashedPassword.toString()
-//       );
-//     }
+    let validPassword = false;
+    if (user) {
+      validPassword = bcrypt.compareSync(
+        password,
+        user.hashedPassword.toString()
+      );
+    }
 
-//     if (!user || !validPassword) {
-//       res.ok = false;
-//       res.status(401);
-//       res.json({ message: "The provided credentials were invalid." });
-//     } else {
-//       const token = generateUserToken(user);
+    if (!user || !validPassword) {
+      res.ok = false;
+      res.status(401);
+      res.json({ message: "The provided credentials were invalid." });
+    } else {
+      const token = generateUserToken(user);
 
-//       res.json(token);
-//     }
-//   })
-// );
+      res.json(token);
+    }
+  })
+);
 
-router.get('/:song', asyncHandler(async (req, res) => {
-  const { song } = req.params;
+//Ben's song page test
+router.get('/test?song', asyncHandler(async (req, res) => {
+  const { song } = req.query;
   const songData = await Song.findOne({
       include: User,
       where: { songLocalPath: song },
     });
-    const url =await getS3Url(songData.songUrl)
-    
-  res.render('audiofile', { songData, url })
+  // if(songData.User.username !== req.params.username) {
+  //   next(songNotFound());
+  // }
+  songData.songUrl = await getS3Url(songData.songUrl)
+  songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
+  res.render('audiofile', { songData })
 }))
 
 module.exports = router;
