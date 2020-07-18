@@ -1,7 +1,8 @@
 nav(class="navbar sticky")
     ul(class="navbar__col")
         li
-            img(class="logo ajax" src="images/header-logo.jpg")
+            a(href="/" class="logo-link")
+                img(class="logo" src="images/header-logo.jpg")
         li
             a(href="/explore" class="ajax") Explore
     if user
@@ -75,7 +76,7 @@ nav(class="navbar sticky")
                         button(class="close-modal" aria-label="close modal" data-close) X
                     section(class="modal-content")
                         ul.signup-errors
-                        form(method="post" class="sign-up-form" action="/users")
+                        form(method="post" class="sign-up-form" action="/users" enctype="multipart/form-data")
                             label(for="usernameSignUp") Username:&nbsp;&nbsp;
                             input(type="text" id="usernameSignUp" name="username")
                             <br><br>

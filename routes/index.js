@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const { User, Song, Like,Comment } = require("../db/models");
+=======
+const { User, Song, Like, Comment } = require("../db/models");
+>>>>>>> f83c265b61064777eaec725fa0cb573008f7aec5
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
 const { asyncHandler, modelNotFound, getS3Url } = require("../utils");
+const Sequelize = require("../db/models/index").Sequelize;
+const Op = Sequelize.Op;
 
 // const fetch = require("node-fetch");
 // const https = require("https");
@@ -15,6 +21,9 @@ const csrf = require("csurf");
 const bcrypt = require("bcryptjs");
 const pug = require("pug");
 const path = require("path");
+const { match } = require("assert");
+const { S3 } = require("aws-sdk");
+const song = require("../db/models/song");
 
 const router = express.Router();
 
@@ -40,11 +49,27 @@ router.get("/", loggedInUser, (req, res) => {
 router.get(
   "/explore",
   loggedInUser,
-  asyncHandler((req, res) => {
+  asyncHandler(async (req, res) => {
+    const songData = await Song.findAll({
+      include: [{ model: User }],
+    });
+
+    //Generate Array of 6 random Song objects
+    const sixSongs = [];
+    for (let i = 0; i < 6; i++) {
+      let random = Math.floor(Math.random() * songData.length) - 1;
+      sixSongs.push(songData[random].dataValues);
+    }
+    for (let song of sixSongs) {
+      let profKey = song.User.dataValues.profilePicUrl;
+      let profPic = await getS3Url(profKey);
+      song.User.dataValues.profilePicUrl = profPic;
+    }
+
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore({ user: req.user }));
+    res.send(ajaxExplore({ user: req.user, sixSongs }));
   })
 );
 
@@ -63,30 +88,63 @@ router.get(
   "/search/:query",
   loggedInUser,
   asyncHandler(async (req, res) => {
-    //made event handler that leads to this route. whatever was search is in params
     const { query } = req.params;
-    console.log(query);
-    //BOTH OF THESE API CALLS MUST BE UPDATED IF WE ARE USING PRODUCTION ENV
-    const resUsers = await axios.get(
-      `http://localhost:${apiPort}/search/users/${query}`
-    );
 
-    const users = resUsers.data;
+    const matchingUsers = await User.findAll({
+      where: {
+        username: {
+          [Op.iLike]: `%${query}%`,
+        },
+      },
+    });
 
-    const resSongs = await axios.get(
-      `http://localhost:${apiPort}/search/songs/${query}`
-    );
+    const matchingSongs = await Song.findAll({
+      include: [{ model: User }],
+      where: {
+        [Op.or]: {
+          title: {
+            [Op.iLike]: `%${query}%`,
+          },
+          artist: {
+            [Op.iLike]: `%${query}%`,
+          },
+          album: {
+            [Op.iLike]: `%${query}%`,
+          },
+          genre: {
+            [Op.iLike]: `%${query}%`,
+          },
+        },
+      },
+    });
 
-    const songs = resSongs.data;
-    // console.log(matchingUsersArr);
+    for (let i = 0; i < matchingSongs.length; i++) {
+      let song = matchingSongs[i];
+      const profilePicKey = song.User.profilePicUrl;
+      const musicKey = song.songUrl;
 
-    // console.log(matchingUsersArr);
-    //AJAX SEARCH NOT WORKING, BUT PUG NO LONGER CRASHING
-    // res.render("search-results", {
-    //   user: req.user,
-    //   songs,
-    //   users,
-    // });
+      const songPic = await getS3Url(profilePicKey);
+      const music = await getS3Url(musicKey);
+
+      song.music = music;
+      song.pic = songPic;
+    }
+
+    for (let i = 0; i < matchingUsers.length; i++) {
+      let user = matchingUsers[i];
+
+      const profilePicKey = user.profilePicUrl;
+      const backgroundPicKey = user.backgroundUrl;
+
+      const profilePic = await getS3Url(profilePicKey);
+      const backgroundPic = await getS3Url(backgroundPicKey);
+
+      user.profilePic = profilePic;
+      user.background = backgroundPic;
+    }
+
+    // console.log(matchingUsers[1]);
+    // console.log(matchingSongs[0]);
 
     const searchResults = pug.compileFile(
       path.join(express().get("views"), "search-results.pug")
@@ -94,8 +152,8 @@ router.get(
     res.send(
       searchResults({
         user: req.user,
-        songs,
-        users,
+        matchingSongs,
+        matchingUsers,
       })
     );
   })
@@ -112,7 +170,10 @@ router.get(
       username === "search" ||
       username === "explore" ||
       username === /\w+\/\w+/ ||
-      username === //
+      // username === //
+      username === "audio-test" ||
+      username === "imagetest" ||
+      username === ""
     ) {
       next();
       return;
@@ -144,13 +205,18 @@ router.get(
 
 //song !== edit
 router.get(
-  "/:username(\\w+)/:song(\\w+)",
+  "/:username/:song",
   loggedInUser,
   asyncHandler(async (req, res) => {
-    const { song } = req.params;
+    if (req.params.username === "search" || req.params.song === "edit") {
+      next();
+      return;
+    }
+    const { song } = req.params.song;
+
     const songData = await Song.findOne({
-      include: [User, Like, Comment],
-      where: { title: song },
+      include: [{ model: User }, { model: Comment }, { model: Like }],
+      where: { songLocalPath: req.params.song },
     });
     // res.render("song-page", { songData, currentUser: req.user });
     const songPage = pug.compileFile(
