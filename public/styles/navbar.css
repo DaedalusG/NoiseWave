@@ -1,49 +1,78 @@
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --lightgray: #efefef;
+  --blue: rgb(46, 46, 46);
+  --white: #fff;
+  --black: rgba(0, 0, 0, 0.8);
+  --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
 nav {
-    height: 50px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    color: white;
-    /* background-color: rgb(26, 26, 26); */
-    background-image: linear-gradient(to top, black,rgb(54, 54, 54));
-    color: white;
-    border-bottom: 1px solid rgba(241, 241, 241, 0.493);
-    font-weight: normal;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to top, black,rgb(54, 54, 54));
+  border-bottom: 1px solid rgb(56, 56, 56);
 }
 
-.navbar a {
-    height: 100%;
-    padding: 40px;
-    border: 2px solid rgb(26, 26, 26);
-    color: white;
-    background-color: rgb(46, 46, 46);
-    text-decoration: none;
+.navbar a, .open-modal {
+  background: var(--blue);
+  color: var(--white);
+  font-size: 14px;
 }
 
-.navbar a:hover {
-    background-color: rgb(75, 75, 75);
+.navbar a.dropdown-link {
+  border: 1px solid rgb(26, 26, 26);
+}
+
+.link-container a {
+  width: 150px;
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.navbar a:not(.logo-link):not(.dropdown-link), .open-modal {
+  border: 1px solid rgba(255, 255, 255, 0.274);
+  padding: .55rem;
+  margin-left: 2rem;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.navbar a:hover, .open-modal:hover {
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+form#searchbar {
+  margin-left: 2rem;
 }
 
 .navbar__col {
     display: flex;
     align-items: center;
     flex-flow: row nowrap;
-    overflow: hidden;
+    justify-content: center;
+    margin-right: 2rem;
 }
 
 .logo {
-  padding: 0;
-  margin: 0;
-  height: 53px;
+  background-image: url(../images/header-logo.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  height: 60px;
+  width: 90px;
 }
 
 .sticky {
-    /* overflow: hidden; */
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
-
 
 .logout {
   width: 150px;
@@ -59,8 +88,7 @@ nav {
   outline: none;
   color: white;
   padding: 14px 16px;
-  /* background-color: inherit; */
-  /* font-family: inherit; */
+  background-color: inherit;
   margin: 0;
 }
 
@@ -72,11 +100,10 @@ nav {
 }
 
 .dropdown-content {
-
   display: none;
   right: 0;
   position: absolute;
-  background-color: #f9f9f9;
+  background: var(--blue);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -84,24 +111,102 @@ nav {
 
 .dropdown-content a {
   float: none;
-
-  /* color: black; */
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
 }
 
-/* .dropdown-content a:hover {
-  background-color: #ddd;
-} */
-
 .dropdown:hover .dropdown-content {
   display: block;
-
 }
 
-@media all and (max-width: 800px) {
+/* MODAL
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--black);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: var(--white);
+  overflow: auto;
+  cursor: default;
+}
+
+.modal-dialog > * {
+  padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+  background: var(--lightgray);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header .close-modal {
+  font-size: 1.5rem;
+}
+
+.modal p + p {
+  margin-top: 1rem;
+}
+
+.errors {
+  background-color: lightpink;
+  border: 1px solid red;
+  color: red;
+  padding: 5px 5px;
+  margin-bottom: 10px;
+}
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+[data-animation] .modal-dialog {
+  opacity: 0;
+  transition: all 0.5s var(--bounceEasing);
+}
+
+[data-animation].is-visible .modal-dialog {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+[data-animation="zoomInOut"] .modal-dialog {
+  transform: scale(0.2);
+}
+
+[data-animation="zoomInOut"].is-visible .modal-dialog {
+  transform: none;
+}
+
+/* @media all and (max-width: 800px) {
   nav {
     height: 40px;
   }
@@ -131,4 +236,4 @@ nav {
   .logo {
     height: 23px;
   }
-}
+} */

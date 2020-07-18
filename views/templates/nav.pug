@@ -2,8 +2,9 @@ nav(class="navbar sticky")
     ul(class="navbar__col")
         li
             a(href="/" class="logo-link")
-                img(class="logo" src="images/header-logo.jpg")
-        li
+                div(class='logo')
+                //- img(class="logo" src="images/header-logo.jpg")
+        li(class="link-container")
             a(href="/explore" class="ajax") Explore
     if user
         form(class="navbar__col" id="searchbar" method="post" action="/search")
@@ -48,7 +49,7 @@ nav(class="navbar sticky")
             li: a.user(href=`/${user.username}` class='ajax')= user.username
             li: a.logout Log Out?
     else
-        form(class="navbar__col navbar__col-" id="searchbar" method="post" action="/search")
+        form(class="navbar__col" id="searchbar" method="post" action="/search")
             input(type="search" id="search" name="search")
             input(type="submit" value="Search" id='submit-search')
         ul(class="navbar__col navbar__col-3")
@@ -97,6 +98,6 @@ nav(class="navbar sticky")
         div(class="dropdown")
             button(class="dropbtn") &bull; &bull; &bull;
             div(class="dropdown-content")
-                a(href="https://github.com/DaedalusG/NoiseWave" target="_blank") GitHub
-                a(href="#") Link 2
-                a(href="#") Link 3
+                a(class="dropdown-link" href="https://github.com/DaedalusG/NoiseWave" target="_blank") GitHub
+                a(class="dropdown-link" href="#") Link 2
+                a(class="dropdown-link" href="#") Link 3
