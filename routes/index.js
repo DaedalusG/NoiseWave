@@ -51,43 +51,12 @@ router.get(
       console.log(random)
       sixSongs.push(songData[random].dataValues);
     }
-
     for (song of sixSongs) {
       const profKey = song.User.dataValues.profilePicUrl;
       console.log(profKey, 'key');
       const profPic = await getS3Url(profKey);
       song.User.dataValues.profilePicUrl = profPic;
     }
-
-    //test to access user profile pic
-    //example sixSongs[0]
-    // {
-    //   id: 35,
-    //   title: 'Gemsbok',
-    //   artist: 'Geinoh Yamashirogumi',
-    //   album: 'Africa Genjoh',
-    //   genre: 'Electronic/World',
-    //   songUrl: 'songs/07 - Africa Genjoh (The African Vision Singing) (1982)/11 - Gemsbok.mp3',
-    //   userId: 47,
-    //   createdAt: 2020 - 07 - 17T20: 55: 35.367Z,
-    //   updatedAt: 2020 - 07 - 17T20: 55: 35.367Z,
-    //   songLocalPath: 'Gemsbok',
-    //   User: User {
-    //     dataValues: {
-    //     id: 47,
-    //     username: 'GeinohYamashirogumi',
-    //     hashedPassword: <Buffer 24 32 61 24 31 30 24 51 48 72 5a 43 37 2f 48 76 6f 78 37 56 73 64 55 31 71 4c 4d 75 2e 48 64 30 58 38 53 35 37 6c 6b 6f 38 42 47 6f 6b 48 50 59 4e 5a ... 10 more bytes >,
-    //     email: 'GeinohYamashirogumi@gmail.com',
-    //     profilePicUrl: 'profile-pics/GeinohYamashirogumi.jpg',
-    //     backgroundUrl: 'background-pics/GeinohYamashirogumi.jpg',
-    //     createdAt: 2020 - 07 - 17T20: 55: 35.294Z,
-    //     updatedAt: 2020 - 07 - 17T20: 55: 35.294Z
-    //   }
-
-    //console.log(sixSongs[0].User.dataValues.profilePicUrl);
-
-
-
 
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
