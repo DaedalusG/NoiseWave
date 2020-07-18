@@ -41,9 +41,24 @@ footer {
   cursor: pointer;
 }
 
+.playSong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .playSong:hover {
   -moz-box-shadow: 0 0 10px #ef5a23;
   -webkit-box-shadow: 0 0 10px #ef5a23;
   box-shadow: 0 0 10px #ef5a23;
   opacity: 0.5;
+}
+
+.playsong_playButton {
+  visibility: hidden;
+}
+
+.playSong:hover .playsong_playButton {
+  visibility: visible;
+  border-radius: 90%;
 }
