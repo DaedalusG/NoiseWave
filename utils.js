@@ -193,7 +193,7 @@ const attachPicsToUser = async (user) => {
     const backgroundPic = await getS3Url(backgroundPicKey);
     console.log(profilePic);
     user.profilePic = profilePic;
-    user.backgroundPic = backgroundPic;
+    user.background = backgroundPic;
   } catch (e) {
     console.log(e);
   }

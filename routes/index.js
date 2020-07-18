@@ -157,8 +157,17 @@ router.get(
       attachPicAndAudiotoSong(song);
     }
 
-    for (user of matchingUsers) {
-      attachPicsToUser(user);
+    for (let i = 0; i < matchingUsers.length; i++) {
+      let user = matchingUsers[i];
+
+      const profilePicKey = user.profilePicUrl;
+      const backgroundPicKey = user.backgroundUrl;
+
+      const profilePic = await getS3Url(profilePicKey);
+      const backgroundPic = await getS3Url(backgroundPicKey);
+
+      user.profilePic = profilePic;
+      user.background = backgroundPic;
     }
 
     console.log(matchingUsers[1]);

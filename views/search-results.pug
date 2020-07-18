@@ -1,7 +1,7 @@
 h1 Users
 if matchingUsers
     each user in matchingUsers
-        img(href=user.profilePic)
+        img(src=user.profilePic)
         div(title=`${user.username}` class='ajax-link')=user.username
         p
 h1 Songs
