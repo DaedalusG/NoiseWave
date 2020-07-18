@@ -1,11 +1,21 @@
-h1 Users
+div.searchHeader Users
+div.matchingUsers
 if matchingUsers
     each user in matchingUsers
-        img(src=user.profilePic)
-        div(title=`${user.username}` class='ajax-link')=user.username
-        p
-h1 Songs
+        div.searchUser
+            img.searchUser_pic(src=user.profilePic title=`${user.username}` class='ajax-link')
+            div.searchUser_username(title=`${user.username}` class='ajax-link')=user.username
+else
+    div No users matching your search
+
+div.searchHeader Songs
 if matchingSongs
+div.matchingSongs
     each song in matchingSongs
-        img(src=song.pic id=song.music)
-        div(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link')=song.title
+        div.searchSong
+            img.searchSong_pic.playSong(src=song.pic id=song.music)
+                img.playsong_playButton(src='/images/play-button.jpg' display='hidden')
+            div.searchSong_details(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link') Title: #{song.title}
+            div.searchSong_details(title=`${song.User.username}` class='ajax-link') Artist: #{song.artist}
+            div.searchSong_details Album: #{song.album}
+            div.searchSong_details Genre: #{song.genre}

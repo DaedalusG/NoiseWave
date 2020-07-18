@@ -1,4 +1,3 @@
-
 /* FOR TESTING PURPOSES; DELETE ONCE NO LONGER NEEDED */
 body {
   /* margin-top: 50px; */
@@ -36,4 +35,15 @@ footer {
   padding: 75px;
   /* margin-bottom: 50px; */
   /* background-color: rgb(185, 185, 185); */
+}
+
+.ajax-link:hover {
+  cursor: pointer;
+}
+
+.playSong:hover {
+  -moz-box-shadow: 0 0 10px #ef5a23;
+  -webkit-box-shadow: 0 0 10px #ef5a23;
+  box-shadow: 0 0 10px #ef5a23;
+  opacity: 0.5;
 }
