@@ -11,6 +11,7 @@ html(lang="en")
         link(rel="stylesheet" href="styles/global.css")
         link(rel="stylesheet" href="styles/search.css")
         link(href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
         script(src="js/ajax.js")
         script(src="js/search.js")
 
@@ -26,6 +27,15 @@ html(lang="en")
         main#page-specific-content
             //- h1 Welcome to NoiseWave!
             //- p The latest hits, updated all the time
+            //- div(id="cover")
+            //-     form(class="navbar__col" id="searchbar" method="post" action="/search")
+            //-         div(class="tb")
+            //-             div(class="td")
+            //-                 input(type="search" id="search" placeholder="Search" name="search")
+            //-             div(class="td" id="s-cover")
+            //-                 button(type="submit" value="Search" id='submit-search')
+            //-                     div(id="s-circle")
+            //-                     span
             a(href="/explore" class="ajax") Click Here to explore our songs
             br
             br
