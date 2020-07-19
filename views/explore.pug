@@ -1,9 +1,9 @@
 section(id='latest' class="songCard__section")
     header
-        h2 Six Random Songs
-        p generated in the /explore route handler
+        h2 New To NoiseWave
+        p Stay on top of the underground sound!
     div(class='songCards')
-        each song in sixSongs
+        each song in sixNewSongs
             div(class='card')
                 div(class='card__image' style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
@@ -11,10 +11,10 @@ section(id='latest' class="songCard__section")
                     div(class='card__label__artist')=song.artist
 section(id='latest' class="songCard__section")
     header
-        h2 Six Random Songs
-        p generated in the /explore route handler
+        h2 Rock on NoiseWave
+        p explore NoiseWaves rock selections
     div(class='songCards')
-        each song in sixSongs
+        each song in sixRockSongs
             div(class='card')
                 div(class='card__image' style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
