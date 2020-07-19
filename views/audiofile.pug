@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-        link(rel="stylesheet", href="styles/song-page.css")
-        script(   src="js/renderWaveform.js")
-    body
-        #song-content
-            #song-overview 
-                #song-description
-                    a(href=`/${songData.User.username}`)= songData.User.username
-                    h2= songData.title
-                    if songData.User.username !== songData.artist
-                        p= songData.artist
-                    p= songData.album
-                    p= songData.genre
-                #song-img
-                    img(src=songData.User.profilePicUrl, alt=songData.User.username)
-                #play-song
-                    a#start-song(href=songData.songUrl ): img(src="images/play.png")
-                #waveform
-            #comments
+#song-content
+    #song-overview 
+        #play-song
+            img#start-song(src="images/play.png")
+            a#song-link(href=songData.songUrl )
+        #song-description
+            a(href=`/${songData.User.username}`)= songData.User.username
+            h2#title= songData.title
+            if songData.artist
+                p#artist= songData.artist
+            p= songData.album
+            p= songData.genre
+        #song-img
+            img(src=songData.User.profilePicUrl, alt=songData.User.username)
+    #comments
 
             //- canvas goes here

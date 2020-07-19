@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const { User, Song, Like,Comment } = require("../db/models");
-=======
 const { User, Song, Like, Comment } = require("../db/models");
->>>>>>> f83c265b61064777eaec725fa0cb573008f7aec5
 const { loggedInUser, requireAuth, generateUserToken } = require("../auth");
 const { asyncHandler, modelNotFound, getS3Url } = require("../utils");
 const Sequelize = require("../db/models/index").Sequelize;
@@ -170,7 +166,7 @@ router.get(
       username === "search" ||
       username === "explore" ||
       username === /\w+\/\w+/ ||
-      // username === //
+      username === "test:song" ||
       username === "audio-test" ||
       username === "imagetest" ||
       username === ""
@@ -219,10 +215,19 @@ router.get(
       where: { songLocalPath: req.params.song },
     });
     // res.render("song-page", { songData, currentUser: req.user });
+    // const songPage = pug.compileFile(
+      // path.join(express().get("views"), "song-page.pug")
+    // );
+    // res.send(songPage({ user: req.user, songData }));
+    songData.songUrl = await getS3Url(songData.songUrl)
+    songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
+    // res.render('audiofile', { songData })
+    
     const songPage = pug.compileFile(
-      path.join(express().get("views"), "song-page.pug")
+      path.join(express().get("views"), "audiofile.pug")
     );
     res.send(songPage({ user: req.user, songData }));
+
   })
 );
 
@@ -257,18 +262,18 @@ router.post(
 );
 
 //Ben's song page test
-router.get('/test?song', asyncHandler(async (req, res) => {
-  const { song } = req.query;
-  const songData = await Song.findOne({
-      include: User,
-      where: { songLocalPath: song },
-    });
-  // if(songData.User.username !== req.params.username) {
-  //   next(songNotFound());
-  // }
-  songData.songUrl = await getS3Url(songData.songUrl)
-  songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
-  res.render('audiofile', { songData })
-}))
+// router.get('/test:song', asyncHandler(async (req, res) => {
+//   const { song } = req.query;
+//   const songData = await Song.findOne({
+//       include: User,
+//       where: { songLocalPath: song },
+//     });
+//   // if(songData.User.username !== req.params.username) {
+//   //   next(songNotFound());
+//   // }
+//   songData.songUrl = await getS3Url(songData.songUrl)
+//   songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
+//   res.render('audiofile', { songData })
+// }))
 
 module.exports = router;

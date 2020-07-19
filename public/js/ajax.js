@@ -1,4 +1,4 @@
-document.getElementById('progress-bar').addEventListener('loadeddata', (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   Array.from(document.getElementsByClassName("ajax")).forEach((el) => {
     el.addEventListener("click", async (event) => {
       event.preventDefault();

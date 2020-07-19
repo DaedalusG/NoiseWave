@@ -3,13 +3,16 @@
     margin: 0 auto;
 }
 
+#song-link {
+    display:none;
+}
 
 #song-overview {
+    padding: 50px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: fr 1fr;
-    grid-template-areas:    "description description img" 
-                            "button waveform waveform";
+    grid-template-rows: 1fr;
+    grid-template-areas:    "img description button" ;
     background-color: #444;
 }
 
@@ -31,6 +34,7 @@
     grid-area: button;
 }
 
-#waveform {
-    grid-area: waveform;
+#play-song > img {
+    height: 200px;
+    width: 200px
 }

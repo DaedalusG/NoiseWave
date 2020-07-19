@@ -6,15 +6,17 @@ html(lang="en")
         title= title
         link(rel="stylesheet" href="styles/navbar.css")
         link(rel="stylesheet" href="styles/modal-popup.css")
-        link(rel="stylesheet" href="styles/simple-playbar.css")
+        link(rel="stylesheet" href="styles/simple-playbar.scss" type='x-scss')
         link(rel="stylesheet" href="styles/song-card.css")
         link(rel="stylesheet" href="styles/global.css")
         link(rel="stylesheet" href="styles/search.css")
+        link(rel="stylesheet" href="styles/song-page.css")
         link(href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet")
         script(src="js/ajax.js")
         script(src="js/search.js")
-
-
+        script(src="js/audioPlayer.js")
+        script(src="js/renderWaveform.js")
+        script(src="https://unpkg.com/wavesurfer.js")
         if user
             script(src="js/logout.js")
         else
@@ -24,6 +26,8 @@ html(lang="en")
     body
         include nav.pug
         main#page-specific-content
+            a(href="/BoneThugsAndHarmony/Carole-of-the-Bones" class="ajax") Click Here to test audio player
+            br
             //- h1 Welcome to NoiseWave!
             //- p The latest hits, updated all the time
             a(href="/explore" class="ajax") Click Here to explore our songs
