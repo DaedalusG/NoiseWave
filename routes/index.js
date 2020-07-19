@@ -84,16 +84,16 @@ router.get(
     console.log(spotMusic);
 
     //Generate Array of 6 Song Objects Like Spotlight Genre
-    const rockData = await Song.findAll({
+    const genreData = await Song.findAll({
       include: [{ model: User }],
       where: { genre: spotlightData.genre },
     });
-    const sixRockSongs = [];
+    const sixSongsLikeSpotlight = [];
     for (let i = 0; i < 6; i++) {
-      let random = Math.floor(Math.random() * rockData.length) - 1;
-      sixRockSongs.push(rockData[random].dataValues);
+      let random = Math.floor(Math.random() * genreData.length) - 1;
+      sixSongsLikeSpotlight.push(genreData[random].dataValues);
     }
-    for (let song of sixRockSongs) {
+    for (let song of sixSongsLikeSpotlight) {
       let profKey = song.User.dataValues.profilePicUrl;
       const music = await getS3Url(song.songUrl);
       song.music = music;
@@ -140,7 +140,7 @@ router.get(
       ajaxExplore({
         user: req.user,
         sixSongs,
-        sixRockSongs,
+        sixSongsLikeSpotlight,
         sixNewSongs,
         spotlightData,
         spotProfKey,
