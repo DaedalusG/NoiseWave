@@ -4,7 +4,7 @@
             img#start-song(src="images/play.png")
             a#song-link(href=songData.songUrl )
         #song-description
-            a.ajax(href=`/${songData.User.username}`)= songData.User.username
+            a.ajax-link(href=`/${songData.User.username}`)= songData.User.username
             h2#title= songData.title
             if songData.artist
                 p#artist= songData.artist
