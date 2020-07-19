@@ -16,7 +16,7 @@ section(id='latest' class="songCard__section")
     div(class='songCards')
         each song in sixRockSongs
             div(class='card' title=`${song.User.username}`)
-                div(class='card__image playSong' id=song.music  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
+                div(class='card__image playSong' id=song.music title=song.title  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
                     div(class='card__label__title ajax-link' title=`${song.User.username}`)=song.title
                     div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
