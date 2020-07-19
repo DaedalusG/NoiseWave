@@ -9,13 +9,13 @@ const {
 const { requireAuth } = require("../auth");
 
 const express = require("express");
-
-const router = express.Router();
-
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
 const { awsKeys } = require("../config");
+
+const router = express.Router();
+
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
@@ -30,8 +30,6 @@ const upload = multer({
     s3: S3,
     bucket: "noisewave",
     key: function (req, file, cb) {
-      //console.log('testy string')
-      //console.log(file);
       cb(null, `${new Date()}${file.originalname}`);
     },
   }),
@@ -51,9 +49,6 @@ router.post(
       res.redirect("/");
       return;
     }
-    //the file in song url, and the thumbnail need to be sourced to s3
-    // TODO handle upload of mp3 and image files to s3
-    // TODO get the id of the logged in user
     const songUrl = req.file.key;
     const userId = req.user.id;
     const songLocalPath = createLocalPath(title);

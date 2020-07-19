@@ -1,0 +1,173 @@
+
+
+/* User profile */
+
+
+section.song-page-header {
+    margin-bottom: 100px;
+    /* height: 200px; */
+    /* width: 100%; */
+}
+
+.song-page-header__wrapper {
+
+
+}
+
+.song-page-header__background-image {
+    display: flex;
+    /* justify-content: flex-end; */
+    /* align-content: flex-end; */
+    /* align-items: flex-end; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    flex-flow: row nowrap;
+}
+
+.song-page-header__profile-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 35%;
+}
+
+.song-page-header__song-info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    /* align-content: flex-end; */
+    /* background-color: rgba(255, 255, 255, 0.685); */
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.753), white);
+    width: 100%;
+    /* padding: 20px; */
+    padding-right: 100px;
+    /* margin-left: 40px; */
+    font-weight: bold;
+}
+
+.song-info__heading {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.song-page-header__artist-name {
+    font-size: 30px;
+}
+
+.song-info__subheading {
+    font-size: 26px;
+    font-weight: normal;
+}
+
+
+
+
+section.song-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* max-height: 358px; */
+}
+
+section.song-header {
+    width: 35%;
+}
+
+.song-header .song-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    height: 250px;
+    margin-bottom: 8px;
+}
+
+.song-header .song-info {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.song-header .song-info__extra {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.song-header .button-wrapper {
+    margin-top: 15px;
+}
+
+.button-wrapper button {
+    background-color: rgb(190, 1, 1);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.button-wrapper button:hover {
+    background-color: rgb(243, 0, 0);
+}
+
+section.song-comments {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.post-comment {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.posted-comments {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: rgb(238, 238, 238);
+    border: 1px dotted rgb(218, 218, 218);
+    height: 308px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    bottom: 15px;
+    position: relative;
+}
+
+.posted-comment {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: aliceblue;
+    /* padding: 15px; */
+    margin: 10px;
+    border: 1px solid rgb(218, 218, 218);
+    /* width: 100%;
+    height: 100%; */
+    /* align-content: center; */
+    /* height: 50px; */
+    /* justify-content: space-between; */
+}
+
+.posted-comment .user-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    height: 55px;
+    width: 55px;
+    /* width: 90%;
+    height: 90%; */
+    margin-right: 10px;
+}
+
+.posted-comments .user-comment {
+    /* margin: 8px; */
+    padding: 8px;
+    font-size: 15px;
+}
+
+.posted-comments .user-name {
+    color: rgb(126, 126, 126);
+    font-size: 13px;
+}

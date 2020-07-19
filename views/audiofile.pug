@@ -1,17 +1,104 @@
-#song-content
-    #song-overview 
-        #play-song
-            img#start-song(src="images/play.png")
-            a#song-link(href=songData.songUrl )
-        #song-description
-            a(href=`/${songData.User.username}`)= songData.User.username
-            h2#title= songData.title
-            if songData.artist
-                p#artist= songData.artist
-            p= songData.album
-            p= songData.genre
-        #song-img
-            img(src=songData.User.profilePicUrl, alt=songData.User.username)
-    #comments
+div(class='songPage__header__wrapper')
+    section(class='songPage__header' style=`background-image: url(${songData.User.backgroundUrl})`)
+        div(class='headerColumn__container-1')
+            img(class='profileImage' src=songData.User.profilePicUrl)
+        div(class='headerColumn__container-2')
+            div(class='playBtnIcon') <span class="material-icons">play_circle_filled</span>
+            div(class='headerColumnContainer__songInfo')
+                div(class='artistName')=songData.artist
+                div(class='songName')=songData.title
+        div(class='headerColumn__container-3')
+            div(class='album__container')
+                span(class='albumName__label') Album:
+                span(class='albumName')=`${songData.album}`
+            div(class='genre__container')
+                span(class='songGenre__label') Genre:
+                span(class='songGenre')=`${songData.genre}`
+            div(class='songCreatedAt__container')
+                span(class='songCreatedAt__label') Uploaded:
+                span(class='songCreatedAt')=`${songData.createdAt}`
+    section(class='songPage__main')
+        section(class='commentForm__container')
+            div(class='commentForm__wrapper')
+                img(class='commentForm__userImage' src=songData.User.profilePicUrl)
+                form(class="commentForm" method="post" action="/")
+                    input(autocomplete="false" name="hidden" type="text" style="display:none;")
+                    input(type="text" id="commentFormText" placeholder="Write a comment" name="search")
+                    button(type="submit" value="Search" id='submit-search' autocomplete='false')
+                div(class='commentForm__likeBtn') <span class="material-icons">favorite</span>
+        section(class='song-comments')
+            div(class='posted-comments')
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Cole Hunter
+                        div(class='user-comment-text') Sweet song!
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Chris Cottier
+                        div(class='user-comment-text') I agree!
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Ben Anderson
+                        div(class='user-comment-text') What Chris said
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Warren Gifford
+                        div(class='user-comment-text') ^ this
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Cole Hunter
+                        div(class='user-comment-text') Sweet song!
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Chris Cottier
+                        div(class='user-comment-text') I agree!
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Ben Anderson
+                        div(class='user-comment-text') What Chris said
+                div(class='posted-comment')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-comment')
+                        div(class='user-name') Warren Gifford
+                        div(class='user-comment-text') ^ this
 
-            //- canvas goes here
+//- #song-content
+//-     #song-overview
+//-         #play-song
+//-             img#start-song(src="images/play.png")
+//-             a#song-link(href=songData.songUrl )
+//-         #song-description
+//-             a(href=`/${songData.User.username}`)= songData.User.username
+//-             h2#title= songData.title
+//-             if songData.artist
+//-                 p#artist= songData.artist
+//-             p= songData.album
+//-             p= songData.genre
+//-         #song-img
+//-             //- img(src=songData.User.profilePicUrl, alt=songData.User.username)
+//-     #comments
+
+//- #song-content
+//-     #song-overview
+//-         #play-song
+//-             img#start-song(src="images/play.png")
+//-             a#song-link(href=songData.songUrl )
+//-         #song-description
+//-             a(href=`/${songData.User.username}`)= songData.User.username
+//-             h2#title= songData.title
+//-             if songData.artist
+//-                 p#artist= songData.artist
+//-             p= songData.album
+//-             p= songData.genre
+//-         #song-img
+//-             img(src=songData.User.profilePicUrl, alt=songData.User.username)
+//-     #comments
+
+//-             //- canvas goes here

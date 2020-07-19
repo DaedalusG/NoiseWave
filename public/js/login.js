@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = { username, password };
 
     try {
-      const res = await fetch("http://localhost:8080/login", {
+      const res = await fetch("/login", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
