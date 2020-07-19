@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      const res = await fetch("http://localHost:8080/users", {
+      const res = await fetch("/users", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
