@@ -7,7 +7,7 @@ section(id='latest' class="songCard__section")
             div(class='card')
                 div(class='card__image playSong' id=song.music  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
-                    div(class='card__label__title ajax-link' title=`${song.User.username}`)=song.title
+                    div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
                     div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
 section(id='latest' class="songCard__section")
     header
@@ -18,18 +18,18 @@ section(id='latest' class="songCard__section")
             div(class='card' title=`${song.User.username}`)
                 div(class='card__image playSong' id=song.music title=song.title  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
-                    div(class='card__label__title ajax-link' title=`${song.User.username}`)=song.title
+                    div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
                     div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
 section(id='latest' class="songCard__section")
     header
-        h2 Six Random Songs
-        p generated in the /explore route handler
+        h2 Looking for something different?
+        p Try something new!
     div(class='songCards')
         each song in sixSongs
             div(class='card')
                 div(class='card__image playSong' id=song.music  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
-                    div(class='card__label__title ajax-link' title=`${song.User.username}`)=song.title
+                    div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
                     div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
 
 //- div.searchSong_pic.playSong(style=`background-image: url(${song.pic})` id=song.music title=song.title)
