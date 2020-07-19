@@ -46,14 +46,13 @@ router.get(
   "/explore",
   loggedInUser,
   asyncHandler(async (req, res) => {
-
     //Generate Array of 6 newest songs
     const dataById = await Song.findAll({
       limit: 6,
       include: [{ model: User }],
-      order: [['id', 'DESC']],
-    })
-    const sixNewSongs = []
+      order: [["id", "DESC"]],
+    });
+    const sixNewSongs = [];
     for (let i = 0; i < 6; i++) {
       sixNewSongs.push(dataById[i].dataValues);
     }
@@ -68,9 +67,9 @@ router.get(
     //Generate Array of 6 hip-hop Song Objects
     const rockData = await Song.findAll({
       include: [{ model: User }],
-      where: { genre: 'Rock' },
-    })
-    const sixRockSongs = []
+      where: { genre: "Rock" },
+    });
+    const sixRockSongs = [];
     for (let i = 0; i < 6; i++) {
       let random = Math.floor(Math.random() * rockData.length) - 1;
       sixRockSongs.push(rockData[random].dataValues);
@@ -103,7 +102,9 @@ router.get(
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore({ user: req.user, sixSongs, sixRockSongs, sixNewSongs }));
+    res.send(
+      ajaxExplore({ user: req.user, sixSongs, sixRockSongs, sixNewSongs })
+    );
   })
 );
 
@@ -227,10 +228,12 @@ router.get(
     //     where: { id: like.songId },
     //   });
     // });
-
-    userData.profilePic = await getS3Url(userData.profilePicUrl);
-    userData.backgroundPic = await getS3Url(userData.backgroundUrl);
-
+    if (userData.profilePicUrl) {
+      userData.profilePic = await getS3Url(userData.profilePicUrl);
+    }
+    if (userData.backgroundUrl) {
+      userData.backgroundPic = await getS3Url(userData.backgroundUrl);
+    }
     const userPage = pug.compileFile(
       path.join(express().get("views"), "user-page.pug")
     );
@@ -255,18 +258,17 @@ router.get(
     });
     // res.render("song-page", { songData, currentUser: req.user });
     // const songPage = pug.compileFile(
-      // path.join(express().get("views"), "song-page.pug")
+    // path.join(express().get("views"), "song-page.pug")
     // );
     // res.send(songPage({ user: req.user, songData }));
-    songData.songUrl = await getS3Url(songData.songUrl)
+    songData.songUrl = await getS3Url(songData.songUrl);
     songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
     // res.render('audiofile', { songData })
-    
+
     const songPage = pug.compileFile(
       path.join(express().get("views"), "audiofile.pug")
     );
     res.send(songPage({ user: req.user, songData }));
-
   })
 );
 

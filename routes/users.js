@@ -76,7 +76,6 @@ router.post(
     });
 
     //Give User token
-    console.log("got here");
 
     const token = generateUserToken(user);
 

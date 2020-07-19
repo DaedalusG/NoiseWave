@@ -1,8 +1,15 @@
 div.userPage
-    //- section.userHeader
-    img.userPage_banner(src=userData.backgroundPic)
-    img.userPage_profilePic(src=userData.profilePic)
-    div.userPage_name= userData.username
+    if userData.backgroundPic && userData.profilePic
+        img.userPage_banner(src=userData.backgroundPic)
+        img.userPage_profilePic(src=userData.profilePic)
+        div.userPage_name= userData.username
+    else
+        img.userPage_banner(src="/images/vaporwave.jpg")
+        if userData.profilePic
+            img.userPage_profilePic(src=userData.profilePic)
+        else
+            img.userPage_profilePic(src="/images/missing_profile.png")
+        div.userPage_name= userData.username
 
     if !userData.Songs
         div.userUploads This user hasn't uploaded a song yet
