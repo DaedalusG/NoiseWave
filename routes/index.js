@@ -59,7 +59,14 @@ router.get("/",
       song.User.dataValues.profilePicUrl = profPic;
     }
 
-    res.render("templates/ajaxLayout.pug", { user: req.user, sixSongs, spotlightData, spotProfKey, spotBackgroundKey, spotMusic });
+    res.render("templates/ajaxLayout.pug", {
+      user: req.user,
+      sixSongs,
+      spotlightData,
+      spotProfKey,
+      spotBackgroundKey,
+      spotMusic
+    });
   }));
 
 // router.get("/explore", loggedInUser, (req, res) => {
@@ -72,6 +79,16 @@ router.get(
   "/explore",
   loggedInUser,
   asyncHandler(async (req, res) => {
+    const songData = await Song.findAll({
+      include: [{ model: User }],
+    });
+    //generate random user spotlight banner
+    let spotlightData = songData[Math.floor(Math.random() * songData.length) - 1].dataValues;
+    let spotProfKey = await getS3Url(spotlightData.User.profilePicUrl);
+    let spotBackgroundKey = await getS3Url(spotlightData.User.backgroundUrl)
+    let spotMusic = await getS3Url(spotlightData.songUrl);
+    console.log(spotMusic);
+
     //Generate Array of 6 newest songs
     const dataById = await Song.findAll({
       limit: 6,
@@ -109,9 +126,6 @@ router.get(
     }
 
     //Generate Array of 6 random Song objects
-    const songData = await Song.findAll({
-      include: [{ model: User }],
-    });
     const sixSongs = [];
     for (let i = 0; i < 6; i++) {
       let random = Math.floor(Math.random() * songData.length) - 1;
@@ -129,7 +143,16 @@ router.get(
       path.join(express().get("views"), "explore.pug")
     );
     res.send(
-      ajaxExplore({ user: req.user, sixSongs, sixRockSongs, sixNewSongs })
+      ajaxExplore({
+        user: req.user,
+        sixSongs,
+        sixRockSongs,
+        sixNewSongs,
+        spotlightData,
+        spotProfKey,
+        spotBackgroundKey,
+        spotMusic
+      })
     );
   })
 );

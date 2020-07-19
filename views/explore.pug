@@ -1,14 +1,10 @@
-section(id='latest' class="songCard__section")
-    header
-        h2 New To NoiseWave
-        p Stay on top of the underground sound!
-    div(class='songCards')
-        each song in sixNewSongs
-            div(class='card')
-                div(class='card__image playSong' id=song.music  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
-                div(class='card__label')
-                    div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
-                    div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
+
+h2 User Spotlight!
+br
+section(class='user-header')
+    div(class='user-cover-image' style=`background-image: url(${spotBackgroundKey})`)
+        div(class='user-profile-image playSong' id=spotMusic style=`background-image: url(${spotProfKey})`)
+    div(class='user-name')=spotlightData.User.username
 section(id='latest' class="songCard__section")
     header
         h2 Rock on NoiseWave
@@ -17,6 +13,17 @@ section(id='latest' class="songCard__section")
         each song in sixRockSongs
             div(class='card' title=`${song.User.username}`)
                 div(class='card__image playSong' id=song.music title=song.title  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
+                div(class='card__label')
+                    div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
+                    div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
+section(id='latest' class="songCard__section")
+    header
+        h2 New To NoiseWave
+        p Stay on top of the underground sound!
+    div(class='songCards')
+        each song in sixNewSongs
+            div(class='card')
+                div(class='card__image playSong' id=song.music  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
                 div(class='card__label')
                     div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
                     div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username

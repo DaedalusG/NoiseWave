@@ -37,8 +37,6 @@ html(lang="en")
                     div(class='user-profile-image playSong' id=spotMusic style=`background-image: url(${spotProfKey})`)
                 div(class='user-name')=spotlightData.User.username
             section(class='user-nav')
-                button Uploads
-                button Likes
             section(id='latest' class="songCard__section")
                 header
                     h2 Looking for something different?
@@ -61,7 +59,6 @@ html(lang="en")
                         div(class='artist-name') Macklemore
                         div(class='button-wrapper')
                             button(class='song-play-button') Play
-                            button(class='song-like-button') Like
                 section(class='song-comments')
                     div(class='post-comment')
                         form(class="post-comment-form" method="get" action="/search")
