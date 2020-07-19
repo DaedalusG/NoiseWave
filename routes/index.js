@@ -158,11 +158,13 @@ router.get(
       const profilePicKey = song.User.profilePicUrl;
       const musicKey = song.songUrl;
 
-      const songPic = await getS3Url(profilePicKey);
+      if (profilePicKey) {
+        const songPic = await getS3Url(profilePicKey);
+        song.pic = songPic;
+      }
       const music = await getS3Url(musicKey);
 
       song.music = music;
-      song.pic = songPic;
     }
 
     for (let i = 0; i < matchingUsers.length; i++) {
@@ -171,11 +173,14 @@ router.get(
       const profilePicKey = user.profilePicUrl;
       const backgroundPicKey = user.backgroundUrl;
 
-      const profilePic = await getS3Url(profilePicKey);
-      const backgroundPic = await getS3Url(backgroundPicKey);
-
-      user.profilePic = profilePic;
-      user.background = backgroundPic;
+      if (profilePicKey) {
+        const profilePic = await getS3Url(profilePicKey);
+        user.profilePic = profilePic;
+      }
+      if (backgroundPicKey) {
+        const backgroundPic = await getS3Url(backgroundPicKey);
+        user.background = backgroundPic;
+      }
     }
 
     // console.log(matchingUsers[1]);
@@ -217,6 +222,10 @@ router.get(
       include: [{ model: Song }, { model: Like }],
       where: { username: username },
     });
+
+    for (let song of userData.Songs) {
+      song.music = await getS3Url(song.songUrl);
+    }
 
     if (!userData) {
       next(userNotFound());
