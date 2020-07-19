@@ -301,6 +301,7 @@ router.get(
     // res.send(songPage({ user: req.user, songData }));
     songData.songUrl = await getS3Url(songData.songUrl);
     songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
+    songData.User.backgroundUrl = await getS3Url(songData.User.backgroundUrl);
     // res.render('audiofile', { songData })
 
     const songPage = pug.compileFile(
