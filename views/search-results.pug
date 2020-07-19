@@ -16,6 +16,6 @@ div.matchingSongs
             div.searchSong_pic.playSong(style=`background-image: url(${song.pic})` id=song.music title=song.title)
                 //- img.playsong_playButton(src='/images/play-button.jpg' )
             div.searchSong_details(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link') Title: #{song.title}
-            div.searchSong_details(title=`${song.User.username}` class='ajax-link') Artist: #{song.artist}
-            div.searchSong_details Album: #{song.album}
-            div.searchSong_details Genre: #{song.genre}
+            div.searchSong_details.searchSong_artist(title=`${song.User.username}` class='ajax-link') Artist: #{song.artist}
+            //- div.searchSong_details Album: #{song.album}
+            //- div.searchSong_details Genre: #{song.genre}

@@ -40,21 +40,26 @@
   width: 400px;
   border: 10px solid black;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
 }
 
 .searchSong_pic {
-  grid-area: 1 / 1 / span 4 / span 1;
+  grid-area: 1 / 1 / span 2 / span 1;
   height: 200px;
   width: 200px;
 }
 
 .searchSong_details {
-  font-size: 14px;
+  font-size: 20px;
   text-align: center;
-  background-color: #ef5a23;
-  color: white;
+  background-color: #ff6a00;
+  color: #00f2e7;
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 20px;
+}
+
+.searchSong_artist {
+  font-style: italic;
+  /* color: gray; */
 }
