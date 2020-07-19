@@ -1,6 +1,6 @@
 .userPage {
   display: grid;
-  grid-template-rows: 400px, 100px, auto;
+  grid-template-rows: 400px, 100px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -37,14 +37,7 @@
   grid-area: 2 / 1 / span 1 / span 4;
   text-align: center;
   font-size: 50px;
-}
-
-.userPage_song {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
+  margin-bottom: 100px;
 }
 
 .editUser {
@@ -61,4 +54,35 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.userSongCollection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.userPage_song {
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.userPage_SongPic {
+  height: 200px;
+  width: 200px;
+}
+
+.songInfo {
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-self: space-between; */
+  /* align-self: ; */
+  /* align-items: start; */
+  width: 300px;
+  color: #f85804;
+  font-weight: bold;
 }
