@@ -9,6 +9,8 @@ const {
   getS3Url,
 } = require("../utils");
 
+const pug = require("pug");
+const path = require("path");
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
@@ -84,29 +86,32 @@ router.post(
 );
 
 // Renders a user edit form
-router.get(
-  "/:id(\\d+)/edit",
-  requireAuth,
-  // csrfProtection,
-  (req, res) => {
-    const authenticatedId = req.user.id;
-    const userId = parseInt(req.params.id, 10);
-    console.log(authenticatedId, userId);
-    if (userId !== authenticatedId) res.redirect("/");
-    const user = req.user;
-    res.render("user-edit", { user });
-    //csrfToken: req.csrfToken()
-  }
-);
+router.get("/:id(\\d+)/edit", requireAuth, (req, res) => {
+  const authenticatedId = req.user.id;
+  const userId = parseInt(req.params.id, 10);
+  console.log(authenticatedId, userId);
+  if (userId !== authenticatedId) res.redirect("/");
+  const user = req.user;
+
+  const editUser = pug.compileFile(
+    path.join(express().get("views"), "user-edit.pug")
+  );
+  res.send(
+    editUser({
+      user,
+    })
+  );
+});
 
 // User profile edit form action
-router.put(
+router.post(
   "/:id(\\d+)",
   requireAuth,
   editUserValidations,
   handleValidationErrors,
   // csrfProtection,
   asyncHandler(async (req, res) => {
+    console.log("we here");
     const userId = parseInt(req.params.id, 10);
     if (userId !== req.user.id) {
       res.redirect("/");
@@ -114,26 +119,57 @@ router.put(
     }
 
     const user = await User.findByPk(userId);
-    const {
-      username,
-      password,
-      email,
-      profilePicUrl,
-      backgroundUrl,
-    } = req.body;
+
+    const { username, password, email } = req.body;
+
     const hashedPassword = await bcrypt.hash(password, 8);
 
     user.username = username;
     user.hashedPassword = hashedPassword;
     user.email = email;
-    if (profilePicUrl) user.profilePicUrl = profilePicUrl;
-
-    if (backgroundUrl) user.backgroundUrl = backgroundUrl;
 
     //error here when saving instance
     await user.save();
 
-    res.json(user);
+    res.redirect("/");
+  })
+);
+
+router.post(
+  "/:id(\\d+)/profile",
+  requireAuth,
+  upload.single("profilePicUrl"),
+  asyncHandler(async (req, res, next) => {
+    const userId = parseInt(req.params.id, 10);
+    if (userId !== req.user.id) {
+      res.redirect("/");
+      return;
+    }
+    console.log(req);
+    const user = await User.findByPk(userId);
+    const profilePicUrl = req.file.key;
+    user.profilePicUrl = profilePicUrl;
+    await user.save();
+    res.redirect("/");
+  })
+);
+
+router.post(
+  "/:id(\\d+)/background",
+  requireAuth,
+  upload.single("backgroundUrl"),
+  asyncHandler(async (req, res, next) => {
+    const userId = parseInt(req.params.id, 10);
+    if (userId !== req.user.id) {
+      res.redirect("/");
+      return;
+    }
+    console.log(req);
+    const user = await User.findByPk(userId);
+    const backgroundUrl = req.file.key;
+    user.backgroundUrl = backgroundUrl;
+    await user.save();
+    res.redirect("/");
   })
 );
 

@@ -222,6 +222,9 @@ router.get(
       next(userNotFound());
     }
 
+    let user = {};
+    if (req.user) user = req.user;
+
     // const likedSongs = userData.Like.map(async (like) => {
     //   return await Song.findOne({
     //     include: [{ model: User }],
@@ -237,7 +240,7 @@ router.get(
     const userPage = pug.compileFile(
       path.join(express().get("views"), "user-page.pug")
     );
-    res.send(userPage({ user: req.user, userData }));
+    res.send(userPage({ user, userData }));
   })
 );
 

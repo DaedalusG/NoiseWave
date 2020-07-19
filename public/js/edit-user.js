@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = formData.get("email");
     const password = formData.get("password");
     const confirmPassword = formData.get("confirmPassword");
-    const profilePicUrl = formData.get("profilePicUrl");
-    const backgroundUrl = formData.get("backgroundUrl");
     const id = formData.get("id");
 
     const body = {
@@ -24,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const res = await fetch(`http://localHost:8080/users/${id}`, {
-        method: "put",
+        method: "post",
         body: JSON.stringify(body),
         headers: {
           "Content-Type": "application/json",
@@ -36,12 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
         throw res;
       }
 
-      //HERE IS WHERE WE NEED TO BE DOING S3 STUFF!! If database change successful
-      const user = await res.json();
-      document.cookie = `NOISEWAVE_ACCESS_TOKEN=;`;
+      // const user = await res.json();
+      // document.cookie = `NOISEWAVE_ACCESS_TOKEN=;`;
 
-      // redirect to home page:
-      window.location.href = "/";
+      // // redirect to home page:
+      // window.location.href = "/";
     } catch (res) {
       let errors = await res.json();
 

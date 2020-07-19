@@ -46,3 +46,19 @@
   align-items: center;
   border: 1px solid black;
 }
+
+.editUser {
+  grid-area: 2 / 4 / span 1 / span 1;
+  text-align: right;
+}
+
+.userPage_buttons {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

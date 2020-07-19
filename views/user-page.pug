@@ -15,6 +15,8 @@ div.userPage
         div.userUploads This user hasn't uploaded a song yet
     else
         div.userUploads #{userData.username}'s Uploads:
+        if user.id === userData.id
+            button.userPage_buttons.button.editUser.ajax-link(title=`users/${userData.id}/edit`) Edit Details
         //- lets put this in a flex container
         each song in userData.Songs
             section.userPage_song(class='song-wrapper')
