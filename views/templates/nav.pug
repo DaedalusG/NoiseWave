@@ -50,8 +50,16 @@ nav(class="navbar sticky")
                             //- input(type="file" name="thumbnailUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
                             <br><br>
                             input(type="submit" value="Upload Song")
-            li: a.user(href=`/${user.username}` class='ajax')= user.username
-            li: a.logout Log Out?
+            li
+                div(class="dropdown")
+                    button(class="dropbtn")= user.username
+                        <span class="material-icons">keyboard_arrow_down</span>
+                    div(class="dropdown-content")
+                        a(class='user dropdown-link' href=`/${user.username}` class='ajax') Profile
+                        a(class='logout dropdown-link') Log Out
+                        a(class="dropdown-link" href="https://github.com/DaedalusG/NoiseWave" target="_blank") GitHub Project
+            //- li(class='nav-item')
+            //-     a(class='user' href=`/${user.username}` class='ajax')= user.username
     else
         div(id="cover")
             form(class="navbar__col" id="searchbar" method="post" action="/search")
@@ -104,10 +112,9 @@ nav(class="navbar sticky")
                             input(type="file", name="profilePic" accept='.jpg,.png')
                             input(type="submit" value="Get Started")
                     footer(class="modal-footer") By signing up I accept the Terms of Use. I have read and understood the Privacy Policy and Cookies Policy.
-    li
-        div(class="dropdown")
-            button(class="dropbtn") &bull; &bull; &bull;
-            div(class="dropdown-content")
-                a(class="dropdown-link" href="https://github.com/DaedalusG/NoiseWave" target="_blank") GitHub
-                a(class="dropdown-link" href="#") Link 2
-                a(class="dropdown-link" href="#") Link 3
+    //- li
+    //-     div(class="dropdown")
+    //-         button(class="dropbtn") &bull; &bull; &bull;
+    //-         div(class="dropdown-content")
+    //-             a(class="dropdown-link" href="https://github.com/DaedalusG/NoiseWave" target="_blank") GitHub Project Details
+    //-             a(class='logout dropdown-link') Log Out

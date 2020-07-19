@@ -22,6 +22,7 @@ nav {
   background: var(--blue);
   color: var(--white);
   font-size: 14px;
+  cursor: pointer;
 }
 
 .navbar a.dropdown-link {
@@ -72,10 +73,10 @@ nav {
   z-index: 1;
 }
 
-.logout {
+/* .logout {
   width: 150px;
   height: 50px;
-}
+} */
 
 /* Searchbar */
 
@@ -222,8 +223,7 @@ form#searchbar {
 /* Drop Down Menu */
 
 .dropdown .dropbtn {
-
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   outline: none;
   color: white;
@@ -232,8 +232,10 @@ form#searchbar {
   margin: 0;
 }
 
-.dropbtn {
-  /* font-size: 40px; */
+.dropbtn span {
+  margin: 0 5px;
+  font-size: 15px;
+  /* padding: 0 14px; */
 }
 .navbar a:hover, .dropdown:hover .dropbtn, .dropdown-content a:hover {
   /* background-color: rgb(155, 24, 24); */
@@ -260,6 +262,12 @@ form#searchbar {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.dropdown-link:last-child {
+  color: rgb(230, 153, 11);
+  /* color: rgb(39, 39, 39); */
+}
+
 
 /* MODAL
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
