@@ -4,7 +4,7 @@
   "description": "A SoundCloud Clone",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "start:development": "nodemon -r dotenv/config ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
