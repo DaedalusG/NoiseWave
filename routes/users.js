@@ -15,17 +15,15 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
 const csrf = require("csurf");
-
-const router = express.Router();
-
-router.use(cookieParser());
-
-const csrfProtection = csrf({ cookie: true });
-
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
 const { awsKeys } = require("../config");
+
+const router = express.Router();
+router.use(cookieParser());
+
+const csrfProtection = csrf({ cookie: true });
 
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
@@ -48,11 +46,11 @@ const upload = multer({
   }),
 });
 
-const getUser = async (userId) => {
-  // Change fetch url for heroku deployment
-  const userData = await fetch(`http://localhost:${apiPort}/users/${userId}`);
-  return await userData.json();
-};
+// const getUser = async (userId) => {
+//   // Change fetch url for heroku deployment
+//   const userData = await fetch(`http://localhost:${apiPort}/users/${userId}`);
+//   return await userData.json();
+// };
 
 // User sign up form action
 router.post(
@@ -61,11 +59,7 @@ router.post(
   handleValidationErrors,
   // upload.single("profilePic"),
   asyncHandler(async (req, res) => {
-    // TODO save uploaded pictures to s3
     const { username, password, email } = req.body;
-    // console.log(req);
-    // const profilePicUrl = req.file.key;
-    // console.log(profilePicUrl);
 
     const hashedPassword = await bcrypt.hash(password, 8);
     const user = await User.create({
