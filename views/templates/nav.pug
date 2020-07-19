@@ -2,13 +2,18 @@ nav(class="navbar sticky")
     ul(class="navbar__col")
         li
             a(href="/" class="logo-link")
-                img(class="logo" src="images/header-logo.jpg")
-        li
+                div(class='logo')
+        li(class="link-container")
             a(href="/explore" class="ajax") Explore
     if user
-        form(class="navbar__col" id="searchbar" method="post" action="/search")
-            input(type="search" id="search" name="search")
-            input(type="submit" value="Search" id='submit-search')
+        div(id="cover")
+            form(class="navbar__col" id="searchbar" method="post" action="/search")
+                input(autocomplete="false" name="hidden" type="text" style="display:none;")
+                div(class="tb")
+                    div(class="td")
+                        input(type="search" id="search" placeholder="Search" name="search")
+                    div(class="td")
+                        button(type="submit" value="Search" id='submit-search' autocomplete='false') <span class="material-icons">search</span>
         ul(class="navbar__col")
             li(class="btn-group")
                 button(type="button" class="open-modal" data-open="modal1") Upload
@@ -48,9 +53,15 @@ nav(class="navbar sticky")
             li: a.user(href=`/${user.username}` class='ajax')= user.username
             li: a.logout Log Out?
     else
-        form(class="navbar__col navbar__col-" id="searchbar" method="post" action="/search")
-            input(type="search" id="search" name="search")
-            input(type="submit" value="Search" id='submit-search')
+        div(id="cover")
+            form(class="navbar__col" id="searchbar" method="post" action="/search")
+                input(autocomplete="false" name="hidden" type="text" style="display:none;")
+                div(class="tb")
+                    div(class="td")
+                        input(type="search" id="search" placeholder="Search" name="search")
+                    div(class="td")
+                        button(type="submit" value="Search" id='submit-search' autocomplete='false') <span class="material-icons">search</span>
+                            //- span(class="material-icons") search
         ul(class="navbar__col navbar__col-3")
             li(class="btn-group")
                 button(type="button" class="open-modal" data-open="modal1") Sign In
@@ -97,6 +108,6 @@ nav(class="navbar sticky")
         div(class="dropdown")
             button(class="dropbtn") &bull; &bull; &bull;
             div(class="dropdown-content")
-                a(href="https://github.com/DaedalusG/NoiseWave" target="_blank") GitHub
-                a(href="#") Link 2
-                a(href="#") Link 3
+                a(class="dropdown-link" href="https://github.com/DaedalusG/NoiseWave" target="_blank") GitHub
+                a(class="dropdown-link" href="#") Link 2
+                a(class="dropdown-link" href="#") Link 3

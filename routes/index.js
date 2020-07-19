@@ -46,11 +46,10 @@ router.get(
   "/explore",
   loggedInUser,
   asyncHandler(async (req, res) => {
+    //Generate Array of 6 random Song objects
     const songData = await Song.findAll({
       include: [{ model: User }],
     });
-
-    //Generate Array of 6 random Song objects
     const sixSongs = [];
     for (let i = 0; i < 6; i++) {
       let random = Math.floor(Math.random() * songData.length) - 1;
@@ -62,10 +61,46 @@ router.get(
       song.User.dataValues.profilePicUrl = profPic;
     }
 
+
+    //Generate Array of 6 hip-hop Song Objects
+    const rockData = await Song.findAll({
+      include: [{ model: User }],
+      where: { genre: 'Rock' },
+    })
+    const sixRockSongs = []
+    for (let i = 0; i < 6; i++) {
+      let random = Math.floor(Math.random() * rockData.length) - 1;
+      sixRockSongs.push(rockData[random].dataValues);
+    }
+    for (let song of sixRockSongs) {
+      let profKey = song.User.dataValues.profilePicUrl;
+      let profPic = await getS3Url(profKey);
+      song.User.dataValues.profilePicUrl = profPic;
+    }
+
+    //Generate Array of 6 newest songs
+    const dataById = await Song.findAll({
+      limit: 6,
+      include: [{ model: User }],
+      order: [['id', 'DESC']],
+    })
+
+    const sixNewSongs = []
+    for (let i = 0; i < 6; i++) {
+      sixNewSongs.push(dataById[i].dataValues);
+    }
+    for (let song of sixNewSongs) {
+      let profKey = song.User.dataValues.profilePicUrl;
+      let profPic = await getS3Url(profKey);
+      song.User.dataValues.profilePicUrl = profPic;
+    }
+
+    console.log(sixNewSongs)
+
     const ajaxExplore = pug.compileFile(
       path.join(express().get("views"), "explore.pug")
     );
-    res.send(ajaxExplore({ user: req.user, sixSongs }));
+    res.send(ajaxExplore({ user: req.user, sixSongs, sixRockSongs, sixNewSongs }));
   })
 );
 
