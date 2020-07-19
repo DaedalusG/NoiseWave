@@ -139,12 +139,12 @@ router.get(
           artist: {
             [Op.iLike]: `%${query}%`,
           },
-          album: {
-            [Op.iLike]: `%${query}%`,
-          },
-          genre: {
-            [Op.iLike]: `%${query}%`,
-          },
+          // album: {
+          //   [Op.iLike]: `%${query}%`,
+          // },
+          // genre: {
+          //   [Op.iLike]: `%${query}%`,
+          // },
         },
       },
     });
@@ -218,19 +218,20 @@ router.get(
       next(userNotFound());
     }
 
-    const likedSongs = userData.Likes.map(async (like) => {
-      return await Song.findOne({
-        include: [{ model: User }],
-        where: { id: like.songId },
-      });
-    });
+    // const likedSongs = userData.Like.map(async (like) => {
+    //   return await Song.findOne({
+    //     include: [{ model: User }],
+    //     where: { id: like.songId },
+    //   });
+    // });
 
-    // res.render("user-page", { userData, user: req.user });
+    userData.profilePic = await getS3Url(userData.profilePicUrl);
+    userData.backgroundPic = await getS3Url(userData.backgroundUrl);
 
     const userPage = pug.compileFile(
       path.join(express().get("views"), "user-page.pug")
     );
-    res.send(userPage({ user: req.user, userData, likedSongs }));
+    res.send(userPage({ user: req.user, userData }));
   })
 );
 
