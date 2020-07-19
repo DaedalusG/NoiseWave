@@ -33,7 +33,7 @@ section.songCard__section {
   margin-top: 7px;
 }
 
-.songCard__section .card__label__album,
+.songCard__section .card__label__title,
 .songCard__section .card__label__artist {
   overflow: hidden;
   text-overflow: ellipsis;
