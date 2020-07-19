@@ -83,6 +83,24 @@ router.get(
     let spotMusic = await getS3Url(spotlightData.songUrl);
     console.log(spotMusic);
 
+    //Generate Array of 6 Song Objects Like Spotlight Genre
+    const rockData = await Song.findAll({
+      include: [{ model: User }],
+      where: { genre: spotlightData.genre },
+    });
+    const sixRockSongs = [];
+    for (let i = 0; i < 6; i++) {
+      let random = Math.floor(Math.random() * rockData.length) - 1;
+      sixRockSongs.push(rockData[random].dataValues);
+    }
+    for (let song of sixRockSongs) {
+      let profKey = song.User.dataValues.profilePicUrl;
+      const music = await getS3Url(song.songUrl);
+      song.music = music;
+      let profPic = await getS3Url(profKey);
+      song.User.dataValues.profilePicUrl = profPic;
+    }
+
     //Generate Array of 6 newest songs
     const dataById = await Song.findAll({
       limit: 6,
@@ -94,24 +112,6 @@ router.get(
       sixNewSongs.push(dataById[i].dataValues);
     }
     for (let song of sixNewSongs) {
-      let profKey = song.User.dataValues.profilePicUrl;
-      const music = await getS3Url(song.songUrl);
-      song.music = music;
-      let profPic = await getS3Url(profKey);
-      song.User.dataValues.profilePicUrl = profPic;
-    }
-
-    //Generate Array of 6 hip-hop Song Objects
-    const rockData = await Song.findAll({
-      include: [{ model: User }],
-      where: { genre: "Rock" },
-    });
-    const sixRockSongs = [];
-    for (let i = 0; i < 6; i++) {
-      let random = Math.floor(Math.random() * rockData.length) - 1;
-      sixRockSongs.push(rockData[random].dataValues);
-    }
-    for (let song of sixRockSongs) {
       let profKey = song.User.dataValues.profilePicUrl;
       const music = await getS3Url(song.songUrl);
       song.music = music;
