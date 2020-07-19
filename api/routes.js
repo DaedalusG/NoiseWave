@@ -1,27 +1,20 @@
 const { User, Song, Comment } = require("../db/models");
-// const db = require("../db/models/index");
-// const { Op } = db.Sequelize;
 const Sequelize = require("../db/models/index").Sequelize;
 const Op = Sequelize.Op;
-
 const {
   asyncHandler,
   modelNotFound,
   handleValidationErrors,
 } = require("../utils");
 
-const userNotFound = modelNotFound("User");
-const songNotFound = modelNotFound("Song");
 
 const express = require("express");
-
-const router = express.Router();
-
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
 const { awsKeys } = require("../config");
 
+const router = express.Router();
 //setting AWS credentials and initializing aws-sdk object instance
 // remember to import keys from config: const { awsKeys } = require('./config');
 AWS.config = new AWS.Config();
@@ -34,16 +27,16 @@ const upload = multer({
   storage: multerS3({
     s3: S3,
     bucket: "noisewave",
-    // metadata: function (req, file, cb) {
-    //   cb(null, { fieldName: file.fieldname });
-    // },
-    key: function (req, file, cb) {
-      cb(null, file.originalname);
-    },
-  }),
-});
+      key: function (req, file, cb) {
+        cb(null, file.originalname);
+      },
+    }),
+  });
 
-router.get(
+  const userNotFound = modelNotFound("User");
+  const songNotFound = modelNotFound("Song");
+  
+  router.get(
   "/users/:id(\\d+)",
   asyncHandler(async (req, res, next) => {
     const userId = req.params.id;
@@ -100,7 +93,6 @@ router.get(
         },
       },
     });
-    // console.log(matchingUsers);
     return res.json(matchingUsers);
   })
 );

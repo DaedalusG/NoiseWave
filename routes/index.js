@@ -27,20 +27,9 @@ const csrfProtection = csrf({ cookie: true });
 const userNotFound = modelNotFound("User");
 const songNotFound = modelNotFound("Song");
 
-// router.get("/", loggedInUser, (req, res) => {
-//   if (req.user) res.redirect("/explore");
-//   res.render("home");
-// });
-
 router.get("/", loggedInUser, (req, res) => {
   res.render("templates/ajaxLayout.pug", { user: req.user });
 });
-
-// router.get("/explore", loggedInUser, (req, res) => {
-//   // TODO: get all relevant songs from the API and send them to the view
-//   console.log(req.user);
-//   res.render("explore", { user: req.user });
-// });
 
 router.get(
   "/explore",
@@ -178,9 +167,6 @@ router.get(
       user.background = backgroundPic;
     }
 
-    // console.log(matchingUsers[1]);
-    // console.log(matchingSongs[0]);
-
     const searchResults = pug.compileFile(
       path.join(express().get("views"), "search-results.pug")
     );
@@ -259,14 +245,12 @@ router.get(
       include: [{ model: User }, { model: Comment }, { model: Like }],
       where: { songLocalPath: req.params.song },
     });
-    // res.render("song-page", { songData, currentUser: req.user });
     // const songPage = pug.compileFile(
     // path.join(express().get("views"), "song-page.pug")
     // );
     // res.send(songPage({ user: req.user, songData }));
     songData.songUrl = await getS3Url(songData.songUrl);
     songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
-    // res.render('audiofile', { songData })
 
     const songPage = pug.compileFile(
       path.join(express().get("views"), "audiofile.pug")
@@ -304,20 +288,5 @@ router.post(
     }
   })
 );
-
-//Ben's song page test
-// router.get('/test:song', asyncHandler(async (req, res) => {
-//   const { song } = req.query;
-//   const songData = await Song.findOne({
-//       include: User,
-//       where: { songLocalPath: song },
-//     });
-//   // if(songData.User.username !== req.params.username) {
-//   //   next(songNotFound());
-//   // }
-//   songData.songUrl = await getS3Url(songData.songUrl)
-//   songData.User.profilePicUrl = await getS3Url(songData.User.profilePicUrl);
-//   res.render('audiofile', { songData })
-// }))
 
 module.exports = router;
