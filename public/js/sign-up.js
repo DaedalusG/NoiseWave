@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const signUpForm = document.querySelector(".sign-up-form");
   signUpForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    console.log("creating");
 
     const formData = new FormData(signUpForm);
 
@@ -9,8 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = formData.get("email");
     const password = formData.get("password");
     const confirmPassword = formData.get("confirmPassword");
+    const profilePic = formData.get("profilePic");
 
-    const body = { email, password, username, confirmPassword };
+    const body = {
+      email,
+      password,
+      username,
+      confirmPassword,
+    };
 
     try {
       const res = await fetch("http://localHost:8080/users", {

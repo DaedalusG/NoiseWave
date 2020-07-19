@@ -57,25 +57,26 @@ router.post(
   "/",
   signUpValidation,
   handleValidationErrors,
-  upload.single("profilePic"),
+  // upload.single("profilePic"),
   asyncHandler(async (req, res) => {
     // TODO save uploaded pictures to s3
-    const { username, password, email, confirmPassword } = req.body;
-    console.log(req.body);
-    const profilePicUrl = req.file.key;
-    console.log(profilePicUrl);
+    const { username, password, email } = req.body;
+    // console.log(req);
+    // const profilePicUrl = req.file.key;
+    // console.log(profilePicUrl);
 
     const hashedPassword = await bcrypt.hash(password, 8);
     const user = await User.create({
       username,
       hashedPassword,
       email,
-      profilePicUrl,
+      // profilePicUrl,
       createdAt: new Date(),
       updatedAt: new Date(),
     });
 
     //Give User token
+    console.log("got here");
 
     const token = generateUserToken(user);
 

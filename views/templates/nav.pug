@@ -7,6 +7,7 @@ nav(class="navbar sticky")
             a(href="/explore" class="ajax") Explore
     if user
         div(id="cover")
+            //- searchbar
             form(class="navbar__col" id="searchbar" method="post" action="/search")
                 input(autocomplete="false" name="hidden" type="text" style="display:none;")
                 div(class="tb")
@@ -16,6 +17,7 @@ nav(class="navbar sticky")
                         button(type="submit" value="Search" id='submit-search' autocomplete='false') <span class="material-icons">search</span>
         ul(class="navbar__col")
             li(class="btn-group")
+                //- upload song
                 button(type="button" class="open-modal" data-open="modal1") Upload
             div(class="modal" id="modal1" data-animation="zoomInOut")
                 div(class="modal-dialog")
@@ -46,8 +48,6 @@ nav(class="navbar sticky")
                             label(for="upload-songUrl") Song File: &nbsp;&nbsp;
                             input(type="file" name="songUrl" accept=".mp3,.flac" id="upload-songUrl")
                             <br><br>
-                            //- label(for="upload-thumbnailUrl") Picture File: &nbsp;&nbsp;
-                            //- input(type="file" name="thumbnailUrl" accept=".jpg,.png" for="upload-thumbnailUrl")
                             <br><br>
                             input(type="submit" value="Upload Song")
             li
@@ -62,6 +62,7 @@ nav(class="navbar sticky")
             //-     a(class='user' href=`/${user.username}` class='ajax')= user.username
     else
         div(id="cover")
+            //- searchbar
             form(class="navbar__col" id="searchbar" method="post" action="/search")
                 input(autocomplete="false" name="hidden" type="text" style="display:none;")
                 div(class="tb")
@@ -72,6 +73,7 @@ nav(class="navbar sticky")
                             //- span(class="material-icons") search
         ul(class="navbar__col navbar__col-3")
             li(class="btn-group")
+                //- log in
                 button(type="button" class="open-modal" data-open="modal1") Sign In
             div(class="modal" id="modal1" data-animation="zoomInOut")
                 div(class="modal-dialog")
@@ -88,6 +90,7 @@ nav(class="navbar sticky")
                             <br><br>
                             input(type="submit" value="Sign in")
             li(class="btn-group")
+                //- create account
                 button(type="button" class="open-modal" data-open="modal2") Create Account
             div(class="modal" id="modal2" data-animation="zoomInOut")
                 div(class="modal-dialog")

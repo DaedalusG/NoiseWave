@@ -43,6 +43,7 @@ router.post(
   handleValidationErrors,
   upload.single("songUrl"),
   asyncHandler(async (req, res, next) => {
+    console.log(req);
     const { title, artist, album, genre } = req.body;
     if (!title || !req.file.key) {
       console.log("UPLOAD FAILED");
