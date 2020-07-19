@@ -25,89 +25,13 @@ html(lang="en")
         else
             script(src="js/login.js")
             script(src="js/sign-up.js")
-
     body
         include nav.pug
         main#page-specific-content
-            h2
-                a(href="/NickCave/Lay-Me-Low" class="ajax") Song Page Template
-            //- User Spotlight
-            h2 User Spotlight!
-            br
-            section(class='user-header')
-                div(class='user-cover-image' style=`background-image: url(${spotBackgroundKey})`)
-                    div(class='user-profile-image playSong' id=spotMusic style=`background-image: url(${spotProfKey})`)
-                div(class='user-name')=spotlightData.User.username
-            section(class='user-nav')
-            section(id='latest' class="songCard__section")
-                header
-                    h2 Looking for something different?
-                    p Try something new!
-                div(class='songCards')
-                    each song in sixSongs
-                        div(class='card')
-                            div(class='card__image playSong' id=song.music  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
-                            div(class='card__label')
-                                div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
-                                div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
-            //- Song Template
-            h2 Song Template:
-            br
-            section(class='song-wrapper')
-                section(class='song-header')
-                    div(class='song-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                    div(class='song-info')
-                        div(class='song-name') Good Old Days (feat. Kesha)
-                        div(class='artist-name') Macklemore
-                        div(class='button-wrapper')
-                            button(class='song-play-button') Play
-                section(class='song-comments')
-                    div(class='post-comment')
-                        form(class="post-comment-form" method="get" action="/search")
-                            label(for="search") Write a comment: &nbsp;&nbsp;
-                            input(type="text" id="comment")
-                            input(type="submit" value="Post")
-                    div(class='posted-comments')
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Cole Hunter
-                                div(class='user-comment-text') Sweet song!
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Chris Cottier
-                                div(class='user-comment-text') I agree!
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Ben Anderson
-                                div(class='user-comment-text') What Chris said
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Warren Gifford
-                                div(class='user-comment-text') ^ this
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Cole Hunter
-                                div(class='user-comment-text') Sweet song!
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Chris Cottier
-                                div(class='user-comment-text') I agree!
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Ben Anderson
-                                div(class='user-comment-text') What Chris said
-                        div(class='posted-comment')
-                            div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
-                            div(class='user-comment')
-                                div(class='user-name') Warren Gifford
-                                div(class='user-comment-text') ^ this
+            div.splashContainer
+                div.splashBackground(style='background-image: url("images/vinyl.jpg")')
+                    div.noiseWave noiseWave
+
         //- JQUERY PLAYER
         div#jquery_jplayer_1.jp-jplayer
         div#jp_container_1.jp-audio(role='application' aria-label='media player')

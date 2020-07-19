@@ -32,42 +32,15 @@ const songNotFound = modelNotFound("Song");
 //   res.render("home");
 // });
 
-router.get("/",
+router.get(
+  "/",
   loggedInUser,
   asyncHandler(async (req, res) => {
-    const songData = await Song.findAll({
-      include: [{ model: User }],
-    });
-    //generate random user spotlight banner
-    let spotlightData = songData[Math.floor(Math.random() * songData.length) - 1].dataValues;
-    let spotProfKey = await getS3Url(spotlightData.User.profilePicUrl);
-    let spotBackgroundKey = await getS3Url(spotlightData.User.backgroundUrl)
-    let spotMusic = await getS3Url(spotlightData.songUrl);
-    console.log(spotMusic);
-
-    //generates a row of six random songs
-    const sixSongs = [];
-    for (let i = 0; i < 6; i++) {
-      let random = Math.floor(Math.random() * songData.length) - 1;
-      sixSongs.push(songData[random].dataValues);
-    }
-    for (let song of sixSongs) {
-      let profKey = song.User.dataValues.profilePicUrl;
-      const music = await getS3Url(song.songUrl);
-      song.music = music;
-      let profPic = await getS3Url(profKey);
-      song.User.dataValues.profilePicUrl = profPic;
-    }
-
     res.render("templates/ajaxLayout.pug", {
       user: req.user,
-      sixSongs,
-      spotlightData,
-      spotProfKey,
-      spotBackgroundKey,
-      spotMusic
     });
-  }));
+  })
+);
 
 router.get(
   "/explore",
@@ -77,9 +50,11 @@ router.get(
       include: [{ model: User }],
     });
     //generate random user spotlight banner
-    let spotlightData = songData[Math.floor(Math.random() * songData.length) - 1].dataValues;
+    let spotlightData =
+      songData[Math.floor(Math.random() * songData.length) - 1].dataValues;
+
     let spotProfKey = await getS3Url(spotlightData.User.profilePicUrl);
-    let spotBackgroundKey = await getS3Url(spotlightData.User.backgroundUrl)
+    let spotBackgroundKey = await getS3Url(spotlightData.User.backgroundUrl);
     let spotMusic = await getS3Url(spotlightData.songUrl);
     console.log(spotMusic);
 
@@ -145,7 +120,7 @@ router.get(
         spotlightData,
         spotProfKey,
         spotBackgroundKey,
-        spotMusic
+        spotMusic,
       })
     );
   })
