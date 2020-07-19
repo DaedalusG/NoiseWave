@@ -46,11 +46,11 @@ const upload = multer({
   }),
 });
 
-const getUser = async (userId) => {
-  // Change fetch url for heroku deployment
-  const userData = await fetch(`http://localhost:${apiPort}/users/${userId}`);
-  return await userData.json();
-};
+// const getUser = async (userId) => {
+//   // Change fetch url for heroku deployment
+//   const userData = await fetch(`http://localhost:${apiPort}/users/${userId}`);
+//   return await userData.json();
+// };
 
 // User sign up form action
 router.post(

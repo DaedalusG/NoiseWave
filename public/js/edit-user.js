@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      const res = await fetch(`http://localHost:8080/users/${id}`, {
+      const res = await fetch(`/users/${id}`, {
         method: "post",
         body: JSON.stringify(body),
         headers: {

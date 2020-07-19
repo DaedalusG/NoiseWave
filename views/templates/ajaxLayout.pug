@@ -20,7 +20,6 @@ html(lang="en")
         script(src="js/search.js")
         script(src="js/jquery.min.js" type='text/javascript')
         script(src="js/jquery.jplayer.min.js" type='text/javascript')
-        //- script(src='js/load-jplayer.js' type='text/javascript')
         if user
             script(src="js/logout.js")
         else
@@ -30,53 +29,27 @@ html(lang="en")
     body
         include nav.pug
         main#page-specific-content
-            a(href="/BoneThugsAndHarmony/Carole-of-the-Bones" class="ajax") Click Here to test audio player
-            br
-            a(href="/explore" class="ajax") Click Here to explore our songs
-            br
-            br
-            //- User Template
-            h2 User Page Template:
+            //- User Spotlight
+            h2 User Spotlight!
             br
             section(class='user-header')
-                div(class='user-cover-image' style='background-image: url(https://i1.sndcdn.com/visuals-000000557633-UFhDc9-t2480x520.jpg)')
-                    div(class='user-profile-image' style='background-image: url(https://i1.sndcdn.com/avatars-000330871676-7lnquw-t500x500.jpg)')
-                div(class='user-name') Macklemore
+                div(class='user-cover-image' style=`background-image: url(${spotBackgroundKey})`)
+                    div(class='user-profile-image playSong' id=spotMusic style=`background-image: url(${spotProfKey})`)
+                div(class='user-name')=spotlightData.User.username
             section(class='user-nav')
                 button Uploads
                 button Likes
             section(id='latest' class="songCard__section")
-                section(class='songCards')
-                    div(class='card')
-                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
-                        div(class='card__label')
-                            div(class='card__label__album') Too Good to Say Goodbye
-                            div(class='card__label__artist') Macklemore
-                    div(class='card')
-                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
-                        div(class='card__label')
-                            div(class='card__label__album') Too Good to Say Goodbye
-                            div(class='card__label__artist') Macklemore
-                    div(class='card')
-                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
-                        div(class='card__label')
-                            div(class='card__label__album') Too Good to Say Goodbye
-                            div(class='card__label__artist') Macklemore
-                    div(class='card')
-                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
-                        div(class='card__label')
-                            div(class='card__label__album') Too Good to Say Goodbye
-                            div(class='card__label__artist') Macklemore
-                    div(class='card')
-                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
-                        div(class='card__label')
-                            div(class='card__label__album') Too Good to Say Goodbye
-                            div(class='card__label__artist') Macklemore
-                    div(class='card')
-                        div(class='card__image' style='background-image: url(https://i1.sndcdn.com/artworks-zf3rCoCkF4NN-0-t500x500.jpg)')
-                        div(class='card__label')
-                            div(class='card__label__album') Too Good to Say Goodbye
-                            div(class='card__label__artist') Macklemore
+                header
+                    h2 Looking for something different?
+                    p Try something new!
+                div(class='songCards')
+                    each song in sixSongs
+                        div(class='card')
+                            div(class='card__image playSong' id=song.music  style=`background-image: url(${song.User.dataValues.profilePicUrl})`)
+                            div(class='card__label')
+                                div(class='card__label__title ajax-link' title=`${song.User.username}/${song.songLocalPath}`)=song.title
+                                div(class='card__label__artist ajax-link' title=`${song.User.username}`)=song.User.username
             //- Song Template
             h2 Song Template:
             br
