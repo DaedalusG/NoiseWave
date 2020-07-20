@@ -32,11 +32,12 @@
 
 .ajax-link {
     /* text-decoration: underline; */
-    color: rgb(112, 15, 15);
+    /* color: rgb(112, 15, 15); */
 }
 
 .userName__label {
-    font-size: 80px;
+    font-size: 50px;
+    overflow: hidden;
     color: white;
     text-shadow: 2px 2px 2px black;
     margin-left: 30px;

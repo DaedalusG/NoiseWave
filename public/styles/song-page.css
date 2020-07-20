@@ -42,15 +42,20 @@
   align-items: center;
 }
 
+.headerColumnContainer__songInfo {
+  margin-left: 20px;
+}
+
 .playBtnIcon .material-icons {
   padding-right: 10px;
-  font-size: 75px;
+  font-size: 30px;
   color: #ffc400;
   cursor: pointer;
 }
 
 .playBtnIcon .material-icons:hover {
   color: #fffb00;
+  margin-right: ;
 }
 
 .artistName {
