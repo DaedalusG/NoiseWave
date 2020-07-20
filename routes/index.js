@@ -50,8 +50,8 @@ router.get(
       include: [{ model: User }],
     });
     //generate random user spotlight banner
-    let spotlightData =
-      songData[Math.floor(Math.random() * songData.length) - 1].dataValues;
+    let spotlightData = songData[Math.floor(Math.random() * songData.length) - 1].dataValues;
+
 
     let spotProfKey = await getS3Url(spotlightData.User.profilePicUrl);
     let spotBackgroundKey = await getS3Url(spotlightData.User.backgroundUrl);
@@ -65,8 +65,12 @@ router.get(
     });
     const sixSongsLikeSpotlight = [];
     for (let i = 0; i < 6; i++) {
-      let random = Math.floor(Math.random() * genreData.length) - 1;
-      sixSongsLikeSpotlight.push(genreData[random].dataValues);
+      let selectedSong;
+      while(!selectedSong) {
+        let random = Math.floor(Math.random() * genreData.length) - 1;
+        selectedSong = genreData[random]
+      }
+      sixSongsLikeSpotlight.push(selectedSong.dataValues);
     }
     for (let song of sixSongsLikeSpotlight) {
       let profKey = song.User.dataValues.profilePicUrl;
@@ -97,8 +101,12 @@ router.get(
     //Generate Array of 6 random Song objects
     const sixSongs = [];
     for (let i = 0; i < 6; i++) {
-      let random = Math.floor(Math.random() * songData.length) - 1;
-      sixSongs.push(songData[random].dataValues);
+      let selectedSong;
+      while(!selectedSong) {
+        let random = Math.floor(Math.random() * songData.length) - 1;
+        selectedSong = songData[random];
+      }
+      sixSongs.push(selectedSong.dataValues);
     }
     for (let song of sixSongs) {
       let profKey = song.User.dataValues.profilePicUrl;
