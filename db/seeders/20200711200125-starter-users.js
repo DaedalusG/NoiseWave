@@ -11,6 +11,8 @@ module.exports = {
           email: "demo@gmail.com",
           createdAt: new Date(),
           updatedAt: new Date(),
+          profilePicUrl: "default profile pic DO NOT MOVE.png",
+          backgroundUrl: "default background DO NOT MOVE.jpg",
         },
         {
           username: "BadPlus",
