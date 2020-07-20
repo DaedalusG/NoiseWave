@@ -140,8 +140,12 @@ router.get(
 router.get(
   "/search/:query",
   loggedInUser,
-  asyncHandler(async (req, res) => {
+  asyncHandler(async (req, res, next) => {
     const { query } = req.params;
+    if (query === "") {
+      res.redirect("/");
+      return;
+    }
 
     const matchingUsers = await User.findAll({
       where: {
@@ -161,12 +165,6 @@ router.get(
           artist: {
             [Op.iLike]: `%${query}%`,
           },
-          // album: {
-          //   [Op.iLike]: `%${query}%`,
-          // },
-          // genre: {
-          //   [Op.iLike]: `%${query}%`,
-          // },
         },
       },
     });
