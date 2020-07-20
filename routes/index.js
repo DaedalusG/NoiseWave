@@ -248,12 +248,6 @@ router.get(
     let user = {};
     if (req.user) user = req.user;
 
-    // const likedSongs = userData.Like.map(async (like) => {
-    //   return await Song.findOne({
-    //     include: [{ model: User }],
-    //     where: { id: like.songId },
-    //   });
-    // });
     if (userData.profilePicUrl) {
       userData.profilePic = await getS3Url(userData.profilePicUrl);
     }
