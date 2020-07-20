@@ -33,7 +33,7 @@
 .headerColumn__container-2, .headerColumn__container-3 {
     padding: 10px;
     color: white;
-    text-shadow: 2px 2px 2px black ;
+    text-shadow: 2px 2px 2px black;
 }
 
 .headerColumn__container-2 {
@@ -127,10 +127,6 @@ input#commentFormText {
     height: inherit;
 }
 
-.commentForm {
-
-}
-
 section.song-comments {
     display: flex;
     flex-flow: column nowrap;
@@ -149,22 +145,14 @@ section.song-comments {
 .posted-comments {
     display: flex;
     flex-flow: column nowrap;
-    /* background-color: rgb(238, 238, 238); */
-    /* border: 1px dotted rgb(218, 218, 218); */
 }
 
 .posted-comment {
     display: flex;
     flex-flow: row nowrap;
     background-color: aliceblue;
-    /* padding: 15px; */
     margin: 10px;
     border: 1px solid rgb(218, 218, 218);
-    /* width: 100%;
-    height: 100%; */
-    /* align-content: center; */
-    /* height: 50px; */
-    /* justify-content: space-between; */
 }
 
 .posted-comment .user-image {

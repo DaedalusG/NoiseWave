@@ -1,45 +1,48 @@
-div.userPage
-    if userData.backgroundPic && userData.profilePic
-        img.userPage_banner(src=userData.backgroundPic)
-        img.userPage_profilePic(src=userData.profilePic)
-        div.userPage_name= userData.username
-    else
-        img.userPage_banner(src="/images/vaporwave.jpg")
-        if userData.profilePic
-            img.userPage_profilePic(src=userData.profilePic)
-        else
-            img.userPage_profilePic(src="/images/missing_profile.png")
-        div.userPage_name= userData.username
-
-    if !userData.Songs
-        div.userUploads This user hasn't uploaded a song yet
-    else
-        div.userUploads #{userData.username}'s Uploads:
-        if user.id === userData.id
-            button.userPage_buttons.button.editUser.ajax-link(title=`users/${userData.id}/edit`) Edit Details
-        div.userSongCollection
-            if userData.Songs
-                each song in userData.Songs
-                    section.userPage_song
-                                img.userPage_SongPic.playSong(src=userData.profilePic id=song.music title=song.title)
-                                div.songInfo
-                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Track: #{song.title}
-                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Artist: #{song.artist}
-                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Album: #{song.album}
-                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Genre: #{song.genre}
-                                img.userPage_waveform(src='images/sample-waveform.png')
 
 
-
-
-
-
-    //- p User Likes
-    //-     if likedSongs
-    //-         each likedSong in likedSongs
-    //-             div(class='card')
-    //-                         div(class='card__image' style=`background-image: url(${likedSong.User.profilePicUrl})`)
-    //-                         div(class='card__label')
-    //-                             div(class='card__label__album') #{likedSong.title}
-    //-                             div(class='card__label__artist') #{likedSong.artist}
-
+div(class='userPage__wrapper')
+    section(class='userPage__header' style=`background-image: url(${userData.backgroundPic})`)
+        div(class='userProfileImage__container')
+            img(class='userProfileImage' src=userData.profilePic)
+        div(class='userName__label')=userData.username
+    section(class='userPage__main')
+        section(class='upload__container')
+            each song in userData.Songs
+                div(class='upload')
+                    img(class='upload__userImage' src=userData.profilePic)
+                    div(class='uploadInfo__container__wrapper')
+                        div(class='uploadInfo__container')
+                            span(class='songName__label') Track:
+                            span(class='songName__text ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.title}`
+                            //- span(class='songName__text ajax-link') Test
+                        div(class='uploadInfo__container')
+                            span(class='artistName__label') Artist:
+                            span(class='songName__text ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.artist}`
+                            //- span(class='songName__text ajax-link') Test
+                        div(class='uploadInfo__container')
+                            span(class='albumName__label') Album:
+                            span(class='songName__text ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.album}`
+                            //- span(class='songName__text ajax-link') Test
+                        div(class='uploadInfo__container')
+                            span(class='genreName__label') Genre:
+                            span(class='songName__text ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.genre}`
+                            //- span(class='songName__text ajax-link') Test
+                    div(class='userPage_waveform__wrapper')
+                        img(class='userPage_waveform' src='images/sample-waveform.png')
+                div(class="separator")
+                //- each song in userData.Songs
+                    //- img(class='upload__userImage' src=userData.profilePic)
+                    //- div(class='uploadInfo__container__wrapper')
+                    //-     div(class='uploadInfo__container')
+                    //-         span(class='songName__label') Track:
+                    //-         span(class='songName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.title}`
+                    //-     div(class='uploadInfo__container')
+                    //-         span(class='artistName__label') Artist:
+                    //-         span(class='artistName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.artist}`
+                    //-     div(class='uploadInfo__container')
+                    //-         span(class='albumName__label') Album:
+                    //-         span(class='albumName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.album}`
+                    //-     div(class='uploadInfo__container')
+                    //-         span(class='genreName__label') Genre:
+                    //-     span(class='genreName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.genre}`
+                    //- img(class='commentForm__likeBtn userPage_waveform' src='images/sample-waveform.png')

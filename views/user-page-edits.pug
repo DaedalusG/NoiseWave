@@ -1,0 +1,128 @@
+div(class='userPage__header__wrapper')
+    if userData.backgroundPic
+        section(class='userPage__header' style=`background-image: url(${userData.backgroundPic})`)
+            div(class='headerColumn__container-1')
+                if userData.profilePic
+                    img(class='profileImage' src=userData.profilePic)
+                else
+                    img(class='profileImage' src="/images/missing_profile.png")
+            div(class='headerColumn__container-2')
+                div(class='headerColumnContainer__userInfo')
+                    div(class='artistName')=userData.username
+    else
+        section(class='userPage__header' style=`background-image: url("/images/vaporwave.jpg")`)
+            div(class='headerColumn__container-1')
+                if userData.profilePic
+                    img(class='profileImage' src=userData.profilePic)
+                else
+                    img(class='profileImage' src="/images/missing_profile.png")
+            div(class='headerColumn__container-2')
+                div(class='headerColumnContainer__userInfo')
+                    div(class='artistName')=userData.username
+    section(class='userPage__main')
+        section(class='user-uploads')
+            div(class='uploads')
+                div(class='posted-upload')
+                    div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+                    div(class='user-upload')
+                        div(class='user-name') Cole Hunter
+                        div(class='user-upload-text') Sweet user!
+
+    if !userData.Songs
+        div.userUploads This user hasn't uploaded a song yet
+    else
+        div.userUploads #{userData.username}'s Uploads:
+        if user.id === userData.id
+            button.userPage_buttons.button.editUser.ajax-link(title=`users/${userData.id}/edit`) Edit Details
+        div.userSongCollection
+            if userData.Songs
+                each song in userData.Songs
+                    section.userPage_song
+                                img.userPage_SongPic.playSong(src=userData.profilePic id=song.music title=song.title)
+                                div.songInfo
+                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Track: #{song.title}
+                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Artist: #{song.artist}
+                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Album: #{song.album}
+                                    div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Genre: #{song.genre}
+                                img.userPage_waveform(src='images/sample-waveform.png')
+
+    //- section(class='userPage__main')
+    //-     section(class='uploads__container')
+    //-         div(class='uploads__wrapper')
+    //-             each song in userData.Songs
+    //-             img(class='userProfileImage2' src=userData.profilePic)
+    //-             div(class='uploadInfo__container__wrapper')
+    //-                 div(class='uploadInfo__container')
+    //-                     span(class='songName__label') Track:
+    //-                     span(class='songName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.title}`
+    //-                 div(class='uploadInfo__container')
+    //-                     span(class='artistName__label') Artist:
+    //-                     span(class='artistName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.artist}`
+    //-                 div(class='uploadInfo__container')
+    //-                     span(class='albumName__label') Album:
+    //-                     span(class='albumName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.album}`
+    //-                 div(class='uploadInfo__container')
+    //-                     span(class='genreName__label') Genre:
+    //-                 span(class='genreName ajax-link' title=`${userData.username}/${song.songLocalPath}`)=`${song.genre}`
+    //-                 div.songInfo
+    //-                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Track: #{song.title}
+    //-                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Artist: #{song.artist}
+    //-                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Album: #{song.album}
+    //-                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Genre: #{song.genre}
+
+
+
+
+//-                     //- div(class='headerColumn__container-3')
+
+//-                 //-     div(class='album__container')
+//-                 //-         span(class='albumName__label') Album:
+//-                 //-         span(class='albumName')=`${songData.album}`
+//-                 //-     div(class='genre__container')
+//-                 //-         span(class='songGenre__label') Genre:
+//-                 //-         span(class='songGenre')=`${songData.genre}`
+//-                 //-     div(class='songCreatedAt__container')
+//-                 //-         span(class='songCreatedAt__label') Uploaded:
+//-                 //-         span(class='songCreatedAt')=`${songData.createdAt}`
+//-                 //- img(class='commentForm__likeBtn userPage_waveform' src='images/sample-waveform.png')
+
+
+
+//-         //- section(class='song-comments')
+//-         //-     div(class='posted-comments')
+//-         //-         div(class='posted-comment')
+//-         //-             div(class='user-image' style='background-image: url(https://i1.sndcdn.com/avatars-000529385298-usv0jg-t500x500.jpg)')
+//-         //-             div(class='user-comment')
+//-         //-                 div(class='user-name') Cole Hunter
+//-         //-                 div(class='user-comment-text') Sweet song!
+
+
+//- //- if userData.backgroundPic && userData.profilePic
+//- //-         img.userPage_banner(src=userData.backgroundPic)
+//- //-         img.userPage_profilePic(src=userData.profilePic)
+//- //-         div.userPage_name= userData.username
+//- //-     else
+//- //-         img.userPage_banner(src="/images/vaporwave.jpg")
+//- //-         if userData.profilePic
+//- //-             img.userPage_profilePic(src=userData.profilePic)
+//- //-         else
+//- //-             img.userPage_profilePic(src="/images/missing_profile.png")
+//- //-         div.userPage_name= userData.username
+
+//- //-     if !userData.Songs
+//- //-         div.userUploads This user hasn't uploaded a song yet
+//- //-     else
+//- //-         div.userUploads #{userData.username}'s Uploads:
+//- //-         if user.id === userData.id
+//- //-             button.userPage_buttons.button.editUser.ajax-link(title=`users/${userData.id}/edit`) Edit Details
+//- //-         div.userSongCollection
+//- //-             if userData.Songs
+//- //-                 each song in userData.Songs
+//- //-                     section.userPage_song
+//- //-                                 img.userPage_SongPic.playSong(src=userData.profilePic id=song.music title=song.title)
+//- //-                                 div.songInfo
+//- //-                                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Track: #{song.title}
+//- //-                                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Artist: #{song.artist}
+//- //-                                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Album: #{song.album}
+//- //-                                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Genre: #{song.genre}
+//- //-                                 img.userPage_waveform(src='images/sample-waveform.png')
