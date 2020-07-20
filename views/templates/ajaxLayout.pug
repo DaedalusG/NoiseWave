@@ -98,6 +98,8 @@ html(lang="en")
                         song.addEventListener('click', ()=> {
                             const songUrl= event.target.id;
                             const songTitle= event.target.title;
+                            console.log(songUrl);
+                            console.log(songTitle)
                             console.log(songTitle, songUrl);
                             $("#jquery_jplayer_1").jPlayer('destroy');
                             $("#jquery_jplayer_1").jPlayer({
@@ -110,7 +112,7 @@ html(lang="en")
                                 },
                                 cssSelectorAncestor: "#jp_container_1",
                                 swfPath: "/js",
-                                supplied: "mp3,flac,m4a,wav",
+                                supplied: "mp3,flac,m4a",
                                 useStateClassSkin: true,
                                 autoBlur: false,
                                 smoothPlayBar: true,
