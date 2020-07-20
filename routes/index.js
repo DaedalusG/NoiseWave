@@ -298,8 +298,6 @@ router.get(
       }
     }
 
-    console.log(songData.Comments);
-
     const songPage = pug.compileFile(
       path.join(express().get("views"), "audiofile.pug")
     );

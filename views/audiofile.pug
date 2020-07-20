@@ -3,7 +3,7 @@ div(class='songPage__header__wrapper')
         div(class='headerColumn__container-1')
             img(class='profileImage' src=songData.User.profilePicUrl)
         div(class='headerColumn__container-2')
-            div(class='playBtnIcon') <span class="material-icons">play_circle_filled</span>
+            img.playSong(src='images/play.png' class='playBtnIcon' title=songData.title id=songData.songUrl)
             div(class='headerColumnContainer__songInfo')
                 div(class='artistName')=songData.artist
                 div(class='songName')=songData.title
