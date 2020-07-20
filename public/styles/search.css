@@ -27,6 +27,9 @@
   font-family: "Monoton", cursive;
   font-size: 80px;
   justify-self: center;
+  /* overflow: hidden;
+  width: 1000px;
+  white-space: pre; */
 }
 
 .matchingSongs {
@@ -62,4 +65,8 @@
 .searchSong_artist {
   font-style: italic;
   /* color: gray; */
+}
+
+.searchUser_username.tooLong {
+  font-size: 50px;
 }

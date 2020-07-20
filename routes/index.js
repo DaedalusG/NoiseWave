@@ -197,6 +197,7 @@ router.get(
         const backgroundPic = await getS3Url(backgroundPicKey);
         user.background = backgroundPic;
       }
+      if (user.username.length > 15) user.longUserName = true;
     }
 
     const searchResults = pug.compileFile(
