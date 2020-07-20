@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (e) => {
+document.addEventListener("DOMContentLoaded", (e) => {
   Array.from(document.getElementsByClassName("ajax")).forEach((el) => {
     el.addEventListener("click", async (event) => {
       event.preventDefault();
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
       // if (event.target === event.currentTarget) {
       event.preventDefault();
       const search = document.getElementById("search").value;
+      if (search === "") return;
       res = await fetch(`/search/${search}`);
       html = await res.text();
       document.querySelector("#page-specific-content").innerHTML = html;

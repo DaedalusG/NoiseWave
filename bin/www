@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { port } = require("../config");
+console.log(port);
 
 const app = require("../app");
 // const api = require('../api');

@@ -21,7 +21,7 @@ section.songCard__section {
 
 .songCard__section .card__image {
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 150px 150px;
     box-sizing: border-box;
     height: 150px;
     margin-top: 7px;
@@ -73,7 +73,7 @@ section.songCard__section {
 .songCard__section .card__image {
   /* background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg); */
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 150px 150px;
   box-sizing: border-box;
   height: 150px;
   margin-top: 7px;
@@ -117,7 +117,7 @@ section.user-header {
 
 .user-cover-image .user-profile-image {
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 150px 150px;
   height: 100%;
 }
 
@@ -127,7 +127,7 @@ section.user-header {
 }
 /* .user-header .user-image {
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 150px 150px;
     box-sizing: border-box;
     height: 150px;
 } */
@@ -181,7 +181,7 @@ section.song-header {
 
 .song-header .song-image {
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 150px 150px;
   box-sizing: border-box;
   height: 250px;
   margin-bottom: 8px;
@@ -214,7 +214,7 @@ section.song-comments {
   flex-flow: column nowrap;
   justify-content: space-between;
   /* align-content: center; */
-  width: 65%;
+  /* width: 65%; */
   /* padding: 15px; */
 
   /* background-color: rgb(238, 238, 238); */
@@ -232,7 +232,7 @@ section.song-comments {
   flex-flow: column nowrap;
   background-color: rgb(238, 238, 238);
   border: 1px dotted rgb(218, 218, 218);
-  height: 308px;
+  /* height: 308px; */
   overflow-x: hidden;
   overflow-y: scroll;
   bottom: 15px;
@@ -255,7 +255,7 @@ section.song-comments {
 
 .posted-comment .user-image {
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 150px 150px;
   box-sizing: border-box;
   height: 55px;
   width: 55px;
