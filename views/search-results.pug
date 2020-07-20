@@ -5,7 +5,10 @@ if matchingUsers
         div.searchUser
             if user.background
                 img.searchUser_pic(src=user.background title=`${user.username}` class='ajax-link')
-                div.searchUser_username(title=`${user.username}` class='ajax-link')=user.username
+                if (user.longUserName)
+                    div.searchUser_username.tooLong(title=`${user.username}` class='ajax-link')=user.username
+                else
+                    div.searchUser_username(title=`${user.username}` class='ajax-link')=user.username
             else
                 img.searchUser_pic(src='/images/vaporwave.jpg' title=`${user.username}` class='ajax-link')
                 div.searchUser_username(title=`${user.username}` class='ajax-link')=user.username
