@@ -214,7 +214,7 @@ section.song-comments {
   flex-flow: column nowrap;
   justify-content: space-between;
   /* align-content: center; */
-  width: 65%;
+  /* width: 65%; */
   /* padding: 15px; */
 
   /* background-color: rgb(238, 238, 238); */
@@ -232,7 +232,7 @@ section.song-comments {
   flex-flow: column nowrap;
   background-color: rgb(238, 238, 238);
   border: 1px dotted rgb(218, 218, 218);
-  height: 308px;
+  /* height: 308px; */
   overflow-x: hidden;
   overflow-y: scroll;
   bottom: 15px;

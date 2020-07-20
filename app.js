@@ -3,7 +3,6 @@ const indexRoutes = require("./routes/index");
 const commentRoutes = require("./routes/comments");
 const songRoutes = require("./routes/songs");
 const userRoutes = require("./routes/users");
-const commentRoutes = require("./routes/comments");
 
 const express = require("express");
 const morgan = require("morgan");
