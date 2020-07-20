@@ -13,3 +13,21 @@
         #song-img
             img(src=songData.User.profilePicUrl, alt=songData.User.username)
     #comments
+        //- p= user.id
+        //- p= songData.id
+        if user
+            div(class='post-comment')
+                form(class="post-comment-form" method="post" action='/comments')
+                    input(type="hidden", name="userId" value= user.id)
+                    input(type="hidden", name="songId" value= songData.id)
+                    label(for="contentBody") Write a comment: &nbsp;&nbsp;
+                    input(type="text" id="comment" name="contentBody")
+                    input#comment-submit(type="submit" value="Post")
+        if songData.Comment
+            .user-comments
+                each comment in songData.Comment
+                    .posted-comment
+                    .user-image(style=`background-image: url(${comment.User.profilePicUrl})`)
+                    .user-comment
+                        .user-name= comment.User.username
+                        .user-comment-text= comment.bodyContent
