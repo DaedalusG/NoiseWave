@@ -21,7 +21,7 @@ section.songCard__section {
 
 .songCard__section .card__image {
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 150px 150px;
     box-sizing: border-box;
     height: 150px;
     margin-top: 7px;
@@ -47,3 +47,231 @@ section.songCard__section {
   font-size: 12px;
   color: rgb(126, 126, 126);
 }
+
+.songCards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+section.songCard__section {
+  margin-bottom: 100px;
+}
+
+.songCard__section header {
+  margin-bottom: 20px;
+}
+
+.songCard__section .songCards {
+}
+
+.songCard__section .card {
+  width: 150px;
+  line-height: 1.15em;
+}
+
+.songCard__section .card__image {
+  /* background-image: url(https://i1.sndcdn.com/artworks-a61e4abf-2e5a-4e7f-93d3-a87172d3fb8d-0-t500x500.jpg); */
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+  box-sizing: border-box;
+  height: 150px;
+  margin-top: 7px;
+}
+
+.songCard__section .card__label {
+  margin-top: 7px;
+}
+
+.songCard__section .card__label__title,
+.songCard__section .card__label__artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.songCard__section .card__label__album {
+  font-size: 14px;
+  color: rgb(31, 31, 31);
+}
+
+.songCard__section .card__label__artist {
+  font-size: 12px;
+  color: rgb(126, 126, 126);
+}
+
+/* User profile */
+
+section.user-header {
+  margin-bottom: 100px;
+  height: 200px;
+}
+
+.user-header .user-cover-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.user-cover-image .user-profile-image {
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+  height: 100%;
+}
+
+.user-header .user-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* .user-header .user-image {
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    box-sizing: border-box;
+    height: 150px;
+} */
+
+section.user-nav {
+  margin-bottom: 10px;
+}
+
+.user-nav button {
+  /* margin-right: 50px;
+    border-bottom: 2px solid white; */
+  /* background-color: rgb(190, 1, 1);
+    color: white; */
+  background-color: rgb(209, 209, 209);
+  padding: 15px;
+  font-size: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.user-nav button:hover {
+  background-color: rgb(190, 1, 1);
+  color: white;
+}
+
+/* .button-wrapper button {
+    background-color: rgb(190, 1, 1);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.button-wrapper button:hover {
+    background-color: rgb(243, 0, 0);
+} */
+
+/* Song Page */
+
+section.song-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  /* max-height: 358px; */
+}
+
+section.song-header {
+  width: 35%;
+}
+
+.song-header .song-image {
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+  box-sizing: border-box;
+  height: 250px;
+  margin-bottom: 8px;
+}
+
+.song-header .song-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.song-header .button-wrapper {
+  margin-top: 15px;
+}
+
+.button-wrapper button {
+  background-color: rgb(190, 1, 1);
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.button-wrapper button:hover {
+  background-color: rgb(243, 0, 0);
+}
+
+section.song-comments {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  /* align-content: center; */
+  /* width: 65%; */
+  /* padding: 15px; */
+
+  /* background-color: rgb(238, 238, 238); */
+}
+
+.post-comment {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.posted-comments {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: rgb(238, 238, 238);
+  border: 1px dotted rgb(218, 218, 218);
+  /* height: 308px; */
+  overflow-x: hidden;
+  overflow-y: scroll;
+  bottom: 15px;
+  position: relative;
+}
+
+.posted-comment {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: aliceblue;
+  /* padding: 15px; */
+  margin: 10px;
+  border: 1px solid rgb(218, 218, 218);
+  /* width: 100%;
+    height: 100%; */
+  /* align-content: center; */
+  /* height: 50px; */
+  /* justify-content: space-between; */
+}
+
+.posted-comment .user-image {
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+  box-sizing: border-box;
+  height: 55px;
+  width: 55px;
+  /* width: 90%;
+    height: 90%; */
+  margin-right: 10px;
+}
+
+.posted-comments .user-comment {
+  /* margin: 8px; */
+  padding: 8px;
+  font-size: 15px;
+}
+
+.posted-comments .user-name {
+  color: rgb(126, 126, 126);
+  font-size: 13px;
+}
+

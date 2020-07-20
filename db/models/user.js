@@ -18,10 +18,13 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
       },
       profilePicUrl: {
+        defaultValue: 'missing_profile.png',
         type: DataTypes.STRING(255),
+        defaultValue: "default profile pic DO NOT MOVE.png",
       },
       backgroundUrl: {
         type: DataTypes.STRING(255),
+        defaultValue: "default background DO NOT MOVE.jpg",
       },
       createdAt: {
         type: DataTypes.DATE,

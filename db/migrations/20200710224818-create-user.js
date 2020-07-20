@@ -24,9 +24,11 @@ module.exports = {
       },
       profilePicUrl: {
         type: Sequelize.STRING(255),
+        defaultValue: "default profile pic DO NOT MOVE.png",
       },
       backgroundUrl: {
         type: Sequelize.STRING(255),
+        defaultValue: "default background DO NOT MOVE.jpg",
       },
       createdAt: {
         allowNull: false,
