@@ -98,3 +98,7 @@ footer a {
   position: absolute;
   top: 25%;
 }
+
+.ajax-link:hover {
+  color: orangered;
+}
