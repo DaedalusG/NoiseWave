@@ -1,4 +1,4 @@
-.userPage__wrapper {
+.userPage__header__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,85 +18,73 @@
     background-blend-mode: overlay;
     margin-bottom: 50px;
     width: 100%;
-    /* height: 100%; */
-}
-
-.userProfileImage__container {
-    height: 200px;
 }
 
 .userProfileImage {
     height: inherit;
-    box-sizing: border-box;
 }
 
-.ajax-link {
-    /* text-decoration: underline; */
-    color: rgb(112, 15, 15);
+.headerColumn__container-1 {
+    height: 200px;
 }
 
-.userName__label {
-    font-size: 80px;
+.headerColumn__container-2 {
+    padding: 10px;
     color: white;
-    text-shadow: 2px 2px 2px black;
-    margin-left: 30px;
+    text-shadow: 2px 2px 2px black ;
+}
+
+/* .headerColumn__container-1 {
+    height: 200px;
+}
+
+.headerColumn__container-2, .headerColumn__container-3 {
+    padding: 10px;
+    color: white;
+    text-shadow: 2px 2px 2px black ;
+}
+
+.headerColumn__container-2 {
+    display: flex;
+    flex-direction: row wrap;
+    align-items:
+} */
+
+.userPage__main {
+    /* width: 100%; */
 }
 
 .upload__container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
 .upload {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 125px;
-    border-bottom: 2px solid rgb(224, 224, 218);
-    padding: 15px 15px;
+    justify-content: space-between;
+    /* align-content: space-between;
+    align-items: center; */
+    /* align-content: center;
+    align-items: center; */
     /* width: 100%; */
+    /* align-items: center; */
+    border-bottom: 1px solid rgb(161, 161, 161);
 }
 
 .upload__userImage {
-    /* width: 150px; */
-    /* height: 100%; */
-    height: 100%;
-    box-sizing: border-box;
+    width: 75px;
+    height: 75px;
 }
 
-.userPage_waveform__wrapper {
-    width: 100%;
-}
 .userPage_waveform {
-    width: 100%;
-}
-
-.uploadInfo__container span {
-    font-size: 14px;
-    /* color: rgb(122, 117, 71); */
-    font-weight: bold;
-    color: black;
-    /* text-shadow: 1px 1px black; */
-    margin: 0 2px;
-}
-
-.uploadInfo__container {
-    margin: 1px 0;
+    height: 75px;
 }
 
 .uploadInfo__container__wrapper {
-    margin: 30px 0;
-    height: inherit;
-    padding: 0 30px;
-    width: 50%;
-    /* background-color: black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: stretch; */
-    /* align-self: flex-start; */
+        display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
@@ -148,7 +136,7 @@
 
 .userPage__main {
     width: 100%;
-    /* border: 2px ridge rgb(201, 201, 201); */
+    border: 2px ridge rgb(201, 201, 201);
 }
 
 section.user-uploads {

@@ -1,0 +1,88 @@
+.userPage {
+  display: grid;
+  grid-template-rows: 400px, 100px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* .userHeader {
+  margin: auto;
+  position: relative;
+  left: 500px;
+  grid-area: 1/1 / span 1 / span 1;
+} */
+
+.userPage_name {
+  font-family: "Monoton", cursive;
+  font-size: 70px;
+  /* position: absolute; */
+  grid-area: 1 / 2 / span 1 / span 2;
+  color: white;
+}
+
+.userPage_profilePic {
+  margin-top: 50px;
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+  grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.userPage_banner {
+  height: 400px;
+  width: 100%;
+  grid-area: 1 / 1 / 1 / span 4;
+}
+
+.userUploads {
+  grid-area: 2 / 1 / span 1 / span 4;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 100px;
+}
+
+.editUser {
+  grid-area: 2 / 4 / span 1 / span 1;
+  text-align: right;
+}
+
+.userPage_buttons {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.userSongCollection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.userPage_song {
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.userPage_SongPic {
+  height: 200px;
+  width: 200px;
+}
+
+.songInfo {
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-self: space-between; */
+  /* align-self: ; */
+  /* align-items: start; */
+  width: 300px;
+  color: #f85804;
+  font-weight: bold;
+}
