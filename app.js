@@ -1,8 +1,8 @@
 const { environment, awsKeys } = require("./config");
 const indexRoutes = require("./routes/index");
+const commentRoutes = require("./routes/comments");
 const songRoutes = require("./routes/songs");
 const userRoutes = require("./routes/users");
-const commentRoutes = require("./routes/comments");
 
 const express = require("express");
 const morgan = require("morgan");
@@ -28,7 +28,7 @@ app.use(cors({ origin: "noisewave.s3.us-west-2.amazonaws.com/" }));
 app.use("/", indexRoutes);
 app.use("/songs", songRoutes);
 app.use("/users", userRoutes);
-app.use("/comments", commentRoutes);
+app.use('/comments', commentRoutes)
 
 const { getS3Image } = require("./utils");
 

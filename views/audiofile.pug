@@ -5,7 +5,7 @@ div(class='songPage__header__wrapper')
         div(class='headerColumn__container-2')
             img.playSong(src='images/play.png' class='playBtnIcon' title=songData.title id=songData.songUrl)
             div(class='headerColumnContainer__songInfo')
-                div(class='artistName')=songData.artist
+                div(class='artistName ajax-link' title=`${songData.User.username}`)=songData.artist
                 div(class='songName')=songData.title
         div(class='headerColumn__container-3')
             div(class='album__container')
