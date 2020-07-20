@@ -69,3 +69,32 @@ footer a {
   height: auto;
   object-fit: inherit;
 }
+
+.splashContainer {
+  height: 100vh;
+}
+.splashBackground {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* The image used */
+  background-image: url("images/vinyl.jpg");
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.noiseWave {
+  color: white;
+  font-family: "Monoton", cursive;
+  font-size: 120px;
+  position: absolute;
+  top: 25%;
+}
