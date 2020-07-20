@@ -18,14 +18,15 @@ div(class='songPage__header__wrapper')
                 span(class='songCreatedAt__label') Uploaded:
                 span(class='songCreatedAt')=`${songData.createdAt}`
     section(class='songPage__main')
-        section(class='commentForm__container')
-            div(class='commentForm__wrapper')
-                img(class='commentForm__userImage' src=songData.User.profilePicUrl)
-                form(class="commentForm" method="post" action=`/comments/${songData.id}`)
-                    input(autocomplete="false" name="hidden" type="text" style="display:none;")
-                    input(type="text" id="commentText" placeholder="Write a comment" name="contentBody")
-                    input.ajax-link(type="submit" value="Post Comment" id='submit-comment' title=`${songData.User.username}/${songData.songLocalPath}`)
-                div(class='commentForm__likeBtn') <span class="material-icons">favorite</span>
+        if user
+            section(class='commentForm__container')
+                div(class='commentForm__wrapper')
+                    img(class='commentForm__userImage' src=songData.User.profilePicUrl)
+                    form(class="commentForm" method="post" action=`/comments/${songData.id}`)
+                        input(autocomplete="false" name="hidden" type="text" style="display:none;")
+                        input(type="text" id="commentText" placeholder="Write a comment" name="contentBody" required)
+                        input.ajax-link(type="submit" value="Post Comment" id='submit-comment' title=`${songData.User.username}/${songData.songLocalPath}`)
+                    div(class='commentForm__likeBtn') <span class="material-icons">favorite</span>
         section(class='song-comments')
             div(class='posted-comments')
             if songData.Comments
