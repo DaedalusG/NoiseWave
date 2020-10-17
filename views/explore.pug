@@ -3,7 +3,7 @@ h2=`User ${spotlightData.User.username} Spotlight!`
 br
 section(class='user-header')
     div(class='user-cover-image' style=`background-image: url(${spotBackgroundKey})`)
-        div(class='user-profile-image playSong' id=spotMusic style=`background-image: url(${spotProfKey})`)
+        div(class='user-profile-image playSong' id=spotMusic data-title=spotlightData.title data-artist=spotlightData.artist style=`background-image: url(${spotProfKey})`)
 section(id='latest' class="songCard__section")
     header
         h2=`Searching for something like ${spotlightData.title} by ${spotlightData.User.username}`
