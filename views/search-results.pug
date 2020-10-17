@@ -21,9 +21,9 @@ div.matchingSongs
     each song in matchingSongs
         div.searchSong
             if song.pic
-                div.searchSong_pic.playSong(style=`background-image: url(${song.pic})` id=song.music title=song.title)
+                div.searchSong_pic.playSong(style=`background-image: url(${song.pic})` id=song.music data-title=song.title data-artist=song.artist title=song.title)
             else
-                div.searchSong_pic.playSong(style=`background-image: url(/images/missing_profile.png)` id=song.music title=song.title)
+                div.searchSong_pic.playSong(style=`background-image: url(/images/missing_profile.png)` id=song.music data-title=song.title data-artist=song.artist title=song.title)
             div.searchSong_details(title=`${song.User.username}/${song.songLocalPath}` class='ajax-link') Title: #{song.title}
             div.searchSong_details.searchSong_artist(title=`${song.User.username}` class='ajax-link') Artist: #{song.artist}
             //- div.searchSong_details Album: #{song.album}

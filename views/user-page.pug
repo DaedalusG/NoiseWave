@@ -9,7 +9,7 @@ div(class='userPage__wrapper')
         section(class='upload__container')
             each song in userData.Songs
                 div(class='upload')
-                    img(class='upload__userImage' src=userData.profilePic)
+                    img(class='upload__userImage playSong' data-title=song.title data-artist=song.artist id=song.music src=userData.profilePic)
                     div(class='uploadInfo__container__wrapper')
                         div(class='uploadInfo__container')
                             span(class='songName__label') Track:

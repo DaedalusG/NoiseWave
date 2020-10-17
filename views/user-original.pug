@@ -21,7 +21,7 @@ div.userPage
             if userData.Songs
                 each song in userData.Songs
                     section.userPage_song
-                                img.userPage_SongPic.playSong(src=userData.profilePic id=song.music title=song.title)
+                                img.userPage_SongPic.playSong(src=userData.profilePic id=song.music data-title=song.title data-artist=song.artist title=song.title)
                                 div.songInfo
                                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Track: #{song.title}
                                     div.ajax-link(title=`${userData.username}/${song.songLocalPath}`) Artist: #{song.artist}
