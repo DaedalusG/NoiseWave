@@ -11,10 +11,10 @@
 
 button {
   cursor: pointer;
-  background: transparent;
+  /* background: transparent;
   border: none;
-  outline: none;
-  font-size: inherit;
+  outline: none; */
+  /* font-size: inherit; */
 }
 
 main {
