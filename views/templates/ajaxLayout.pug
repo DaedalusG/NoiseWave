@@ -55,7 +55,7 @@ html(lang="en")
                         .jp-duration(role='timer' aria-label='duration') &nbsp;
                         .jp-toggles
                             button.jp-repeat(role='button' tabindex='0') repeat
-            .jp-details
+            .jp-details#jp-details
                 .jp-title(aria-label='title')
             .jp-no-solution
                 span Update Required
@@ -100,9 +100,7 @@ html(lang="en")
                             const songUrl= event.target.id;
                             const songTitle= event.target.getAttribute('data-title');
                             const songArtist = event.target.getAttribute('data-artist');
-                            //- console.log(songUrl);
-                            //- console.log(songTitle)
-                            //- console.log(songTitle, songUrl);
+                            console.log('data', songTitle, songArtist);
                             $("#jquery_jplayer_1").jPlayer('destroy');
                             $("#jquery_jplayer_1").jPlayer({
                                 ready: function () {

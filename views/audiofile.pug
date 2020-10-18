@@ -3,7 +3,7 @@ div(class='songPage__header__wrapper')
         div(class='headerColumn__container-1')
             img(class='profileImage' src=songData.User.profilePicUrl)
         div(class='headerColumn__container-2')
-            img.playSong(src='images/play.png' class='playBtnIcon' title=songData.title id=songData.songUrl data-title=song.title data-artist=song.artist)
+            img.playSong(src='images/play.png' class='playBtnIcon' title=songData.title id=songData.songUrl data-title=songData.title data-artist=songData.artist)
             div(class='headerColumnContainer__songInfo')
                 div(class='artistName ajax-link' title=`${songData.User.username}`)=songData.artist
                 div(class='songName')=songData.title
