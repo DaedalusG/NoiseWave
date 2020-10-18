@@ -30,9 +30,9 @@ html(lang="en")
     body
         include nav.pug
         main#page-specific-content
-            div.splashContainer
-                div.splashBackground(style='background-image: url("images/vinyl.jpg")')
-                    div.noiseWave noiseWave
+            div.splashBackground(style='background-image: url("images/vinyl.jpg")')
+                div.noiseWave noiseWave
+            div.spacer
 
         //- JQUERY PLAYER
         div#jquery_jplayer_1.jp-jplayer
@@ -55,7 +55,7 @@ html(lang="en")
                         .jp-duration(role='timer' aria-label='duration') &nbsp;
                         .jp-toggles
                             button.jp-repeat(role='button' tabindex='0') repeat
-            .jp-details
+            .jp-details#jp-details
                 .jp-title(aria-label='title')
             .jp-no-solution
                 span Update Required
@@ -96,17 +96,16 @@ html(lang="en")
                     let playSongs= document.querySelectorAll('.playSong')
 
                     playSongs.forEach(song=>{
-                        song.addEventListener('click', ()=> {
+                        song.addEventListener('click', async (event)=> {
                             const songUrl= event.target.id;
-                            const songTitle= event.target.title;
-                            console.log(songUrl);
-                            console.log(songTitle)
-                            console.log(songTitle, songUrl);
+                            const songTitle= event.target.getAttribute('data-title');
+                            const songArtist = event.target.getAttribute('data-artist');
+                            console.log('data', songTitle, songArtist);
                             $("#jquery_jplayer_1").jPlayer('destroy');
                             $("#jquery_jplayer_1").jPlayer({
                                 ready: function () {
                                 $(this).jPlayer("setMedia", {
-                                    title: songTitle,
+                                    title: `${songArtist} - ${songTitle}`,
                                     mp3: songUrl,
                                 });
                                 $(this).jPlayer("play");
