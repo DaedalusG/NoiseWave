@@ -14,4 +14,8 @@ module.exports = {
     secret: process.env.JWT_SECRET,
     expiresIn: process.env.JWT_EXPIRES_IN,
   },
+  awsKeys: {
+    IAM_ACCESS_ID: process.env.IAM_ACCESS_ID,
+    IAM_SECRET: process.env.IAM_SECRET
+  },
 };
