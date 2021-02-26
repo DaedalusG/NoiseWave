@@ -1,5 +1,5 @@
 # NoiseWave
-*By Cole Hunter - [Visit NoiseWave](https://noisewave.herokuapp.com/)*
+[Visit NoiseWave](https://noisewave.herokuapp.com/)*
 
 **Table of Contents**
 * [NoiseWave at a Glance](#noisewave-at-a-glance)
