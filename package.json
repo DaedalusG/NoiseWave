@@ -20,7 +20,7 @@
   "homepage": "https://github.com/DaedalusG/420_Group2_Project#readme",
   "dependencies": {
     "aws": "0.0.3-2",
-    "aws-sdk": "^2.713.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
